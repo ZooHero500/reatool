@@ -1,0 +1,12 @@
+{
+  "ja": [
+    {
+      "source": "A slug is the readable last part of a URL, such as deja-vu in example.com/posts/deja-vu. This example uses the real slugify 1.6.6 npm release. The results below come from running that release locally.",
+      "html": "<strong>スラッグ</strong>は URL の末尾にある読みやすい部分です。例えば <code>example.com/posts/deja-vu</code> の <code>deja-vu</code> が該当します。この例では実際の <a href=\"https://www.npmjs.com/package/slugify/v/1.6.6\">slugify 1.6.6 npm リリース</a>を使い、以下の結果はその版をローカルで実行したものです。"
+    },
+    {
+      "source": "The same file also explains why spaces collapse into one separator, why & becomes and, and why the German locale changes Ä into AE.",
+      "html": "同じファイルから、連続する空白が一つの区切りになる理由、<code>&amp;</code> が <code>and</code> に変わる理由、ドイツ語ロケールで <code>Ä</code> が <code>AE</code> に変わる理由も分かります。"
+    }
+  ]
+}

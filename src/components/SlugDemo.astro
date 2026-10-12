@@ -1,0 +1,30 @@
+<div class="slug-demo" data-slug-demo>
+  <div class="demo-bar"><span class="live-dot"></span> Try the real package <span>slugify 1.6.6</span></div>
+  <div class="demo-body">
+    <label for="slug-input">Article title</label>
+    <input id="slug-input" type="text" value="Déjà Vu!" maxlength="160" autocomplete="off" spellcheck="false"/>
+    <div class="demo-options"><label><input id="slug-lower" type="checkbox" checked/> Make it lowercase</label><label><input id="slug-strict" type="checkbox"/> Remove punctuation</label></div>
+    <div class="url-preview"><span class="demo-label">GENERATED URL</span><div><span>example.com/posts/</span><output id="slug-output" for="slug-input slug-lower slug-strict" aria-live="polite">deja-vu!</output></div></div>
+    <p class="demo-tip" data-demo-tip>Still has a “!”? Turn on <strong>Remove punctuation</strong>.</p>
+    <div class="demo-config"><span>JavaScript options</span><code data-demo-config>{'{ lower: true, strict: false }'}</code></div>
+  </div>
+  <p class="demo-privacy">Runs in your browser. Nothing is uploaded. REA is used in the written walkthrough.</p>
+</div>
+<script>
+  import slugify from 'slugify';
+  import {t} from '../lib/i18n';
+  const input=document.querySelector<HTMLInputElement>('#slug-input');
+  const lower=document.querySelector<HTMLInputElement>('#slug-lower');
+  const strict=document.querySelector<HTMLInputElement>('#slug-strict');
+  const output=document.querySelector<HTMLOutputElement>('#slug-output');
+  const tip=document.querySelector<HTMLElement>('[data-demo-tip]');
+  const config=document.querySelector<HTMLElement>('[data-demo-config]');
+  function update(){
+    if(!input||!lower||!strict||!output||!tip||!config)return;
+    const result=slugify(input.value,{lower:lower.checked,strict:strict.checked});
+    output.textContent=result||t('(empty)');
+    config.textContent=`{ lower: ${lower.checked}, strict: ${strict.checked} }`;
+    tip.textContent=t(!result?'Enter a title to generate a URL slug.':strict.checked?'Punctuation is removed. Compare the options with the walkthrough.':'Try “Remove punctuation” and compare the generated URL.');
+  }
+  [input,lower,strict].forEach(el=>el?.addEventListener('input',update));
+</script>

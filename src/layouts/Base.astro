@@ -1,0 +1,109 @@
+---
+import '@fontsource-variable/mona-sans/wdth.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/site.css';
+import '../styles/redesign.css';
+import '../styles/motion.css';
+import '../styles/seo.css';
+import {pageSeo,breadcrumbsFor} from '../data/seo';
+interface Props { title?: string; description?: string; article?: boolean; noindex?: boolean; collectionItems?:{name:string;url:string}[]; }
+const {article = false, noindex = false,collectionItems} = Astro.props;
+const path = Astro.url.pathname;
+const metadata=pageSeo[path];
+const title=metadata?.title??Astro.props.title;
+const description=metadata?.description??Astro.props.description;
+if(!title||!description)throw new Error(`Missing page metadata for ${path}`);
+const canonical = new URL(path, Astro.site);
+const nav = [{href:'/tutorials/',label:'Tutorials'},{href:'/install/',label:'Install REA'},{href:'/#play-cases',label:'Interactive labs'}];
+const siteUrl='https://reatool.dev/';
+const breadcrumbs=breadcrumbsFor(path);
+const pageEntity={
+  '@type':article?'TechArticle':collectionItems?'CollectionPage':path==='/about/'?'AboutPage':'WebPage',
+  '@id':`${canonical}#page`,url:canonical.toString(),name:title,description,inLanguage:'en',
+  isPartOf:{'@id':`${siteUrl}#website`},
+  ...(article?{headline:metadata?.heading??title,datePublished:'2026-10-12',dateModified:'2026-10-12',author:{'@id':`${siteUrl}#publisher`},publisher:{'@id':`${siteUrl}#publisher`},mainEntityOfPage:canonical.toString()}:{}),
+  ...(breadcrumbs.length?{breadcrumb:{'@id':`${canonical}#breadcrumbs`}}:{}),
+  ...(collectionItems?{mainEntity:{'@type':'ItemList',numberOfItems:collectionItems.length,itemListElement:collectionItems.map((item,i)=>({'@type':'ListItem',position:i+1,name:item.name,url:new URL(item.url,siteUrl).toString()}))}}:{})
+};
+const structured={'@context':'https://schema.org','@graph':[
+  {'@type':'Organization','@id':`${siteUrl}#publisher`,name:'REA Tool',url:`${siteUrl}about/`,description:'Independent publisher of REA tutorials and teaching experiments.'},
+  {'@type':'WebSite','@id':`${siteUrl}#website`,name:'REA Tool',url:siteUrl,inLanguage:'en',publisher:{'@id':`${siteUrl}#publisher`}},
+  pageEntity,
+  ...(breadcrumbs.length?[{'@type':'BreadcrumbList','@id':`${canonical}#breadcrumbs`,itemListElement:breadcrumbs.map((item,i)=>({'@type':'ListItem',position:i+1,name:item.name,item:new URL(item.path,siteUrl).toString()}))}]:[])
+]};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#0c0a09"/>
+    <title>{title}</title><meta name="description" content={description}/>
+    <link rel="canonical" href={canonical}/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    {noindex && <meta name="robots" content="noindex"/>}
+    <meta property="og:type" content={article?'article':'website'}/><meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/><meta property="og:url" content={canonical}/>
+    <meta property="og:site_name" content="REA Tool"/><meta property="og:image" content="https://reatool.dev/og.png"/>
+    <meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <script type="application/ld+json" set:html={JSON.stringify(structured).replace(/</g,'\\u003c')}/>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      {article && <span class="reading-progress" aria-hidden="true"></span>}
+      <a class="wordmark" href="/" aria-label="REA Tool home"><img src="/rea-mark.svg" alt="" width="30" height="30"/><span>reatool<span class="domain-dot">.</span></span><span class="brand-label">GUIDES</span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">{nav.map(item=><a class:list={{active:path===item.href}} aria-current={path===item.href?'page':undefined} href={item.href}>{item.label}</a>)}</nav>
+      <a class="upstream-link" href="https://github.com/morluto/rea" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      <button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>{nav.map(item=><a aria-current={path===item.href?'page':undefined} href={item.href}>{item.label}<span aria-hidden="true">↗</span></a>)}<a href="https://github.com/morluto/rea">Official GitHub <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main id="main"><slot/></main>
+    <footer class="site-footer wrap">
+      <div><a class="footer-brand" href="/">reatool<span>.</span>dev</a><p>REA setup, tutorials and worked examples.<br/>An independent learning resource.</p></div>
+      <div class="footer-links"><a href="/install/">Install REA</a><a href="/about/">About & editorial method</a><a href="https://rea.tools/">Official website ↗</a><a href="https://github.com/morluto/rea">GitHub ↗</a></div>
+      <div class="footer-bottom"><span>Independent community resource. Not affiliated with the REA maintainers.</span><span>© 2026 REA Tool</span></div>
+    </footer>
+    <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
+    <script>
+      import '../scripts/motion';
+      import {t} from '../lib/i18n';
+      document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach(button=>{
+        const originalLabel=button.querySelector('span')?.textContent??t('Copy');
+        button.addEventListener('click', async()=>{
+          const label=button.querySelector('span');
+          const text=button.dataset.copy || '';
+          try {
+            await navigator.clipboard.writeText(text);
+            if(label) label.textContent=t('Copied');
+            button.classList.add('copied');
+            document.getElementById('copy-status')!.textContent=t('Copied to clipboard.');
+          } catch {
+            if(label) label.textContent=t('Select text');
+            document.getElementById('copy-status')!.textContent=t('Copy unavailable. Select and copy the command manually.');
+          }
+          setTimeout(()=>{if(label) label.textContent=originalLabel;button.classList.remove('copied');},2000);
+        });
+      });
+      const menu=document.querySelector<HTMLButtonElement>('.menu-button');
+      const mobile=document.getElementById('mobile-nav');
+      let menuAnimation:Animation|undefined;let menuRevision=0;
+      const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+      function setMenu(open:boolean){
+        if(!menu||!mobile)return;const revision=++menuRevision;menuAnimation?.cancel();
+        menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',t(open?'Close navigation':'Open navigation'));mobile.inert=!open;
+        if(reduced.matches){mobile.hidden=!open;return;}
+        mobile.hidden=false;
+        menuAnimation=mobile.animate(open?[{opacity:0,transform:'translateY(-10px)'},{opacity:1,transform:'translateY(0)'}]:[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(-8px)'}],{duration:open?230:150,easing:'cubic-bezier(.16,1,.3,1)'});
+        menuAnimation.onfinish=()=>{if(revision===menuRevision)mobile.hidden=!open;};
+      }
+      function closeMenu(){if(menu?.getAttribute('aria-expanded')==='true')setMenu(false);}
+      menu?.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu?.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus();}});
+      mobile?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+      reduced.addEventListener('change',()=>{if(reduced.matches)setMenu(menu?.getAttribute('aria-expanded')==='true');});
+      const languageSwitch=document.querySelector<HTMLDetailsElement>('.language-switch');
+      document.addEventListener('click',event=>{if(languageSwitch&&!languageSwitch.contains(event.target as Node))languageSwitch.open=false;});
+      document.addEventListener('keydown',event=>{if(event.key==='Escape'&&languageSwitch?.open){languageSwitch.open=false;languageSwitch.querySelector('summary')?.focus();}});
+    </script>
+  </body>
+</html>

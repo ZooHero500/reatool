@@ -1,0 +1,40 @@
+---
+const prompt = 'Install REA for this coding agent using npx rea-agents@latest setup. Show me the proposed configuration changes before applying them. Then tell me how to restart and verify the connection. My first target will be a local JavaScript package.';
+---
+<section class="quick-install wrap" id="quick-install" aria-labelledby="quick-install-title">
+  <div class="quick-install-copy">
+    <p class="eyebrow">REA QUICK START</p>
+    <h2 id="quick-install-title">One prompt. Let your AI install REA.</h2>
+    <p>Paste it into Claude Code, Codex or Cursor. Let your agent handle the setup.</p>
+    <ol class="quick-install-steps">
+      <li><span aria-hidden="true">01</span><div><strong>Copy the prompt</strong><p>Everything your agent needs to get started.</p></div></li>
+      <li><span aria-hidden="true">02</span><div><strong>Send it to your coding agent</strong><p>Review and approve the setup it proposes.</p></div></li>
+      <li><span aria-hidden="true">03</span><div><strong>Restart, then verify</strong><p>Restart when prompted, then ask your agent to check the REA connection.</p></div></li>
+    </ol>
+  </div>
+  <div class="quick-install-panel prompt-block">
+    <div class="quick-install-label"><span class="blue-dot" aria-hidden="true"></span><span>Copy into your coding agent</span></div>
+    <pre><code>{prompt}</code></pre>
+    <button type="button" class="copy-button button primary" data-copy={prompt} aria-label="Copy setup prompt"><span>Copy setup prompt</span><svg aria-hidden="true" viewBox="0 0 20 20" width="17" height="17"><rect x="7" y="7" width="10" height="11" rx="2"/><path d="M13 7V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg></button>
+    <div class="quick-install-links"><a href="/install/">Manual setup & troubleshooting →</a><a href="/first-analysis/">Your first REA analysis →</a></div>
+  </div>
+</section>
+<style>
+  .quick-install{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-block:64px;border-bottom:1px solid var(--line);scroll-margin-top:95px;align-items:center}
+  .quick-install-copy h2{font-size:clamp(29px,3.2vw,44px);line-height:1.17;letter-spacing:-.035em;margin:14px 0 18px;max-width:510px;text-wrap:balance}
+  .quick-install-copy>p:not(.eyebrow){color:#b8a5b0;font-size:14px;line-height:1.8;max-width:500px}
+  .quick-install-steps{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:20px}
+  .quick-install-steps li{display:flex;gap:17px;align-items:flex-start}
+  .quick-install-steps li>span{font:11px var(--mono);color:#fa607d;padding-top:4px}
+  .quick-install-steps strong{font-size:14px;font-weight:550;color:#f0dfe6}
+  .quick-install-steps p{font-size:12px;color:#a995a0;line-height:1.7;margin:5px 0 0}
+  .quick-install-panel{min-width:0;padding:27px;background:linear-gradient(145deg,#24131b,#141015 70%);border:1px solid #643344;border-radius:10px;box-shadow:0 12px 48px #0003}
+  .quick-install-label{display:flex;align-items:center;gap:9px;font:11px/1.6 var(--mono);color:#d7adb9}
+  .quick-install-panel pre{margin:22px 0 24px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.9 var(--font);color:#d5c4cd}
+  .quick-install-panel code{font:inherit}
+  .quick-install-panel .copy-button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:16px 19px;min-height:52px;font-size:13px;white-space:normal;color:#fff;cursor:pointer}
+  .quick-install-panel .copy-button svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.4}
+  .quick-install-links{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:18px;font-size:11px;line-height:1.6;color:#bd909f}
+  .quick-install-links a:hover{color:#ffb0c2}
+  @media(max-width:800px){.quick-install{grid-template-columns:1fr;gap:0;padding-block:40px}.quick-install-copy{display:contents}.quick-install-copy h2{max-width:none}.quick-install-panel{order:1;padding:22px;margin-top:24px}.quick-install-steps{order:2;margin-top:28px}.quick-install-copy>p:not(.eyebrow){max-width:none}}
+</style>

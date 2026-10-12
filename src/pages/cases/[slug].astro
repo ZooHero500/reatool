@@ -1,0 +1,21 @@
+---
+import Guide from '../../layouts/Guide.astro';
+import CaseLab from '../../components/CaseLab.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import {caseStudies} from '../../data/cases';
+export function getStaticPaths(){return caseStudies.map(study=>({params:{slug:study.slug},props:{study}}));}
+const {study}=Astro.props;
+const next=caseStudies.find(c=>c.slug===study.next)!;
+const toc=[{id:'try',label:'Try the experiment'},...study.sections.map(s=>({id:s.id,label:s.title.slice(4)})),{id:'check',label:'Compare known results'},{id:'scope',label:'What we verified'}];
+---
+<Guide eyebrow={`${study.category} / Interactive case study`} minutes={study.minutes} toc={toc}>
+  <h2 id="try">01. Try it before taking it apart</h2><p>{study.tryText}</p><CaseLab kind={study.slug}/>
+  <div class="lesson-summary"><strong>What you will build</strong><p>{study.outcome}</p><strong>Before the investigation</strong><p>{study.needs} <a href="/install/">Set up REA →</a></p></div>
+  {study.sections.map(section=><section><h2 id={section.id}>{section.title}</h2>{section.paragraphs.map(p=><p>{p}</p>)}{section.code&&<CodeBlock code={section.code}/>} {section.checks&&<ul>{section.checks.map(c=><li>{c}</li>)}</ul>}{section.prompt&&<CodeBlock prompt label="Copy this investigation prompt" code={section.prompt}/>}</section>)}
+  <h2 id="check">06. Compare known results</h2><p>Use these as explicit checkpoints. Matching them supports this small rule; it does not establish whole-application compatibility.</p>
+  <div class="table-scroll"><table><thead><tr>{study.columns.map(c=><th>{c}</th>)}</tr></thead><tbody>{study.rows.map(row=><tr>{row.map(c=><td>{c}</td>)}</tr>)}</tbody></table></div>
+  <div class="lab-downloads"><a href="/downloads/case-lab-rules.mjs" download>Download the rules (.mjs) ↓</a><a href="/downloads/check-case-labs.mjs" download>Download the checks (.mjs) ↓</a></div><p>Save both files in the same folder. Run the checks with Node.js; no package installation is needed.</p><CodeBlock code="node check-case-labs.mjs"/>
+  <h2 id="scope">07. What was actually verified?</h2><p>{study.scope}</p><p><a href="/evidence/case-lab-checks.json">Read this site’s recorded numeric test results →</a></p>
+  <div class="sources"><p>Sources: <a href={study.source}>{study.sourceLabel}</a> · <a href={study.extraSource}>{study.extraLabel}</a>. Tutorial, illustrations and browser experiments independently authored.</p></div>
+  <a class="next-guide" href={`/cases/${next.slug}/`}><span>Next experiment</span><strong>{next.title} <span>→</span></strong></a>
+</Guide>

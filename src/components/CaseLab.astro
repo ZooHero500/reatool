@@ -1,0 +1,46 @@
+---
+import '../styles/labs.css';
+interface Props {kind:'dino'|'th04'|'dx-ball'|'calculator'}
+const {kind}=Astro.props;
+const names={dino:'The speed experiment',th04:'The aiming experiment','dx-ball':'The stereo experiment',calculator:'The percent experiment'};
+---
+<section class="case-lab" data-lab={kind} aria-label={names[kind]}>
+  <div class="lab-top"><span><i></i> {names[kind]}</span><span>PLAY / OBSERVE / EXPLAIN</span></div>
+  {kind==='dino' && <>
+    <div class="lab-stage dino-stage" tabindex="0" role="group" aria-label="Dinosaur game. Use Play, then Space or Arrow Up to jump.">
+      <div class="lab-hud"><span>SPEED <output id="dino-speed">6.000</output></span><span>CLEARED <output id="dino-score">0</output></span></div>
+      <svg viewBox="0 0 640 230" role="img" aria-label="A red dinosaur and an approaching obstacle" class="dino-scene">
+        <path d="M0 185H640" stroke="#65404c"/><path d="M20 201H70 M98 215H113 M175 198H203 M305 207H334 M440 198H450 M535 212H571" stroke="#382630"/>
+        <g id="dino-player" fill="#ff536d"><path d="M82 142v-25h31v9H98v7h18v9H98v12H87v16h-7v-12H70v12h-7v-26H52v-13h7v8h11v3z"/><rect x="63" y="170" width="9" height="15"/><rect x="82" y="170" width="9" height="15"/><rect x="100" y="120" width="4" height="4" fill="#151014"/></g>
+        <g id="dino-obstacle" transform="translate(530 0)" fill="#ae6879"><path d="M0 185v-43h9v16h8v-24h9v51z"/></g>
+        <text id="dino-overlay" x="320" y="92" text-anchor="middle" fill="#cda9b6" font-size="15">A familiar game. One rule to investigate.</text>
+      </svg>
+    </div>
+    <div class="lab-controls"><div class="lab-buttons"><button type="button" id="dino-play" class="lab-primary">Play</button><button type="button" id="dino-jump" disabled>Jump ↑</button><button type="button" id="dino-reset">Restart</button></div><label for="dino-slider">Fixed speed <span>2 — 18</span></label><input id="dino-slider" type="range" min="2" max="18" step="0.5" value="6"/><label class="lab-check"><input id="dino-auto" type="checkbox" checked/> Use the recovered acceleration rule</label><p class="lab-status" id="dino-status" role="status">Press Play, then Jump. Changing the slider selects a fixed speed.</p></div>
+  </>}
+  {kind==='th04' && <>
+    <div class="lab-stage"><div class="lab-hud"><span>BYTE ANGLE <output id="ring-aim">32</output></span><span>FULL TURN <b>256</b></span></div>
+      <svg id="ring-stage" class="ring-scene" viewBox="0 0 640 340" role="img" aria-label="Bullet ring. Drag the player diamond, or use the position sliders below.">
+        <circle cx="320" cy="170" r="120" fill="none" stroke="#422833" stroke-dasharray="2 7"/><path d="M320 20V320 M35 170H605" stroke="#2b2027"/>
+        <g id="ring-rays"></g><g id="ring-bullets"></g><circle cx="320" cy="170" r="8" fill="#f8d3dc"/><circle cx="320" cy="170" r="15" fill="none" stroke="#78515f"/>
+        <g id="ring-player" transform="translate(440 290)"><circle r="21" fill="#ff486520" stroke="#fc6780" stroke-dasharray="3 3"/><path d="M0 -9L8 0 0 9 -8 0Z" fill="#ff5b76"/></g>
+        <text x="22" y="320" fill="#b48c9b" font-size="11">DRAG THE DIAMOND TO AIM</text><text x="530" y="320" fill="#b48c9b" font-size="11">0 → / 64 ↓</text>
+      </svg>
+    </div>
+    <div class="lab-controls"><div class="lab-buttons"><button type="button" id="ring-fire" class="lab-primary">Fire one ring ↗</button><label class="lab-select">Bullets <select id="ring-count"><option>8</option><option>12</option><option selected>16</option><option>32</option></select></label><button type="button" id="ring-reset">Reset</button></div><div class="lab-two"><div><label for="ring-x">Player X</label><input id="ring-x" type="range" min="40" max="600" value="440"/></div><div><label for="ring-y">Player Y</label><input id="ring-y" type="range" min="30" max="310" value="290"/></div></div><label for="ring-rotation">Template rotation <output id="ring-rotation-value">0</output></label><input id="ring-rotation" type="range" min="0" max="255" value="0"/><p class="lab-status" id="ring-status" role="status">16 directions, spaced 16 angle units apart.</p></div>
+  </>}
+  {kind==='dx-ball' && <>
+    <div class="lab-stage pan-stage"><div class="lab-hud"><span>SCREEN X <output id="pan-position">320</output></span><span>INTEGER PAN <output id="pan-value">0</output></span></div><div class="pan-field" aria-hidden="true"><div class="pan-brick" id="pan-brick"></div><span>0</span><span>320</span><span>640</span></div><div class="pan-channels"><span>L</span><div><i id="pan-left"></i></div><div><i id="pan-right"></i></div><span>R</span></div><p class="pan-equation" id="pan-equation">trunc((320 × 1.5625 − 500) × 1) = 0</p></div>
+    <div class="lab-controls"><label for="pan-x">Move the brick <span>Screen position</span></label><input id="pan-x" type="range" min="0" max="640" step="1" value="320"/><div class="lab-buttons"><button type="button" data-pan="0">Left</button><button type="button" data-pan="320">Center</button><button type="button" data-pan="640">Right</button><label class="lab-select">Scale <select id="pan-scale"><option>0</option><option>0.5</option><option selected>1</option><option>20</option><option>-1</option></select></label></div><button type="button" id="pan-play" class="lab-primary">Play a short tone ♫</button><p class="lab-status" id="pan-status" role="status">Use headphones to hear the position. Sound starts only when you press Play.</p></div>
+  </>}
+  {kind==='calculator' && <>
+    <div class="lab-stage calc-stage"><div class="lab-hud"><span>STANDARD MODE / PERCENT</span><span id="calc-step">01 / ENTER</span></div><p id="calc-expression">200 + 10%</p><output id="calc-result" aria-live="polite">10</output><p id="calc-explanation">Press % to see what happens to the second number.</p></div>
+    <div class="lab-controls"><div class="lab-two"><div><label for="calc-base">First number</label><input id="calc-base" type="number" min="-1000000000" max="1000000000" step="any" value="200"/></div><div><label for="calc-entry">Percent input</label><input id="calc-entry" type="number" min="-1000000000" max="1000000000" step="any" value="10"/></div></div><div class="lab-buttons calc-operators" role="group" aria-label="Operation"><button type="button" data-operator="+" aria-label="Add" aria-pressed="true">+</button><button type="button" data-operator="-" aria-label="Subtract" aria-pressed="false">−</button><button type="button" data-operator="*" aria-label="Multiply" aria-pressed="false">×</button><button type="button" data-operator="/" aria-label="Divide" aria-pressed="false">÷</button></div><div class="lab-buttons"><button type="button" id="calc-percent" class="lab-primary">Apply %</button><button type="button" id="calc-equals" disabled>Then =</button><button type="button" id="calc-reset">Reset</button></div><p class="lab-status" id="calc-status" role="status">Try addition, then multiplication, with the same two numbers.</p></div>
+  </>}
+  <p class="lab-note">{kind==='dino'?'New teaching game. Only the acceleration rule follows the documented investigation.':kind==='th04'?'Angle diagram, not game footage. Mouse aiming uses an approximate atan2 conversion; the original uses iatan2.':kind==='dx-ball'?'The numeric rule follows the report. Sound is a normalized Web Audio illustration, not the original audio engine.':'A two-operand percent experiment, not a complete Windows Calculator emulator.'}</p>
+  <noscript><p class="lab-note">Enable JavaScript to use the lab. The tutorial and reference results below remain readable.</p></noscript>
+</section>
+<script>
+  import {initCaseLab} from '../scripts/case-labs';
+  initCaseLab();
+</script>

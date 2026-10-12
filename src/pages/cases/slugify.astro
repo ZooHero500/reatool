@@ -1,0 +1,49 @@
+---
+import Guide from '../../layouts/Guide.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import SlugDemo from '../../components/SlugDemo.astro';
+const toc=[{id:'question',label:'The URL we wanted'},{id:'artifact',label:'Download and inspect'},{id:'rule',label:'Find the right option'},{id:'verify',label:'Run the checks'},{id:'limits',label:'What we tested'},{id:'reproduce',label:'Download the example'}];
+---
+<Guide eyebrow="03 / Real package example" minutes="7 min" toc={toc}>
+  <div class="case-meta"><span>slugify 1.6.6 / MIT</span><span>REA 6.4.0</span><span>Checked Oct 12, 2026</span></div>
+  <div class="answer-box"><p class="eyebrow">THE SHORT ANSWER</p><p><code>lower: true</code> only changes uppercase letters to lowercase. Add <code>strict: true</code> to remove punctuation too. This is an option you need to enable, not a bug in the library.</p><CodeBlock label="The working configuration" code={'slugify("Déjà Vu!", { lower: true, strict: true })\n// → "deja-vu"'}/></div>
+  <h2 id="question">01. The URL we wanted</h2>
+  <p>A <strong>slug</strong> is the readable last part of a URL, such as <code>deja-vu</code> in <code>example.com/posts/deja-vu</code>. This example uses the real <a href="https://www.npmjs.com/package/slugify/v/1.6.6">slugify 1.6.6 npm release</a>. The results below come from running that release locally.</p>
+  <p>Try the title below. Then turn on <strong>Remove punctuation</strong> to see the difference.</p>
+  <SlugDemo/>
+  <p>Here is the same comparison in JavaScript:</p>
+  <CodeBlock label="Actual package behavior" code={'slugify("Déjà Vu!")\n// → "Deja-Vu!"\n\nslugify("Déjà Vu!", { lower: true })\n// → "deja-vu!"'}/>
+  <p>The accent disappeared; the exclamation mark stayed. We used REA to locate the package’s main file, read the filtering code, and check which option removes it. You can repeat those steps below.</p>
+  <h2 id="artifact">02. Download the package and inspect it with REA</h2>
+  <p>We downloaded the pinned npm tarball and unpacked it without installing or running the package. The following preparation commands work in a shell with <code>tar</code>:</p>
+  <CodeBlock code={'mkdir rea-slugify-case\ncd rea-slugify-case\nnpm pack slugify@1.6.6\ntar -xzf slugify-1.6.6.tgz'}/>
+  <p>Then we ran REA’s JavaScript application analyzer on the extracted <code>package</code> directory:</p>
+  <p>If you prefer your coding agent, replace the path and paste this prompt:</p>
+  <CodeBlock prompt label="Copy into your coding agent" code="Use REA to inspect /absolute/path/to/rea-slugify-case/package. I use slugify to make article URLs. Why does slugify('Déjà Vu!', { lower: true }) keep the exclamation mark? Find the entry file, show the code that allows it, and identify the option that removes it. Do not change the package."/>
+  <p>Or collect the analysis directly in your terminal:</p>
+  <CodeBlock code={'npx -y rea-agents@6.4.0 analyze-javascript-application ./package --json > analysis.json'}/>
+  <p>REA identified the package as <code>slugify</code>, version <code>1.6.6</code>, with an entry point of <code>./slugify.js</code>. The report recorded three relevant files and zero parse failures. It also marked overall graph coverage as <strong>partial</strong>, which we retained in the published summary.</p>
+  <p>This is a readable JavaScript distribution. REA supplied the artifact inventory and analysis context; subsequent source inspection and direct checks established the behavior. No native decompilation was involved.</p>
+  <h2 id="rule">03. Find the option that removes punctuation</h2>
+  <p>In the shipped <code>slugify.js</code>, lines 33–42 normalize the string, apply locale or character-map replacements, and filter characters. The default filter explicitly allows the exclamation mark.</p>
+  <CodeBlock label="slugify.js · lines 41–47" code={'// remove not allowed characters\n.replace(options.remove || /[^\\w\\s$*_+~.()\'"!\\-:@]+/g, \'\')\n}, \'\');\n\nif (options.strict) {\n  slug = slug.replace(/[^A-Za-z0-9\\s]/g, \'\');\n}'}/>
+  <p>The strict branch runs afterward and removes characters outside letters, numbers and whitespace. Lowercasing is a separate operation at lines 57–58. That gives us a testable prediction:</p>
+  <CodeBlock label="Prediction" code={'slugify("Déjà Vu!", { lower: true, strict: true })\n// should return "deja-vu"'}/>
+  <p>The same file also explains why spaces collapse into one separator, why <code>&amp;</code> becomes <code>and</code>, and why the German locale changes <code>Ä</code> into <code>AE</code>.</p>
+  <h2 id="verify">04. Run the checks on the real package</h2>
+  <p>We executed eight assertions against the unmodified 1.6.6 release, including the original question and a few surrounding behaviors.</p>
+  <div class="outcome"><span>8 / 8</span><div><strong>Checks passed.</strong><p>Original package · Node.js 22.23.1 · macOS arm64</p></div></div>
+  <div class="table-scroll"><table><thead><tr><th>Input</th><th>Options</th><th>Observed result</th></tr></thead><tbody><tr><td>Déjà Vu!</td><td>Default</td><td>Deja-Vu!</td></tr><tr><td>Déjà Vu!</td><td>lower</td><td>deja-vu!</td></tr><tr><td>Déjà Vu!</td><td>lower + strict</td><td>deja-vu</td></tr><tr><td>hello &nbsp; world (padded)</td><td>Default</td><td>hello-world</td></tr><tr><td>Rock &amp; Roll</td><td>Default</td><td>Rock-and-Roll</td></tr><tr><td>Äpfel</td><td>German locale + lower</td><td>aepfel</td></tr><tr><td>Empty string</td><td>Default</td><td>Empty string</td></tr><tr><td>42 (a number)</td><td>Default</td><td>Throws “string argument expected”</td></tr></tbody></table></div>
+  <p><a href="/evidence/slugify-checks.json">Read the recorded check results</a>, or use the interactive package demo above. The demo runs the same pinned package in your browser.</p>
+  <h2 id="limits">05. What we tested</h2>
+  <p>For this release and these inputs, the source and observed outputs agree. If you want <code>deja-vu</code>, use both <code>lower: true</code> and <code>strict: true</code>.</p>
+  <div class="callout"><p><strong>The scope matters.</strong> Eight checks do not establish every Unicode or locale behavior. The REA graph is partial; a missing relationship in it is not proof of absence. We did not reconstruct a native binary or recover unavailable source code.</p></div>
+  <p>Because the shipped source is readable, ordinary source inspection is also a valid route. This case demonstrates the full habit: identify the artifact, inspect one rule, then test the claim against the original implementation.</p>
+  <h2 id="reproduce">06. Download and run this example</h2>
+  <p>Download the small reproduction kit. It includes the pinned dependency, all eight assertions, and the steps to collect your own REA evidence.</p>
+  <p><a class="button secondary" href="/downloads/slugify-reproduction.zip" download>Download the reproduction kit <span aria-hidden="true">↓</span></a></p>
+  <CodeBlock code={'npm install --ignore-scripts\nnode verify.mjs'} label="Inside the extracted kit"/>
+  <p>The assertion runner prints each result and exits with an error if a check fails. Node.js executes the npm package only at this verification step; REA’s preceding static inspection does not execute it.</p>
+  <a class="next-guide" href="/first-analysis/"><span>Try another tutorial</span><strong>Find where an app saves exported files. <span aria-hidden="true">↗</span></strong></a>
+  <div class="sources"><p>Evidence: <a href="/evidence/slugify-analysis-summary.json">REA analysis summary</a> · <a href="/evidence/slugify-checks.json">check results</a> · <a href="/evidence/slugify-source.txt">inspected source</a> · <a href="/evidence/slugify-LICENSE.txt">MIT license</a>. Package by simov and contributors. Analysis and runtime checks performed locally on October 12, 2026. Public summaries omit local filesystem paths.</p></div>
+</Guide>

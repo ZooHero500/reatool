@@ -1,0 +1,75 @@
+{
+  "package": "slugify",
+  "version": "1.6.6",
+  "verifiedDate": "2026-10-12",
+  "runtime": "v22.23.1",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "total": 8,
+  "passed": 8,
+  "results": [
+    {
+      "input": "Déjà Vu!",
+      "options": {},
+      "expected": "Deja-Vu!",
+      "actual": "Deja-Vu!",
+      "passed": true
+    },
+    {
+      "input": "Déjà Vu!",
+      "options": {
+        "lower": true
+      },
+      "expected": "deja-vu!",
+      "actual": "deja-vu!",
+      "passed": true
+    },
+    {
+      "input": "Déjà Vu!",
+      "options": {
+        "lower": true,
+        "strict": true
+      },
+      "expected": "deja-vu",
+      "actual": "deja-vu",
+      "passed": true
+    },
+    {
+      "input": "  hello   world  ",
+      "options": {},
+      "expected": "hello-world",
+      "actual": "hello-world",
+      "passed": true
+    },
+    {
+      "input": "Rock & Roll",
+      "options": {},
+      "expected": "Rock-and-Roll",
+      "actual": "Rock-and-Roll",
+      "passed": true
+    },
+    {
+      "input": "Äpfel",
+      "options": {
+        "locale": "de",
+        "lower": true
+      },
+      "expected": "aepfel",
+      "actual": "aepfel",
+      "passed": true
+    },
+    {
+      "input": "",
+      "options": {},
+      "expected": "",
+      "actual": "",
+      "passed": true
+    },
+    {
+      "input": 42,
+      "options": {},
+      "expectedError": "slugify: string argument expected",
+      "passed": true
+    }
+  ]
+}

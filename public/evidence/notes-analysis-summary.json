@@ -1,0 +1,75 @@
+{
+  "document_type": "Editorial summary of a locally collected REA analysis; not the full immutable Evidence record",
+  "checked_on": "2026-10-12",
+  "rea_version": "6.4.0",
+  "command": "rea analyze-javascript-application ./notes-example --json",
+  "source_evidence_id": "ev_96ec1c6c12cfb64fecc0bfec1a41d5c7b32afa203ab7e3150e3e9fce3a8a1a18",
+  "artifact_sha256": "0ee325d4eaf7f94b62b2962044995fe1efe9f1d31411eb035118b19b1f56f7bb",
+  "target": "REA official notes-example.zip",
+  "provider": {
+    "id": "rea-javascript-application",
+    "name": "REA JavaScript application analyzer",
+    "version": "1"
+  },
+  "statistics": {
+    "relevant_files": 6,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 1817,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 4,
+    "visited_ast_nodes": 241,
+    "findings": 21,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "summary": {
+    "browser_windows": 1,
+    "explicit_web_preferences": 1,
+    "preload_entrypoints": 1,
+    "context_bridge_apis": 1,
+    "exposed_api_members": 1,
+    "ipc": {
+      "operations": 2,
+      "literal_channels": 1,
+      "dynamic_channel_operations": 0,
+      "renderer_transmissions": 1,
+      "renderer_listeners": 0,
+      "main_handlers": 1,
+      "paired_renderer_transmissions": 1,
+      "ambiguous_renderer_transmissions": 0,
+      "unpaired_literal_renderer_transmissions": 0
+    },
+    "sender_validation_observations": 0,
+    "utility_processes": 0,
+    "resolved_utility_entrypoints": 0,
+    "native_addon_bindings": 0,
+    "resolved_native_addon_bindings": 0
+  },
+  "coverage": {
+    "status": "complete",
+    "truncated": false,
+    "omitted_count": 0,
+    "limits": []
+  },
+  "limitations": [
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Electron API identity follows proven lexical module aliases. Reassigned bindings, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+    "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+  ],
+  "privacy_note": "Local absolute filesystem paths omitted. Counts and limitations copied from the original report.",
+  "formatter_check": {
+    "input": [
+      {
+        "id": 1,
+        "title": "Hello, \"REA\""
+      }
+    ],
+    "expected": "id,title\n1,\"Hello, \"\"REA\"\"\"\n",
+    "actual": "id,title\n1,\"Hello, \"\"REA\"\"\"\n",
+    "passed": true
+  }
+}
