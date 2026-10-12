@@ -1,0 +1,69 @@
+{
+  "document_type": "Editorial summary of a locally collected REA analysis; not the full immutable Evidence record",
+  "checked_on": "2026-10-12",
+  "rea_version": "6.4.0",
+  "command": "rea analyze-javascript-application ./package --json",
+  "source_evidence_id": "ev_3aa58d53a221c421ed1fe4edd728dca42d1d995ada259f89931221c12a79fa54",
+  "artifact_sha256": "f20b21d81db1dff2f2064f8335fce13bac6a0c72c918d60b0c278341eeaebdae",
+  "target": "slugify@1.6.6 npm tarball",
+  "provider": {
+    "id": "rea-javascript-application",
+    "name": "REA JavaScript application analyzer",
+    "version": "1"
+  },
+  "statistics": {
+    "relevant_files": 3,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 10836,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 2,
+    "visited_ast_nodes": 330,
+    "findings": 3,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "summary": {
+    "browser_windows": 0,
+    "explicit_web_preferences": 0,
+    "preload_entrypoints": 0,
+    "context_bridge_apis": 0,
+    "exposed_api_members": 0,
+    "ipc": {
+      "operations": 0,
+      "literal_channels": 0,
+      "dynamic_channel_operations": 0,
+      "renderer_transmissions": 0,
+      "renderer_listeners": 0,
+      "main_handlers": 0,
+      "paired_renderer_transmissions": 0,
+      "ambiguous_renderer_transmissions": 0,
+      "unpaired_literal_renderer_transmissions": 0
+    },
+    "sender_validation_observations": 0,
+    "utility_processes": 0,
+    "resolved_utility_entrypoints": 0,
+    "native_addon_bindings": 0,
+    "resolved_native_addon_bindings": 0
+  },
+  "coverage": {
+    "status": "partial",
+    "truncated": false,
+    "omitted_count": null,
+    "limits": []
+  },
+  "limitations": [
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+  ],
+  "privacy_note": "Local absolute filesystem paths omitted. Counts and limitations copied from the original report.",
+  "package": {
+    "name": "slugify",
+    "version": "1.6.6",
+    "main": "./slugify.js"
+  },
+  "tarball_sha256": "3adbaac6daeae595154217bda3836aa7e4292b5b103cc17955192fa9cd24732f"
+}

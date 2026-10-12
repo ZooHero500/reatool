@@ -1,0 +1,28 @@
+---
+import Base from './Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import {pageSeo} from '../data/seo';
+interface Props {eyebrow:string;minutes:string;toc:{id:string;label:string}[];}
+const {eyebrow,minutes,toc}=Astro.props;
+const metadata=pageSeo[Astro.url.pathname];
+if(!metadata)throw new Error(`Missing guide metadata: ${Astro.url.pathname}`);
+---
+<Base article>
+  <div class="guide-shell wrap">
+    <aside class="guide-sidebar">
+      <a class="back-link" href="/tutorials/">← All tutorials</a>
+      <span class="eyebrow">On this page</span>
+      <nav aria-label="Table of contents">{toc.map(item=><a href={`#${item.id}`}>{item.label}</a>)}</nav>
+      <div class="sidebar-note"><span class="status-dot"></span> Reviewed October 12, 2026<br/><span>REA 6.4.0</span></div>
+    </aside>
+    <article class="guide-article">
+      <Breadcrumbs/>
+      <header class="article-header"><p class="eyebrow">{eyebrow} <span class="eyebrow-divider">/</span> {minutes} read</p><h1>{metadata.heading}</h1><p class="article-intro">{metadata.intro??metadata.description}</p></header>
+      <details class="mobile-toc"><summary>On this page</summary><nav aria-label="Article sections">{toc.map(item=><a href={`#${item.id}`}>{item.label}</a>)}</nav></details>
+      <div class="prose"><slot/>
+        {metadata.related&&<section class="related-guides" aria-labelledby="related-heading"><h2 id="related-heading">Continue with a related REA guide</h2><ul>{metadata.related.map(path=><li><a href={path}>{pageSeo[path].label}</a></li>)}</ul></section>}
+        <p class="guide-context">New to the tool? <a href="/#what-is-rea">What is REA?</a> · <a href="/about/#editorial-method">How we check our guides</a></p>
+      </div>
+    </article>
+  </div>
+</Base>

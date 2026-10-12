@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import {tutorials} from '../../data/tutorials';
+import {caseStudies} from '../../data/cases';
+import {pageSeo} from '../../data/seo';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+const entries=[...caseStudies.map(c=>({...c,href:`/cases/${c.slug}/`,level:`Interactive lab · ${c.minutes}`})),{href:'/cases/aegis/',category:'Android',title:'Rebuild an authenticator’s 30-second code',description:'Follow the Aegis APK investigation and test a working reconstruction with a clock you control.',level:'Worked case · Interactive demo'},...tutorials.map(t=>({href:`/tutorials/${t.slug}/`,...t,level:`Intermediate · ${t.minutes}`})),{href:'/install/',category:'Start here',title:'Install and connect REA',description:'Set up Claude Code, Codex or Cursor and check your integration.',level:'Setup · 6 min'},{href:'/first-analysis/',category:'Start here',title:'Find where an app saves exported files',description:'Trace the official Notes teaching sample from button to output file.',level:'Beginner · 8 min'},{href:'/cases/slugify/',category:'JavaScript',title:'Why is “!” still in my URL?',description:'Investigate slugify 1.6.6 and check the fix with eight executable assertions.',level:'Worked case · 7 min'}];
+---
+<Base collectionItems={entries.map(t=>({name:pageSeo[t.href].heading,url:t.href}))}><section class="catalog wrap"><Breadcrumbs/><header class="catalog-header"><p class="eyebrow">THE REA FIELD GUIDE / {entries.length} GUIDES</p><h1>REA Tutorials<br/>&amp; Examples</h1><p>Pick a feature you want to understand. Follow the evidence. Test what you rebuild.</p></header><div class="catalog-filters" role="group" aria-label="Filter tutorials">{['All','Start here','Electron','Android','Native','Browser','JavaScript'].map(c=><button type="button" data-filter={c} aria-pressed={c==='All'?'true':'false'}>{c}</button>)}</div><p class="catalog-count" role="status" aria-live="polite">{entries.length} guides</p><div class="editorial-list">{entries.map((t,i)=><a data-category={t.category} href={t.href}><span class="row-number">{String(i+1).padStart(2,'0')}</span><div><span class="lesson-kind">{t.category.toUpperCase()} / {t.level.toUpperCase()}</span><h2>{pageSeo[t.href].heading}</h2><p>{pageSeo[t.href].description}</p></div><span class="row-arrow">↗</span></a>)}</div></section></Base>
+<script>
+  import {t} from '../../lib/i18n';
+  const buttons=document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  const rows=Array.from(document.querySelectorAll<HTMLElement>('[data-category]'));
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  buttons.forEach(button=>button.addEventListener('click',()=>{
+    if(button.getAttribute('aria-pressed')==='true')return;
+    const previous=new Map(rows.filter(r=>!r.hidden).map(r=>[r,r.getBoundingClientRect().top]));
+    buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));let count=0;
+    rows.forEach(row=>{row.getAnimations().forEach(a=>a.cancel());row.hidden=button.dataset.filter!=='All'&&row.dataset.category!==button.dataset.filter;if(row.hidden)return;count++;
+      if(!reduced.matches){const before=previous.get(row);const offset=before===undefined?14:before-row.getBoundingClientRect().top;row.animate([{opacity:before===undefined?0:1,transform:`translateY(${offset}px)`},{opacity:1,transform:'translateY(0)'}],{duration:320,delay:before===undefined?Math.min(count-1,4)*35:0,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'});}
+    });
+    document.querySelector('.catalog-count')!.textContent=t(count===1?'{count} guide':'{count} guides',{count});
+  }));
+</script>

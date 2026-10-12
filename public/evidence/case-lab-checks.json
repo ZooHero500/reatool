@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "dino": {
+    "checkpoints": 5,
+    "scope": "This implementation versus upstream recorded displays"
+  },
+  "ring": {
+    "cases": 3072,
+    "scope": "Ring arithmetic only; no original iatan2 or DOS execution"
+  },
+  "pan": {
+    "cases": 3205,
+    "scope": "JavaScript versus independent rational arithmetic; no original x86 execution"
+  },
+  "calculator": {
+    "cases": 10,
+    "scope": "Two-operand numeric rules; no Windows GUI execution"
+  }
+}

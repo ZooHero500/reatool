@@ -1,0 +1,13 @@
+---
+import Guide from '../../layouts/Guide.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import {tutorials} from '../../data/tutorials';
+export function getStaticPaths(){return tutorials.map(t=>({params:{slug:t.slug},props:{tutorial:t}}));}
+const {tutorial:t}=Astro.props;
+---
+<Guide eyebrow={`${t.category} / Intermediate`} minutes={t.minutes} toc={t.sections.map(s=>({id:s.id,label:s.title.slice(4)}))}>
+  <div class="lesson-summary"><strong>What you will leave with</strong><p>{t.outcome}</p><strong>You will need</strong><p>{t.needs}</p></div>
+  {t.sections.map(s=><section><h2 id={s.id}>{s.title}</h2>{s.paragraphs.map(p=><p>{p}</p>)}{s.code&&<CodeBlock code={s.code}/>} {s.prompt&&<CodeBlock prompt label="Ask your coding agent" code={s.prompt}/>} {s.checks&&<ul>{s.checks.map(c=><li>{c}</li>)}</ul>}</section>)}
+  <div class="sources"><p>Commands checked against REA 6.4.0. Target-specific results depend on your artifact and provider. <a href={t.source}>Read the upstream source and scope →</a></p>{t.slug==='native-error'&&<p><a href="https://github.com/morluto/rea/blob/main/website/evidence/dx-ball-sound-pan.md">DX-Ball: original function checks and compiler-match report →</a></p>}</div>
+  <a class="next-guide" href="/tutorials/"><span>Keep investigating</span><strong>Choose your next tutorial <span>→</span></strong></a>
+</Guide>

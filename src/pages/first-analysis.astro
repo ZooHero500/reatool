@@ -1,0 +1,42 @@
+---
+import Guide from '../layouts/Guide.astro';
+import CodeBlock from '../components/CodeBlock.astro';
+const toc=[{id:'question',label:'Choose one question'},{id:'sample',label:'Get the sample'},{id:'inspect',label:'Ask REA to inspect it'},{id:'trace',label:'Follow the export path'},{id:'check',label:'Check a prediction'},{id:'next',label:'Continue the investigation'}];
+---
+<Guide eyebrow="02 / Beginner tutorial" minutes="8 min" toc={toc}>
+  <div class="case-meta"><span>JavaScript / Electron</span><span>No native engine</span><span>Official teaching sample</span></div>
+  <div class="lesson-summary"><strong>What you will learn</strong><ul><li>Download a small app and give its folder path to REA.</li><li>Find the export handler and the intended destination: <code>Downloads/notes.csv</code>.</li><li>Run a short check to see whether commas and quotation marks export correctly.</li></ul></div>
+  <h2 id="question">01. Choose one question</h2>
+  <p>“Explain this app” is a large request. Start with a behavior you can name and an answer you can check:</p>
+  <CodeBlock prompt label="Our question" code="When I click Export notes, where does the CSV file go, and what happens if a note title contains commas or quotation marks?"/>
+  <p>We use the <a href="https://rea.tools/first-investigation/">official REA Notes example</a>: six small files representing an Electron app. This is a teaching sample, not a production application. Its static analysis needs no Electron installation.</p>
+  <h2 id="sample">02. Get the sample</h2>
+  <p><a href="https://rea.tools/examples/notes-example.zip">Download notes-example.zip from rea.tools</a> and extract it into a new folder. Keep the folder path handy. You should see:</p>
+  <CodeBlock label="Sample files" code={'notes-example/\n  package.json\n  index.html\n  renderer.js\n  preload.js\n  main.js\n  csv.js'}/>
+  <p>If REA is not connected yet, follow the <a href="/install/">installation guide</a>. This sample can be inspected without launching a desktop window.</p>
+  <h2 id="inspect">03. Ask your agent to inspect it</h2>
+  <p>Replace the sample path in this prompt with the absolute path to your extracted folder.</p>
+  <CodeBlock prompt label="Analysis prompt" code="Use REA to statically inspect /absolute/path/to/notes-example. Trace the Export notes button through the renderer, preload bridge and main process. Show the output file path, CSV columns, and the files and lines that support your answer. Do not launch Electron. Separate observed code from assumptions."/>
+  <p>You can also collect REA’s static evidence directly from the terminal:</p>
+  <CodeBlock code={'npx -y rea-agents@6.4.0 analyze-javascript-application "/absolute/path/to/notes-example" --json > notes-analysis.json'}/>
+  <p>The command pins the version used for this walkthrough. The JSON is analysis evidence, not a natural-language explanation; your coding agent uses it to guide follow-up inspection.</p>
+  <h2 id="trace">04. Follow the export path</h2>
+  <p><strong>The answer:</strong> the app is written to save <code>notes.csv</code> in the operating system’s Downloads folder. The setting is in <code>main.js</code>. Here is how the button reaches that code.</p>
+  <div class="flow"><span>Button</span><i>→</i><span>Preload</span><i>→</i><span>IPC</span><i>→</i><span>CSV file</span></div>
+  <p>In Electron, the page and the main app run separately. <strong>Preload</strong> exposes a method the page can call. <strong>IPC</strong> is the message that carries the request to the main app, which can write the file.</p>
+  <div class="table-scroll"><table><thead><tr><th>Location</th><th>What the code does</th></tr></thead><tbody><tr><td><code>renderer.js</code></td><td>The click handler calls <code>window.notes.exportCsv()</code>.</td></tr><tr><td><code>preload.js</code></td><td>The exposed method invokes the <code>notes:export</code> IPC channel.</td></tr><tr><td><code>main.js</code></td><td>The matching handler builds a Downloads path and writes <code>notes.csv</code>.</td></tr><tr><td><code>csv.js</code></td><td>The formatter writes <code>id,title</code>, quotes each title and doubles embedded quotes.</td></tr></tbody></table></div>
+  <p>The code uses Electron’s <code>app.getPath("downloads")</code>. That establishes the intended destination; it does not prove a file was actually written on your machine. This walkthrough checks the formatter directly below.</p>
+  <h2 id="check">05. Check a prediction</h2>
+  <p>Give the formatter a note whose title is <code>Hello, "REA"</code>. The predicted CSV row is:</p>
+  <CodeBlock label="Expected output" code={'id,title\n1,"Hello, ""REA"""'}/>
+  <p>The comma stays inside one quoted field. Each embedded quotation mark becomes two quotes. To verify this, save the following as <code>check.cjs</code> inside the extracted <code>notes-example</code> folder:</p>
+  <CodeBlock label="check.cjs" code={'const assert = require("node:assert/strict");\nconst { toCsv } = require("./csv.js");\n\nconst actual = toCsv([{ id: 1, title: \'Hello, "REA"\' }]);\nconst expected = \'id,title\\n1,"Hello, ""REA"""\\n\';\nassert.equal(actual, expected);\nconsole.log(actual);\nconsole.log("PASS: comma and quotes stay in one field.");'}/>
+  <CodeBlock code="node check.cjs" label="Run from the sample folder"/>
+  <div class="callout"><p><strong>Verified locally.</strong> We ran the REA 6.4.0 static analysis and this formatter check on October 12, 2026. The output matched. We did not launch the Electron UI or test filesystem permissions through its export button.</p></div>
+  <h2 id="next">06. Continue with a sharper question</h2>
+  <p>Now try a follow-up that tests the explanation rather than asking for more general description:</p>
+  <CodeBlock prompt label="Follow-up prompt" code="If writing notes.csv fails, how would that error travel back to the page? Trace the error handling in the supplied files. Identify any missing handler, but do not modify the app."/>
+  <p>Keep three things in every report: <strong>the finding, its source location, and what you actually tested.</strong> This makes it easier to catch a plausible explanation that goes beyond the evidence.</p>
+  <a class="next-guide" href="/cases/slugify/"><span>Next / Real package example</span><strong>Find why a generated URL still contains “!”. <span aria-hidden="true">↗</span></strong></a>
+  <div class="sources"><p>Sample and workflow: <a href="https://rea.tools/first-investigation/">REA’s official first investigation</a>. This page is an independent walkthrough, with an additional local analysis and formatter check. <a href="/evidence/notes-analysis-summary.json">Download the analysis summary</a>.</p></div>
+</Guide>
