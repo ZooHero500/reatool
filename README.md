@@ -1,125 +1,75 @@
-# reatool.dev
+# REA tutorials (unofficial)
 
-An English-first, independent REA tutorial site. Built with Astro 7, TypeScript and CSS; pre-rendered static HTML for Cloudflare Pages. No server adapter, database, API key or runtime environment variables are required.
+REA (Reverse Engineer Anything) is an MCP server and command-line tool from [morluto/rea](https://github.com/morluto/rea). It lets a coding agent inspect a program on your computer — native binaries through Hopper, Ghidra, or IDA, and JavaScript, Electron, .NET, Android, and websites with REA’s own tools — and return findings with evidence. Install a supported Node.js release (22.19+ in 22.x, 24.11+ in 24.x, or 26+), then run `npx rea-agents@latest setup`, approve the plan, and restart the agent. Official setup: [rea.tools/get-started](https://rea.tools/get-started) and [morluto.github.io/rea](https://morluto.github.io/rea/). **This repository is an unofficial tutorial collection for [reatool.dev](https://reatool.dev/). It is not affiliated with morluto or the REA maintainers.**
 
-The complete site is also available in Simplified Chinese, Traditional Chinese, Japanese, Korean, Russian, Spanish and French. See `MULTILINGUAL.md` for URL prefixes, keyword targeting, translation files and review instructions.
+The current npm release checked for these pages is [rea-agents 6.4.0](https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0), published 2026-10-11. Last verified: October 12, 2026.
 
-## Pages
+## FAQ
 
-- `/` — red WebGPU disassembly cover, featured investigations and a live TOTP experiment
-- `/tutorials/` — filterable library of thirteen guides and cases
-- `/about/` — independent publisher, editorial method, evidence and scope
-- `/cases/dino/` — playable speed-rule experiment with pause, jump, restart and fixed/automatic speed
-- `/cases/th04/` — draggable aimed-ring diagram, bullet counts, rotation and a single-burst animation
-- `/cases/dx-ball/` — screen-position/pan calculation with a user-triggered stereo tone illustration
-- `/cases/calculator/` — percent-to-operand-to-result experiment with input validation
-- `/install/` — REA setup with client-specific commands, verification and troubleshooting
-- `/first-analysis/` — trace the official Notes sample's Electron CSV export
-- `/cases/slugify/` — locally verified analysis of the published slugify 1.6.6 package
-- `/cases/aegis/` — attributed upstream APK investigation plus an independently tested TOTP demo
-- `/tutorials/electron-clipboard/` — follow Notion's reported clipboard path and apply the method
-- `/tutorials/android-api/` — find request-building code in an APK
-- `/tutorials/native-error/` — trace an error string to its guard condition
-- `/tutorials/browser-export/` — observe an export action and distinguish local generation from network requests
-- `/tutorials/compare-releases/` — compare two Electron artifacts and test a suspected regression
-- `/404.html` — actual static 404 page, including on Cloudflare Pages
+### What is REA?
 
-## Local development
+REA (Reverse Engineer Anything) is the morluto/rea project: one local MCP server and CLI for reverse engineering. Your agent calls it; REA does not replace the agent. The official project site is [rea.tools](https://rea.tools/). This repo only publishes independent tutorials.
 
-Use Node.js 22.23.1 (pinned in `.node-version`) and npm.
+### How do I install it?
 
-```sh
-npm ci
-npm run dev
+With Node.js and npm installed, run:
+
+```bash
+npx rea-agents@latest setup
 ```
 
-## Build and verification
+Review the plan, approve the changes you want, and restart Claude Code, Codex, Cursor, or another supported client. Copying a prompt in a browser does not install REA. A global CLI is optional: `npm install --global rea-agents`. Details: [installation reference](https://github.com/morluto/rea/blob/main/docs/installation.md) and the [install tutorial](https://reatool.dev/install/).
 
-```sh
-npm run check
-npm run verify:case
-npm run verify:totp
-npm run verify:labs
-npm run build
-npm run verify:site
-npm run verify:seo
-npm run verify:i18n
-npm run preview
-```
+### Is REA free?
 
-The case check runs eight assertions against the pinned slugify package and updates `public/evidence/slugify-checks.json`. The site check verifies internal assets, links, anchors, metadata and structured data in the built HTML.
+REA’s own code is [MIT-licensed](https://github.com/morluto/rea/blob/main/LICENSE). The official docs describe the `rea-agents` npm package, not a paid REA subscription. Deep native analysis still uses your own Hopper, Ghidra, or IDA installation. REA does not grant a license for commercial tools such as IDA Pro, Hopper, or JEB. Hopper’s free demo has vendor-defined limits.
 
-The new lab check writes `public/evidence/case-lab-checks.json`: five recorded dinosaur checkpoints, 3,072 ring input combinations, 3,205 pan inputs checked with an independent BigInt rational reference, and ten percent scenarios plus invalid-input checks. These are tests of this site's teaching implementations, not fresh execution of the original binaries. The rules and checks are downloadable as two dependency-free `.mjs` files. Case content is in `src/data/cases.ts`; `CaseLab.astro`, `case-labs.ts` and `labs.css` supply the experiments. No new dependency was added.
+### Does it work with Claude Code, Codex, and Cursor?
 
-## Deploy to Cloudflare Pages
+Yes. The [get-started page](https://rea.tools/get-started) names all three, and the installation reference uses the client ids `claude_code`, `codex`, and `cursor`. Restart the agent after setup so it loads the MCP server.
 
-Current production deployment: **https://reatool.pages.dev/**, project `reatool`, using Direct Upload. See `DEPLOYMENT.md` for the deployment ID, live verification and repeat-deploy command. Custom-domain binding is left to the owner.
+### Do I need Ghidra or IDA?
 
-### Connect a Git repository
+Not for static JavaScript, Electron, or .NET inspection. Those paths read the files you supply. Native work needs Hopper, Ghidra, or IDA. GhidraMCP, GhydraMCP, ida-pro-mcp, and radare2-mcp are separate single-tool bridges; see the comparison below.
 
-Upload this source directory to a GitHub or GitLab repository, then create a **Pages** project in Cloudflare and connect it.
+### How does REA compare with GhidraMCP, ida-pro-mcp, and radare2-mcp?
 
-| Setting | Value |
-| --- | --- |
-| Framework preset | Astro |
-| Build command | `npm run build` |
-| Build output directory | `dist` |
-| Root directory | Repository root (or this folder's path in a monorepo) |
-| Node version | 22.23.1; `.node-version` is included |
+REA covers more than one backend, including JavaScript and Electron without a decompiler. The others connect an agent to Ghidra, IDA Pro, or radare2. For a small Electron question, extracting the asar with `@electron/asar` and searching with `rg` can be enough. The sourced table lives at [reatool.dev/compare](https://reatool.dev/compare/).
 
-Use a static Pages project. Do not add the Cloudflare SSR adapter or a Worker entrypoint.
+### When do I not need REA?
 
-### Direct upload
+When the unpacked files or a disassembly listing already answer the question, or when you only want the decompiler you already run. [GitTested’s review of rea-agents 6.2.0](https://gittested.com/reviews/morluto-rea/) (tested October 9, 2026, not by this site) found no accuracy gain on four small stripped binaries: 74 of 75 with ordinary shell tools and 73 of 75 with REA. Do not use REA on software you are not allowed to examine.
 
-The delivered `reatool-cloudflare-pages.zip` contains the built site at its root. In Cloudflare, create a Pages Direct Upload project and upload this zip (or the entire `dist` folder). Do not upload the source zip as the built site.
+### Does REA use more tokens?
 
-Alternatively, with an authenticated Wrangler CLI and your Pages project:
+This repository has not measured token use. In that same GitTested review of version 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA (about 2.5 times). The review says most extra tokens were cached reads, so computed cost was about 1.5 times. Those numbers are not a measurement of 6.4.0 and not a result from reatool.dev.
 
-```sh
-wrangler pages deploy dist --project-name=reatool
-```
+## Short comparison
 
-This command publishes the build. The project name must match your actual Cloudflare project.
+Facts below are from each project’s public README, checked October 12, 2026. The full table, limits, and source links are on the [comparison page](https://reatool.dev/compare/).
 
-### Attach the domain
+| Tool | Backend | Documented agents | Best for |
+| --- | --- | --- | --- |
+| [REA](https://github.com/morluto/rea) | Hopper, Ghidra, or IDA, plus built-in JavaScript, Electron, and .NET analysis | Claude Code, Codex, Cursor, and other clients in the install docs | One setup when the question may cross an app and a native binary |
+| [GhidraMCP](https://github.com/LaurieWired/GhidraMCP) | Ghidra 12.1.4 | Any MCP client, in theory; examples for VS Code and Claude Code | Binaries you already open in that Ghidra version |
+| [GhydraMCP](https://github.com/starsong-consulting/GhydraMCP) | Ghidra 11.x or 12.x, multiple windows | Claude Desktop, Claude Code, and Cline; MCP bridge marked for deprecation | Scripted or multi-window Ghidra work |
+| [ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) | IDA Pro 8.3+ (IDA Free is not supported) | Claude Code, Codex, Cursor, and others; README recommends the official Hex-Rays server | An existing IDA Pro database |
+| [radare2-mcp](https://github.com/radareorg/radare2-mcp) | radare2 (README badge: 6.2.2) | Generic MCP config, Claude Desktop, VS Code, Zed, Codex plugin; Cursor is not named | Agents that should drive radare2 |
+| [@electron/asar](https://github.com/electron/asar) + rg | No decompiler; extract an asar and search the text | No MCP server | A small Electron question you can answer by reading the files |
 
-In the Pages project's **Custom domains**, add `reatool.dev` and follow Cloudflare's DNS steps. Canonicals, sitemap and social metadata already use `https://reatool.dev`. If you also use `www`, redirect it to the apex hostname in Cloudflare.
+## Tutorials on reatool.dev
 
-Official deployment reference: https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/
+These pages are independent walkthroughs. A passing check on one function is not a rebuilt application.
 
-## Content and evidence
+- [Install REA](https://reatool.dev/install/) — Claude Code, Codex, and Cursor setup, doctor checks, and what to do if the agent cannot see the tools
+- [Compare REA](https://reatool.dev/compare/) — sourced comparison, when to skip REA, published tests, and a placeholder for this site’s own measurement
+- [First investigation](https://reatool.dev/first-analysis/) — follow an Electron export button in the official Notes sample
+- [All tutorials](https://reatool.dev/tutorials/) — browser, Electron, Android, native, and JavaScript guides
+- [slugify](https://reatool.dev/cases/slugify/) — locally checked JavaScript package example
+- [Aegis TOTP](https://reatool.dev/cases/aegis/) — attributed upstream APK report plus a tested demo
+- [Electron clipboard](https://reatool.dev/tutorials/electron-clipboard/) — Notion’s reported copy path
+- [About and editorial method](https://reatool.dev/about/) — what this site checked and what it did not
 
-- Guides are authored in `src/pages/` and `src/data/tutorials.ts`; shared layouts are in `src/layouts/`.
-- Reading styles live in `src/styles/site.css`; the red cover, library and new demo styles are in `src/styles/redesign.css`.
-- The homepage leads with concrete feature investigations. Its diagrams are illustrations, not application screenshots. The URL demo remains on the slugify case page.
-- Fonts are self-hosted through Fontsource; no third-party font request is needed.
-- The TOTP demo uses an independently authored WebCrypto implementation with only RFC 6238's public SHA-1 test key. Tests cover 12 reference-vector results and 121 per-second comparisons with Node HMAC.
-- Aegis and Notion findings are attributed to upstream reports. This site did not repeat those original application investigations. The general intermediate tutorials are workflows, not fabricated completed analyses.
-- `public/evidence/` contains human-readable summaries of actual REA CLI runs, runtime assertion results, the inspected slugify source and its MIT license.
-- REA analysis of slugify explicitly reports partial graph coverage. Source inspection and runtime checks are separate evidence steps.
-- The Notes tutorial uses the official downloadable teaching fixture. We statically analyzed it and checked the CSV formatter; we did not launch its Electron UI.
-- `public/downloads/slugify-reproduction.zip` contains a standalone reproduction kit.
+## Unofficial
 
-Before changing tutorial versions, recheck commands against the npm release, rerun relevant examples, and update review dates. Repository `main` can document unreleased REA features.
-
-## Search and sharing
-
-Every page has a title, description, canonical URL, Open Graph tags and JSON-LD. The build includes robots.txt, sitemap.xml, a 1200×630 social image and Cloudflare security/cache headers. No analytics or cookie banner is installed. After deployment, verify your domain in Google Search Console and submit `https://reatool.dev/sitemap.xml`.
-
-`src/data/seo.ts` owns page titles, descriptions, guide headings, breadcrumb labels and related-guide links. Keep each page focused on one REA search intent. The shared layout emits linked publisher, website and page entities; articles use TechArticle, the catalog uses CollectionPage/ItemList, and visible breadcrumbs match BreadcrumbList. `verify:seo` checks the built metadata, graph relationships, catalog entries and sitemap coverage. See `SEO-IMPLEMENTATION.md` for verification and remaining production checks.
-
-## Attribution
-
-Independent community resource; not affiliated with morluto or the REA maintainers. Official project: https://github.com/morluto/rea and https://rea.tools/.
-
-The site uses FireCode-inspired dark composition with an original red module-disassembly visual. Three.js WebGPURenderer is dynamically imported on the homepage only; it uses WebGPU when available and its WebGL fallback otherwise. A CSS illustration remains if renderer initialization fails. The scene pauses when hidden or offscreen, respects reduced motion and offers a pause control. No FireCode flame shader or other FireCode code is included. Three.js is MIT-licensed; its license is in the dependency package.
-
-The GPU chunk is approximately 770 KB minified before compression and produces Vite's size advisory. It is isolated from tutorial pages. Keep this tradeoff visible when optimizing the landing page; a fast static tutorial path remains available while the visual loads.
-
-## Motion system
-
-`src/scripts/motion.ts` and `src/styles/motion.css` coordinate line-by-line hero entrances, scroll-linked cover depth, ordered viewport reveals, contextual card hovers, directional homepage navigation and article progress/current-section feedback. The GPU scene interpolates pointer movement and expands its modules as the cover scrolls out. Native scrolling is preserved; no additional animation dependency was added.
-
-The menu, tutorial filter and OTP result use short Web Animations transitions with cancellation for repeated input. OTP animation occurs only when its code changes. Reduced-motion preferences remove CSS motion and bypass the interactive transitions; content remains visible without JavaScript. FireCode's local reference source informed timing and choreography; this implementation does not incorporate its flame shader or scroll engine.
-
-slugify is MIT-licensed by simov and contributors; the license accompanies its inspected source. Mona Sans and IBM Plex Mono are distributed through Fontsource with their respective font licenses in the installed packages.
+Independent community resource. Not affiliated with morluto or the REA maintainers. Report REA software bugs in the [official issue tracker](https://github.com/morluto/rea/issues). Site build, animation, and Cloudflare Pages notes are in [DEPLOYMENT.md](DEPLOYMENT.md). Translation workflow is in [MULTILINGUAL.md](MULTILINGUAL.md).

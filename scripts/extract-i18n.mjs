@@ -14,7 +14,7 @@ for(const file of files('dist').filter(f=>f.endsWith('.html')&&!/^dist\/(zh-cn|z
    if(node.tagName==='meta'&&a.name==='content'&&['description','og:title','og:description'].includes(attr(node,'name')??attr(node,'property')))add(a.value,`${path} metadata`);
   }
   if(node.tagName==='script'&&attr(node,'type')==='application/ld+json'){
-   function schema(value){if(Array.isArray(value))value.forEach(schema);else if(value&&typeof value==='object')for(const [k,v]of Object.entries(value)){if(['name','headline','description'].includes(k)&&typeof v==='string')add(v,`${path} schema`);else schema(v);}}
+   function schema(value){if(Array.isArray(value))value.forEach(schema);else if(value&&typeof value==='object')for(const [k,v]of Object.entries(value)){if((['name','headline','description'].includes(k)||(k==='text'&&value['@type']==='Answer'))&&typeof v==='string')add(v,`${path} schema`);else schema(v);}}
    schema(JSON.parse(node.childNodes[0].value));
   }
  });

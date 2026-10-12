@@ -25,5 +25,5 @@ for(const file of pages){
   for(const match of html.matchAll(/href="#([^"]+)"/g)) assert(html.includes(`id="${match[1]}"`),`${file}: missing local anchor ${match[1]}`);
   for(const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g))JSON.parse(match[1]);
 }
-for(const asset of ['robots.txt','sitemap.xml','404.html','_headers','_redirects','og.png','downloads/slugify-reproduction.zip'])assert(existsSync(join(root,asset)),`Missing ${asset}`);
+for(const asset of ['robots.txt','sitemap.xml','llms.txt','llms-full.txt','404.html','_headers','_redirects','og.png','downloads/slugify-reproduction.zip'])assert(existsSync(join(root,asset)),`Missing ${asset}`);
 console.log(`${pages.length} pages verified; ${checked} internal links/assets checked. Metadata, structured data and anchor targets passed.`);
