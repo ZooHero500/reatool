@@ -1,15 +1,17 @@
 ---
 import Guide from '../layouts/Guide.astro';
 import CodeBlock from '../components/CodeBlock.astro';
-const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect your agent'},{id:'verify',label:'Check the connection'},{id:'engines',label:'Choose an analysis engine'},{id:'troubleshooting',label:'If something goes wrong'},{id:'update',label:'Keep REA up to date'}];
+import {installFaqs} from '../data/compare';
+import {reaRelease} from '../data/rea-release';
+const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect your agent'},{id:'verify',label:'Check the connection'},{id:'engines',label:'Choose an analysis engine'},{id:'troubleshooting',label:'If something goes wrong'},{id:'update',label:'Keep REA up to date'},{id:'faq',label:'Install FAQ'}];
 ---
-<Guide eyebrow="01 / Installation" minutes="6 min" toc={toc}>
+<Guide eyebrow="01 / Installation" minutes="6 min" toc={toc} faq={installFaqs}>
   <div class="callout"><p><strong>The short version</strong></p><p>Install a supported Node.js release, run REA setup, review the proposed changes, and restart your coding agent. Then ask it to inspect one small, local target.</p></div>
   <h2 id="before">01. Before you start</h2>
   <p>You need a terminal, npm, and a coding agent with local MCP support. This guide covers Claude Code, Codex and Cursor. Use software you own or have permission to inspect.</p>
   <CodeBlock code={'node --version\nnpm --version'} label="Check your runtime"/>
   <p>REA currently supports <strong>Node.js 22.19+ within 22.x, 24.11+ within 24.x, or 26+</strong>. Versions 23, 25 and prereleases are outside its supported range. Get a compatible release from <a href="https://nodejs.org/en/download">Node.js</a> if needed.</p>
-  <p>Our example checks were run on macOS arm64 with Node.js 22.23.1 and REA 6.4.0. Platform support for additional engines varies; see the <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">official installation reference</a> for your target.</p>
+  <p>{`Our example checks were run on macOS arm64 with Node.js 22.23.1 and REA ${reaRelease.version}. Platform support for additional engines varies; see the`} <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">official installation reference</a> for your target.</p>
   <h2 id="connect">02. Connect your coding agent</h2>
   <p>Choose your client to get a scoped setup command. “Choose in setup” opens the interactive client selection.</p>
   <div class="client-chooser" role="group" aria-label="Choose your coding agent"><button aria-pressed="true" data-client="">Choose in setup</button><button aria-pressed="false" data-client="claude_code">Claude Code</button><button aria-pressed="false" data-client="codex">Codex</button><button aria-pressed="false" data-client="cursor">Cursor</button></div>
@@ -40,7 +42,10 @@ const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect y
   <CodeBlock code="npx rea-agents@latest setup"/>
   <p>For a global CLI, run <code>rea update</code>, then follow its setup-refresh instructions. A running MCP server will not refresh merely because newer instructions exist on GitHub.</p>
   <a class="next-guide" href="/first-analysis/"><span>Next / Beginner tutorial</span><strong>Find where an app saves exported files. <span aria-hidden="true">↗</span></strong></a>
-  <div class="sources"><p>Sources: <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">REA installation reference</a>, <a href="https://github.com/morluto/rea">official README</a>, and the locally checked REA 6.4.0 CLI help. Reviewed October 12, 2026. Upstream main may describe features newer than the npm release.</p></div>
+  <h2 id="faq">Install FAQ</h2>
+  {installFaqs.map(item => <section class="faq-item"><h3>{item.question}</h3><p>{item.answer}</p></section>)}
+  <p><a href="/compare/">Compare REA with GhidraMCP and other tools</a></p>
+  <div class="sources"><p>Sources: <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">REA installation reference</a>, <a href="https://github.com/morluto/rea">official README</a>, <a href="https://rea.tools/get-started">official get-started page</a>{`, and the locally checked REA ${reaRelease.version} CLI help. Reviewed ${reaRelease.lastVerifiedLabel}. Upstream main may describe features newer than the npm release.`}</p></div>
 </Guide>
 <script>
   const buttons=document.querySelectorAll<HTMLButtonElement>('[data-client]');

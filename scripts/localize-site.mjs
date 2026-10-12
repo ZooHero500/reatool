@@ -86,7 +86,7 @@ for(const page of english)for(const locale of locales){
         if(Array.isArray(value))return value.map(localSchema);
         if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,
           k==='inLanguage'?locale.lang:
-          typeof v==='string'&&['name','headline','description'].includes(k)?translate(v,locale):
+          typeof v==='string'&&(['name','headline','description'].includes(k)||(k==='text'&&value['@type']==='Answer'))?translate(v,locale):
           typeof v==='string'&&['url','@id','item','mainEntityOfPage'].includes(k)?localUrl(v,locale):localSchema(v)]));
         return value;
       }
@@ -112,4 +112,22 @@ for(const page of english)for(const locale of locales){
   mkdirSync(dirname(destination),{recursive:true});writeFileSync(destination,serialize(doc));
 }
 writeFileSync(join(root,'sitemap.xml'),'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+urls.map(url=>`  <url><loc>${url}</loc><lastmod>2026-10-12</lastmod></url>`).join('\n')+'\n</urlset>\n');
+const decode=value=>value.replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+const meta=html=>decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1]??'');
+const textOf=html=>decode(html.replace(/<br\s*\/?>/gi,' ').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim());
+const heading=html=>textOf(html.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1]??'');
+const sections=html=>[...html.matchAll(/<h2[^>]*>(.*?)<\/h2>/gs)].map(match=>textOf(match[1])).filter(Boolean);
+const preferred=['/','/compare/','/install/','/first-analysis/','/tutorials/','/about/'];
+const listed=english.filter(page=>page.path!=='/404.html').sort((a,b)=>{
+  const ai=preferred.indexOf(a.path),bi=preferred.indexOf(b.path);
+  return (ai<0?preferred.length:ai)-(bi<0?preferred.length:bi)||a.path.localeCompare(b.path);
+});
+const linkLines=listed.map(page=>`- [${heading(page.html)}](${origin}${page.path}): ${meta(page.html)}`);
+const llms=['# REA Tool','','> Independent, unofficial tutorials for REA (Reverse Engineer Anything), an MCP server and CLI from morluto/rea. This site is not affiliated with the REA maintainers.','','Official project: https://github.com/morluto/rea','Official setup: https://rea.tools/get-started','Official docs mirror: https://morluto.github.io/rea/','','The same pages are also published under /zh-cn/, /zh-tw/, /ja/, /ko/, /ru/, /es/, and /fr/.','','## Pages','',...linkLines,''].join('\n');
+const full=['# REA Tool','','> Longer outline of the independent REA tutorial site. Not affiliated with morluto or the REA maintainers. Facts about REA itself should be checked against the official docs linked above each page’s sources.','','## Pages','',...listed.flatMap(page=>{
+  const outline=sections(page.html).map(item=>`  - ${item}`);
+  return [`### ${heading(page.html)}`,`URL: ${origin}${page.path}`,meta(page.html),...outline,''];
+})].join('\n');
+writeFileSync(join(root,'llms.txt'),llms);
+writeFileSync(join(root,'llms-full.txt'),full);
 console.log(`Localized ${english.length} pages in ${locales.length} languages; ${urls.length} indexable URLs.`);

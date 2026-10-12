@@ -32,6 +32,8 @@
       "/cases/slugify/ a",
       "/cases/th04/ schema",
       "/cases/th04/ a",
+      "/compare/ schema",
+      "/compare/ a",
       "/first-analysis/ schema",
       "/first-analysis/ a",
       "/ schema",
@@ -62,6 +64,7 @@
       "/cases/dx-ball/ schema",
       "/cases/slugify/ schema",
       "/cases/th04/ schema",
+      "/compare/ schema",
       "/first-analysis/ schema",
       "/ schema",
       "/install/ schema",
@@ -84,6 +87,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -106,6 +110,7 @@
       "/cases/dx-ball/ aria-label",
       "/cases/slugify/ aria-label",
       "/cases/th04/ aria-label",
+      "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
@@ -136,6 +141,8 @@
       "/cases/slugify/ a",
       "/cases/th04/ span",
       "/cases/th04/ a",
+      "/compare/ span",
+      "/compare/ a",
       "/first-analysis/ span",
       "/first-analysis/ a",
       "/ span",
@@ -167,6 +174,7 @@
       "/cases/dx-ball/ span",
       "/cases/slugify/ span",
       "/cases/th04/ span",
+      "/compare/ span",
       "/first-analysis/ span",
       "/ span",
       "/install/ span",
@@ -189,6 +197,7 @@
       "/cases/dx-ball/ aria-label",
       "/cases/slugify/ aria-label",
       "/cases/th04/ aria-label",
+      "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
@@ -211,6 +220,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -233,11 +243,35 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ schema",
       "/install/ a",
       "/install/ span",
+      "/tutorials/android-api/ a",
+      "/tutorials/browser-export/ a",
+      "/tutorials/compare-releases/ a",
+      "/tutorials/electron-clipboard/ a",
+      "/tutorials/ a",
+      "/tutorials/native-error/ a"
+    ]
+  },
+  "e888155d8c7d": {
+    "text": "Compare",
+    "contexts": [
+      "/404.html a",
+      "/about/ a",
+      "/cases/aegis/ a",
+      "/cases/calculator/ a",
+      "/cases/dino/ a",
+      "/cases/dx-ball/ a",
+      "/cases/slugify/ a",
+      "/cases/th04/ a",
+      "/compare/ a",
+      "/first-analysis/ a",
+      "/ a",
+      "/install/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -257,6 +291,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -279,6 +314,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -301,6 +337,7 @@
       "/cases/dx-ball/ aria-label",
       "/cases/slugify/ aria-label",
       "/cases/th04/ aria-label",
+      "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
@@ -324,6 +361,7 @@
       "/cases/dx-ball/ aria-label",
       "/cases/slugify/ aria-label",
       "/cases/th04/ aria-label",
+      "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
@@ -346,6 +384,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -386,6 +425,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -408,6 +448,7 @@
       "/cases/dx-ball/ p",
       "/cases/slugify/ p",
       "/cases/th04/ p",
+      "/compare/ p",
       "/first-analysis/ p",
       "/ p",
       "/install/ p",
@@ -430,6 +471,7 @@
       "/cases/dx-ball/ p",
       "/cases/slugify/ p",
       "/cases/th04/ p",
+      "/compare/ p",
       "/first-analysis/ p",
       "/ p",
       "/install/ p",
@@ -439,6 +481,31 @@
       "/tutorials/electron-clipboard/ p",
       "/tutorials/ p",
       "/tutorials/native-error/ p"
+    ]
+  },
+  "48ec05261a88": {
+    "text": "Compare REA",
+    "contexts": [
+      "/404.html a",
+      "/about/ a",
+      "/cases/aegis/ a",
+      "/cases/calculator/ a",
+      "/cases/dino/ a",
+      "/cases/dx-ball/ a",
+      "/cases/slugify/ a",
+      "/cases/th04/ a",
+      "/compare/ schema",
+      "/compare/ span",
+      "/compare/ a",
+      "/first-analysis/ a",
+      "/ a",
+      "/install/ a",
+      "/tutorials/android-api/ a",
+      "/tutorials/browser-export/ a",
+      "/tutorials/compare-releases/ a",
+      "/tutorials/electron-clipboard/ a",
+      "/tutorials/ a",
+      "/tutorials/native-error/ a"
     ]
   },
   "2151f0204d38": {
@@ -454,6 +521,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -476,6 +544,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -498,6 +567,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
@@ -520,6 +590,7 @@
       "/cases/dx-ball/ span",
       "/cases/slugify/ span",
       "/cases/th04/ span",
+      "/compare/ span",
       "/first-analysis/ span",
       "/ span",
       "/install/ span",
@@ -542,6 +613,7 @@
       "/cases/dx-ball/ span",
       "/cases/slugify/ span",
       "/cases/th04/ span",
+      "/compare/ span",
       "/first-analysis/ span",
       "/ span",
       "/install/ span",
@@ -578,6 +650,7 @@
       "/cases/dx-ball/ aria-label",
       "/cases/slugify/ aria-label",
       "/cases/th04/ aria-label",
+      "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/install/ aria-label",
       "/tutorials/android-api/ aria-label",
@@ -642,6 +715,12 @@
       "/about/ p"
     ]
   },
+  "cd0a313e4182": {
+    "text": "Compare REA with other public tools",
+    "contexts": [
+      "/about/ a"
+    ]
+  },
   "fc1f89597deb": {
     "text": "How we check our guides",
     "contexts": [
@@ -652,6 +731,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/install/ a",
       "/tutorials/android-api/ a",
@@ -918,6 +998,8 @@
       "/cases/slugify/ a",
       "/cases/th04/ schema",
       "/cases/th04/ a",
+      "/compare/ schema",
+      "/compare/ a",
       "/first-analysis/ schema",
       "/first-analysis/ a",
       "/install/ schema",
@@ -953,6 +1035,7 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ a",
       "/first-analysis/ a",
       "/install/ a",
       "/tutorials/android-api/ a",
@@ -977,6 +1060,8 @@
       "/cases/slugify/ summary",
       "/cases/th04/ span",
       "/cases/th04/ summary",
+      "/compare/ span",
+      "/compare/ summary",
       "/first-analysis/ span",
       "/first-analysis/ summary",
       "/install/ span",
@@ -1002,6 +1087,7 @@
       "/cases/dx-ball/ aria-label",
       "/cases/slugify/ aria-label",
       "/cases/th04/ aria-label",
+      "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/install/ aria-label",
       "/tutorials/android-api/ aria-label",
@@ -1041,40 +1127,37 @@
       "/cases/aegis/ a"
     ]
   },
-  "9900417fe5b5": {
-    "text": "Reviewed October 12, 2026",
+  "6c53ca21991f": {
+    "text": "Last verified: October 12, 2026 · REA version 6.4.0",
     "contexts": [
       "/cases/aegis/ div",
+      "/cases/aegis/ p",
       "/cases/calculator/ div",
+      "/cases/calculator/ p",
       "/cases/dino/ div",
+      "/cases/dino/ p",
       "/cases/dx-ball/ div",
+      "/cases/dx-ball/ p",
       "/cases/slugify/ div",
+      "/cases/slugify/ p",
       "/cases/th04/ div",
+      "/cases/th04/ p",
+      "/compare/ div",
+      "/compare/ p",
       "/first-analysis/ div",
+      "/first-analysis/ p",
       "/install/ div",
+      "/install/ p",
       "/tutorials/android-api/ div",
+      "/tutorials/android-api/ p",
       "/tutorials/browser-export/ div",
+      "/tutorials/browser-export/ p",
       "/tutorials/compare-releases/ div",
+      "/tutorials/compare-releases/ p",
       "/tutorials/electron-clipboard/ div",
-      "/tutorials/native-error/ div"
-    ]
-  },
-  "48c396d281f3": {
-    "text": "REA 6.4.0",
-    "contexts": [
-      "/cases/aegis/ span",
-      "/cases/calculator/ span",
-      "/cases/dino/ span",
-      "/cases/dx-ball/ span",
-      "/cases/slugify/ span",
-      "/cases/th04/ span",
-      "/first-analysis/ span",
-      "/install/ span",
-      "/tutorials/android-api/ span",
-      "/tutorials/browser-export/ span",
-      "/tutorials/compare-releases/ span",
-      "/tutorials/electron-clipboard/ span",
-      "/tutorials/native-error/ span"
+      "/tutorials/electron-clipboard/ p",
+      "/tutorials/native-error/ div",
+      "/tutorials/native-error/ p"
     ]
   },
   "9c3b4b4a0c20": {
@@ -1106,6 +1189,7 @@
       "/cases/dx-ball/ aria-label",
       "/cases/slugify/ aria-label",
       "/cases/th04/ aria-label",
+      "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/install/ aria-label",
       "/tutorials/android-api/ aria-label",
@@ -1593,6 +1677,7 @@
       "/cases/dx-ball/ h2",
       "/cases/slugify/ h2",
       "/cases/th04/ h2",
+      "/compare/ h2",
       "/first-analysis/ h2",
       "/install/ h2",
       "/tutorials/android-api/ h2",
@@ -1628,6 +1713,7 @@
       "/cases/dx-ball/ p",
       "/cases/slugify/ p",
       "/cases/th04/ p",
+      "/compare/ p",
       "/first-analysis/ p",
       "/install/ p",
       "/tutorials/android-api/ p",
@@ -1646,6 +1732,9 @@
       "/cases/dx-ball/ a",
       "/cases/slugify/ a",
       "/cases/th04/ a",
+      "/compare/ schema",
+      "/compare/ h3",
+      "/compare/ a",
       "/first-analysis/ a",
       "/ h2",
       "/install/ a",
@@ -2557,6 +2646,7 @@
     "contexts": [
       "/cases/dino/ a",
       "/cases/slugify/ a",
+      "/compare/ a",
       "/first-analysis/ schema",
       "/first-analysis/ span",
       "/install/ a",
@@ -3013,6 +3103,12 @@
   },
   "56df13ba14e5": {
     "text": "slugify 1.6.6 / MIT",
+    "contexts": [
+      "/cases/slugify/ span"
+    ]
+  },
+  "48c396d281f3": {
+    "text": "REA 6.4.0",
     "contexts": [
       "/cases/slugify/ span"
     ]
@@ -3547,7 +3643,8 @@
   "6201111b83a0": {
     "text": "and",
     "contexts": [
-      "/cases/slugify/ p"
+      "/cases/slugify/ p",
+      "/compare/ li"
     ]
   },
   "911b3bf8f77e": {
@@ -3644,7 +3741,8 @@
   "dda6e5f49978": {
     "text": "MIT license",
     "contexts": [
-      "/cases/slugify/ a"
+      "/cases/slugify/ a",
+      "/compare/ a"
     ]
   },
   "d33d096dbbd6": {
@@ -4005,6 +4103,746 @@
     "text": "Can you hear which side the brick is on?",
     "contexts": [
       "/cases/th04/ strong"
+    ]
+  },
+  "6791df0410ef": {
+    "text": "REA vs GhidraMCP, ida-pro-mcp, and radare2-mcp",
+    "contexts": [
+      "/compare/ title",
+      "/compare/ metadata",
+      "/compare/ schema"
+    ]
+  },
+  "2b47b3aa148b": {
+    "text": "Compare REA 6.4.0 with GhidraMCP, GhydraMCP, ida-pro-mcp, radare2-mcp, and extracting an Electron asar. Facts are cited from public READMEs.",
+    "contexts": [
+      "/compare/ metadata",
+      "/compare/ schema"
+    ]
+  },
+  "cec2e2a1f912": {
+    "text": "REA (Reverse Engineer Anything) is an MCP server and command-line tool from the morluto/rea project. A coding agent calls it to inspect a program on your computer and receive findings with evidence. Official setup docs are at rea.tools/get-started and morluto.github.io/rea. This website is an unofficial tutorial collection. It is not affiliated with morluto or the REA maintainers.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "16458f2c9616": {
+    "text": "How do I install REA?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "5721333c7540": {
+    "text": "Install Node.js 22.19 or newer in the 22.x line, 24.11 or newer in the 24.x line, or Node.js 26 or newer. In a terminal, run npx rea-agents@latest setup, review the plan, approve the changes you want, and restart the coding agent. Copying a prompt in the browser does not install REA. The same package is on npm as rea-agents.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "66dfe0fb1f8c": {
+    "text": "Is REA free?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "e5cfb177760a": {
+    "text": "REA’s own code is under the MIT license, and the official install docs describe the npm package rather than a paid REA subscription. You still need a supported Node.js release. Deep native analysis uses your own Hopper, Ghidra, or IDA installation. REA’s README says it does not grant a license for commercial tools such as IDA Pro, Hopper, or JEB. Hopper’s free demo has vendor-defined limits.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "2f8ebea88d8c": {
+    "text": "Does REA work with Claude Code, Codex, and Cursor?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "3ba55f84845a": {
+    "text": "Yes. The official get-started page names Claude Code, Codex, and Cursor among the clients setup can connect. The installation reference uses the client ids claude_code, codex, and cursor. Run npx rea-agents@latest setup, approve the plan, and restart that agent so it loads the MCP server.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "d371d685d465": {
+    "text": "Do I need Ghidra or IDA to use REA?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "5aa3792c34b4": {
+    "text": "Not for static JavaScript, Electron, or .NET inspection. The REA README says those paths read the files you supply and do not need a native engine. Deep native analysis uses Hopper, Ghidra, or IDA. The get-started page documents Ghidra 12.1.x with JDK 21, an optional Hopper install after approval, and IDA through an existing MCP registration whose verified setups are on Windows.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "788281ba53c8": {
+    "text": "How does REA compare with GhidraMCP, GhydraMCP, ida-pro-mcp, and radare2-mcp?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "f992e978390d": {
+    "text": "Those four projects are bridges to one reverse-engineering tool: Ghidra, Ghidra again, IDA Pro, or radare2. REA’s setup registers one MCP server that can also analyze JavaScript and Electron apps without those engines. GhidraMCP’s README pins Ghidra 12.1.4. GhydraMCP says its MCP bridge is being deprecated in favor of its CLI. ida-pro-mcp requires IDA Pro 8.3 or newer, states that IDA Free is not supported, and recommends the official Hex-Rays server. radare2-mcp is installed with r2pm. None of those READMEs describe REA’s Electron application graph.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "def4c23993ff": {
+    "text": "When do I not need REA?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "90be7e8eb7cb": {
+    "text": "Skip it when you already have the files and a text search answers the question, or when you only want the decompiler you already run. GitTested’s 9 October 2026 review of rea-agents 6.2.0 found that, on four small stripped binaries, Claude Code scored 74 of 75 with ordinary shell tools and 73 of 75 with REA. Static JavaScript in an asar archive can also be extracted with @electron/asar and searched with rg. You also should not use REA on software you are not allowed to examine; the project’s README limits use to software you own or are authorized to analyze.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "176b433dca40": {
+    "text": "Does REA use more tokens?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "82fb944acb32": {
+    "text": "This site has not measured token use. In the GitTested review of rea-agents 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA, about 2.5 times as many. That review says most of the extra tokens were cached reads, so computed cost rose by about 1.5 times. It also says a full analysis of one 22 MB Electron archive wrote a 692 MB document that could not be returned in a single MCP call. Those figures are that review’s measurements of version 6.2.0, not a measurement of the current 6.4.0 release and not a result from this site.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
+  "fd11506ed546": {
+    "text": "Comparison table",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "d2ee90dd6261": {
+    "text": "When you don’t need REA",
+    "contexts": [
+      "/compare/ a",
+      "/compare/ h2"
+    ]
+  },
+  "f26bdd9d21c4": {
+    "text": "Published tests",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "17523e92815e": {
+    "text": "Our hands-on test",
+    "contexts": [
+      "/compare/ a",
+      "/compare/ h2"
+    ]
+  },
+  "dbc468a14b60": {
+    "text": "FAQ",
+    "contexts": [
+      "/compare/ a",
+      "/compare/ h2"
+    ]
+  },
+  "caf85b0888d7": {
+    "text": "Sources",
+    "contexts": [
+      "/compare/ a",
+      "/compare/ h2"
+    ]
+  },
+  "8f359d388b4c": {
+    "text": "02 / Comparison",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "f66401001c81": {
+    "text": "12 min read",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "0404a0507c2c": {
+    "text": "REA compared with other agent reverse-engineering tools",
+    "contexts": [
+      "/compare/ h1"
+    ]
+  },
+  "749bd88f6ac1": {
+    "text": "REA (Reverse Engineer Anything) is an MCP server and CLI from morluto/rea. This page compares it with other public tools using their READMEs and two published tests. reatool.dev is an unofficial tutorial site and is not affiliated with the REA maintainers.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "6ac6dd2bc9e7": {
+    "text": "What each project actually is",
+    "contexts": [
+      "/compare/ h2"
+    ]
+  },
+  "68cd6594c418": {
+    "text": "The rows below use the public README of each project, plus REA’s installation reference and get-started page. A cell does not rank the tools. Where a README is silent, the cell says so instead of guessing.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "364ef9b15f8a": {
+    "text": "REA and five other ways to inspect software with a coding agent. Checked against public READMEs on October 12, 2026.",
+    "contexts": [
+      "/compare/ caption"
+    ]
+  },
+  "2e53bdcd0740": {
+    "text": "Tool",
+    "contexts": [
+      "/compare/ th"
+    ]
+  },
+  "2fb4019a35e4": {
+    "text": "Backend",
+    "contexts": [
+      "/compare/ th"
+    ]
+  },
+  "16e5c7ebc575": {
+    "text": "Documented agents",
+    "contexts": [
+      "/compare/ th"
+    ]
+  },
+  "d895fa19f8e2": {
+    "text": "Install effort",
+    "contexts": [
+      "/compare/ th"
+    ]
+  },
+  "b11d27f88ceb": {
+    "text": "Strengths",
+    "contexts": [
+      "/compare/ th"
+    ]
+  },
+  "dffb64dc7001": {
+    "text": "Limits",
+    "contexts": [
+      "/compare/ th"
+    ]
+  },
+  "15582071ab2c": {
+    "text": "Best for",
+    "contexts": [
+      "/compare/ th"
+    ]
+  },
+  "e518db6fc706": {
+    "text": "REA",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "13284313b92e": {
+    "text": "Hopper, Ghidra, or IDA for native binaries. Built-in static analysis for JavaScript, Electron, and .NET. Separate official guides cover Android, browsers, and other targets.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "2f6e5fa349ba": {
+    "text": "Setup documents Claude Code, Codex, and Cursor, plus other MCP clients in the installation reference.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "a3f85ec03b2c": {
+    "text": "Node.js 22.19+ (22.x), 24.11+ (24.x), or 26+, then npx rea-agents@latest setup. Restart the agent after approving the plan.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "9908ade00cf0": {
+    "text": "One MCP server and CLI for packaged apps and native binaries. Static JavaScript needs no native engine. Results include evidence and stated limits. Analysis runs locally.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "e2ca7637b48c": {
+    "text": "Hopper, IDA, and JEB keep their own licenses. A native engine is still required for deep native work. This site has not measured token cost; see the published tests below.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "3f05d6434277": {
+    "text": "An agent investigation that may cross JavaScript or Electron and a native binary, with one setup command.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "70272d257f30": {
+    "text": "GhidraMCP",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "b9fe72c6f76f": {
+    "text": "A Ghidra 12.1.4 plugin plus a Python MCP server. Headless mode can import a binary with PyGhidra and no Ghidra window.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "04238bde76d6": {
+    "text": "The README says any MCP client should work. It shows VS Code and Claude Code configurations.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "6d182388f522": {
+    "text": "Install the release extension in Ghidra, enable the plugin, then launch the MCP server against the plugin HTTP port (localhost:8080 by default).",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "fe2d320812d5": {
+    "text": "Decompilation, renames, and listings of methods, classes, imports, and exports from Ghidra. Apache-2.0 badge on the README.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "31783daf322f": {
+    "text": "The README pins Ghidra 12.1.4. It documents Ghidra binary analysis and does not describe a JavaScript or Electron workflow.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "e88acafad49c": {
+    "text": "Native binaries you already open in Ghidra 12.1.4.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "767d2ca28213": {
+    "text": "GhydraMCP",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "e50fa523a77d": {
+    "text": "Ghidra 11.x or 12.x. The extension build must match that Ghidra version. Several Ghidra windows can listen on ports 8192–8447.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "5b918d0fbb40": {
+    "text": "The README says it has been tested with Claude Desktop, Claude Code, and Cline over stdio.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "737948e714fc": {
+    "text": "Install the matching Ghidra extension. The ghydra CLI is installed from a checkout. The Python MCP bridge is still documented.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "1830a9a1804b": {
+    "text": "Fork of GhidraMCP with multi-instance Ghidra, a HATEOAS HTTP API, and a CLI that can print JSON. Apache-2.0 badge on the README.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "a306d1d5e162": {
+    "text": "The README says the MCP bridge is being deprecated in favor of the ghydra CLI. It does not describe Electron application graphs.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "676f13078120": {
+    "text": "Scripted or multi-window Ghidra work, including clients that can call a CLI.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "e0f38c09d551": {
+    "text": "ida-pro-mcp",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "c0e562692213": {
+    "text": "IDA Pro 8.3 or newer (9 recommended) through idalib. The README states that IDA Free is not supported.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "3f970ad7aa10": {
+    "text": "The README lists many clients, including Claude Code, Codex, and Cursor, and shows install commands for Claude Code, Codex, and Kimi Code.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "cdbc5f7f1452": {
+    "text": "Python 3.11+, uv, and idalib activated globally, then the client’s plugin command. The GUI plugin path is still documented.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "43654c30e669": {
+    "text": "MCP access to an IDA database, including decompiler output, for the clients the README lists. MIT license.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "c9a2e5b2c57f": {
+    "text": "The README recommends the official Hex-Rays IDA MCP server instead, and says the GUI plugin will eventually be deprecated.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "183973e1ed18": {
+    "text": "People who already run IDA Pro and want the MCP bridge the README describes.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "6007b9de9e87": {
+    "text": "radare2-mcp",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "938344de4202": {
+    "text": "radare2. The README badge names radare2 6.2.2. It can attach to a local or remote r2 session through r2pipe.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "d949592790f6": {
+    "text": "The README shows a generic MCP config plus Claude Desktop, VS Code, Zed, and a Codex plugin command. It does not name Cursor.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "a3624cc41898": {
+    "text": "r2pm -Uci r2mcp, then point the client at r2pm -r r2mcp. Docker and a source build are also documented.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "2d77721339c9": {
+    "text": "C implementation using radare2 APIs, with read-only mode, a sandbox lock, and HTTP serving. MIT license.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "033372c46c9b": {
+    "text": "radare2 has to be installed. The README does not describe a JavaScript or Electron application workflow.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "a6075ba163b3": {
+    "text": "Agents that should drive radare2, including an already-open r2 session.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "696353923261": {
+    "text": "@electron/asar + rg",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "4fd49b438865": {
+    "text": "No decompiler. @electron/asar reads and extracts asar archives. ripgrep (rg) searches the extracted text.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "00c0380258e6": {
+    "text": "No MCP server. You run the tools, or the agent uses its shell.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "3c1e27d54470": {
+    "text": "Node.js 22.12+ for @electron/asar, plus a ripgrep install. The asar CLI can list or extract an archive.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "1933e43cf7ca": {
+    "text": "No Ghidra, Hopper, or IDA install. Enough when the feature is JavaScript inside the archive. MIT license.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "599b59e9124b": {
+    "text": "Text search does not build REA’s module, IPC, or evidence report, and it does not decompile native code.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "ea903169d3ba": {
+    "text": "A small Electron question you can answer by reading the unpacked files.",
+    "contexts": [
+      "/compare/ td"
+    ]
+  },
+  "cb541c514695": {
+    "text": "REA, ida-pro-mcp, radare2-mcp, and @electron/asar publish MIT licenses. The GhidraMCP and GhydraMCP READMEs display an Apache-2.0 badge. REA’s current npm release is",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "92eb57728ce5": {
+    "text": "rea-agents-6.4.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "15ca70abdf72": {
+    "text": ", published on 2026-10-11.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "29691b1fb757": {
+    "text": "Use a smaller tool when it already answers the question.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "4584481ad18e": {
+    "text": "The files are already unpacked and a search such as rg finds the function. @electron/asar extracts an Electron archive; it does not need an MCP server.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "24eb91d6b498": {
+    "text": "The target is a small native binary and the agent can already explain it from a disassembler. GitTested’s review of version 6.2.0, cited below, is the public measurement we found for that case.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "9cbec8bd6dfe": {
+    "text": "You only want one engine you already run. GhidraMCP and GhydraMCP speak Ghidra. ida-pro-mcp speaks IDA Pro. radare2-mcp speaks radare2. REA is the broader setup, not a requirement for those single-tool jobs.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "ac2544f7c1db": {
+    "text": "The program is JavaScript or .NET and you only need static inspection. REA’s README says those paths do not need Hopper, Ghidra, or IDA.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "e43a87e6ffde": {
+    "text": "You are not allowed to examine the software. REA’s README limits the project to lawful research and to software you own or are authorized to analyze.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "159a7cd50c19": {
+    "text": "Published tests we could read",
+    "contexts": [
+      "/compare/ h2"
+    ]
+  },
+  "f9e53888c2af": {
+    "text": "These are other people’s results. This site did not re-run them. They are not interchangeable: they used different REA versions and different targets.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "159b97cb3885": {
+    "text": "GitTested, tested 9 October 2026",
+    "contexts": [
+      "/compare/ h3"
+    ]
+  },
+  "552bb8a72637": {
+    "text": "The review covers tag",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "ab914635b004": {
+    "text": "at commit",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "f7b9222e9ff5": {
+    "text": ". The agent was Claude Code 2.1.295 with",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "037db5fe6c82": {
+    "text": "at medium effort. The native scope was four small stripped binaries up to 264 KB.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "13b306518b87": {
+    "text": "On that native checklist, ordinary shell tools scored 74 of 75 and REA scored 73 of 75. Median tokens were 94,663 without REA and 233,951 with REA, about 2.5 times as many. The review says most of the extra tokens were cached reads, so computed cost was about 1.5 times. It also reports 92 of 95 REA calls returned usable output. Electron sessions scored 57 of 60 with or without REA, because the agent searched the unpacked app instead of using REA’s summary. A full analysis of one 22 MB asar wrote a 692 MB document that could not be returned in one MCP call.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "963db51ecbfe": {
+    "text": "Read the GitTested review",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "dbab493b5d74": {
+    "text": "System Design Academy, 12 October 2026",
+    "contexts": [
+      "/compare/ h3"
+    ]
+  },
+  "60185b524191": {
+    "text": "The article reports a hands-on test of REA 6.4.0 on Electron API Demos. It says all 30 file and line locations REA returned were correct, and that REA found a channel a text search missed. It also says REA recorded none of the 8 places that send a reply to a window, and counted 1 window where the app creates 8. The article quotes REA’s own limit: a missing finding does not prove the feature is absent. The article’s author describes this as one app, one target type, and version 6.4.0.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "2aa12cd8f171": {
+    "text": "Read the System Design Academy test",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "98186fcfa904": {
+    "text": "Placeholder. This site has no head-to-head numbers yet.",
+    "contexts": [
+      "/compare/ strong"
+    ]
+  },
+  "6a54addbf573": {
+    "text": "Put the owner’s accuracy, time, and token comparison here when it exists. Do not fill this section with estimates. The third-party figures above are not measurements by reatool.dev. This site’s current checks are narrower: slugify package assertions, the Notes CSV formatter, and browser labs that test teaching code. Passing those checks does not mean a whole application was rebuilt, and it is not a bake-off against GhidraMCP or a bare coding agent.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "fef3be203766": {
+    "text": "REA README",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "2c5c037d15b8": {
+    "text": "REA get-started",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "9e0070c875f9": {
+    "text": "morluto.github.io/rea",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "4aa9bfd2f175": {
+    "text": ", and",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "80bf4c6c9e78": {
+    "text": "installation reference",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "14ef959d3164": {
+    "text": "GitHub release rea-agents-6.4.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "67e5b9b37af3": {
+    "text": ", published 2026-10-11",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "ddaf219fdbcf": {
+    "text": "GhidraMCP README",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "5d3d65dc5c73": {
+    "text": "GhydraMCP README",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "de82efde4a33": {
+    "text": "ida-pro-mcp README",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "e73d2f12ce06": {
+    "text": "Official Hex-Rays IDA MCP server",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "891a86cc9252": {
+    "text": ", as recommended by the ida-pro-mcp README",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "c78ca9a110b9": {
+    "text": "radare2-mcp README",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "23602a50c6e1": {
+    "text": "@electron/asar README",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "1d96387321cd": {
+    "text": "GitTested review of rea-agents 6.2.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "990fec92fbc7": {
+    "text": "System Design Academy hands-on test of REA 6.4.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "8bcbc94c0720": {
+    "text": "Electron clipboard analysis",
+    "contexts": [
+      "/compare/ a",
+      "/first-analysis/ a",
+      "/tutorials/compare-releases/ a",
+      "/tutorials/electron-clipboard/ schema",
+      "/tutorials/electron-clipboard/ span"
     ]
   },
   "46c3edbe9079": {
@@ -4570,15 +5408,6 @@
       "/first-analysis/ a"
     ]
   },
-  "8bcbc94c0720": {
-    "text": "Electron clipboard analysis",
-    "contexts": [
-      "/first-analysis/ a",
-      "/tutorials/compare-releases/ a",
-      "/tutorials/electron-clipboard/ schema",
-      "/tutorials/electron-clipboard/ span"
-    ]
-  },
   "4e2aec5b39ed": {
     "text": "REA — Reverse Engineer Anything: Tutorials & Examples",
     "contexts": [
@@ -4798,6 +5627,12 @@
   },
   "89b8dabfe728": {
     "text": "Install REA →",
+    "contexts": [
+      "/ a"
+    ]
+  },
+  "f1c4058124db": {
+    "text": "Compare REA →",
     "contexts": [
       "/ a"
     ]
@@ -5355,6 +6190,48 @@
       "/tutorials/ h2"
     ]
   },
+  "b2b7a0cdec8d": {
+    "text": "Which Node.js versions does REA support?",
+    "contexts": [
+      "/install/ schema",
+      "/install/ h3"
+    ]
+  },
+  "64d92d181b4b": {
+    "text": "REA currently supports Node.js 22.19+ within 22.x, 24.11+ within 24.x, or 26+. Versions 23, 25, and prereleases are outside its supported range.",
+    "contexts": [
+      "/install/ schema",
+      "/install/ p"
+    ]
+  },
+  "d4dbdba1316d": {
+    "text": "How do I connect Claude Code, Codex, or Cursor?",
+    "contexts": [
+      "/install/ schema",
+      "/install/ h3"
+    ]
+  },
+  "69db49777c57": {
+    "text": "Run npx rea-agents@latest setup, choose the client, review the proposed configuration, and approve it. Then restart the agent. Copying the prompt on this site only gives the agent those instructions. It does not install REA inside the browser.",
+    "contexts": [
+      "/install/ schema",
+      "/install/ p"
+    ]
+  },
+  "2a113d3ad9ff": {
+    "text": "What if my coding agent cannot see REA?",
+    "contexts": [
+      "/install/ schema",
+      "/install/ h3"
+    ]
+  },
+  "78007060f13a": {
+    "text": "Restart the client first. If the tools are still missing, run npx -y rea-agents@latest doctor with that client’s id. Doctor checks registration. A successful tool call after the restart is the end-to-end check.",
+    "contexts": [
+      "/install/ schema",
+      "/install/ p"
+    ]
+  },
   "6334a21cc136": {
     "text": "Connect your agent",
     "contexts": [
@@ -5383,6 +6260,13 @@
     "text": "Keep REA up to date",
     "contexts": [
       "/install/ a"
+    ]
+  },
+  "95f78acfb9ac": {
+    "text": "Install FAQ",
+    "contexts": [
+      "/install/ a",
+      "/install/ h2"
     ]
   },
   "612eae643c56": {
@@ -5848,6 +6732,12 @@
       "/install/ span"
     ]
   },
+  "1a4deff9e8f6": {
+    "text": "Compare REA with GhidraMCP and other tools",
+    "contexts": [
+      "/install/ a"
+    ]
+  },
   "fb026036a305": {
     "text": "REA installation reference",
     "contexts": [
@@ -5856,6 +6746,12 @@
   },
   "2940090c0fb5": {
     "text": "official README",
+    "contexts": [
+      "/install/ a"
+    ]
+  },
+  "f7815592f67b": {
+    "text": "official get-started page",
     "contexts": [
       "/install/ a"
     ]

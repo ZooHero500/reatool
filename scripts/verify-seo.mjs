@@ -60,7 +60,16 @@ for (const file of walk(root).filter(file => file.endsWith('.html'))) {
 const sitemap = [...readFileSync(join(root, 'sitemap.xml'), 'utf8').matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 assert.equal(new Set(sitemap).size, sitemap.length, 'Duplicate sitemap entries');
 assert.deepEqual([...pages.keys()].sort(), sitemap.sort(), 'Sitemap must cover every indexable page only');
-assert.match(readFileSync(join(root, 'robots.txt'), 'utf8'), /Sitemap: https:\/\/reatool.dev\/sitemap.xml/);
+const robots = readFileSync(join(root, 'robots.txt'), 'utf8');
+assert.match(robots, /Sitemap: https:\/\/reatool.dev\/sitemap.xml/);
+for (const bot of ['GPTBot', 'PerplexityBot', 'ClaudeBot', 'Google-Extended', 'Bingbot']) {
+  assert.match(robots, new RegExp(`User-agent: ${bot}\\nAllow: /`), `robots.txt must allow ${bot}`);
+}
+const llms = readFileSync(join(root, 'llms.txt'), 'utf8');
+const llmsFull = readFileSync(join(root, 'llms-full.txt'), 'utf8');
+assert.match(llms, /https:\/\/reatool\.dev\/compare\//);
+assert.match(llmsFull, /https:\/\/reatool\.dev\/compare\//);
+assert.match(llms, /not affiliated/i);
 for (const locale of locales) {
 const catalog = pages.get(origin + languagePath(locale.id,'/tutorials/'));
 assert.equal(catalog.page['@type'], 'CollectionPage');
@@ -77,5 +86,21 @@ list.itemListElement.forEach((item, i) => {
 });
 assert.match(pages.get(origin + languagePath(locale.id,'/')).html, /id="what-is-rea"/);
 assert.equal(pages.get(origin + languagePath(locale.id,'/about/')).page['@type'], 'AboutPage');
+for (const path of ['/compare/', '/install/']) {
+  const entry = pages.get(origin + languagePath(locale.id, path));
+  const graph = JSON.parse(entry.html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1])['@graph'];
+  const faq = graph.find(item => item['@type'] === 'FAQPage');
+  assert(faq?.mainEntity?.length, `${path} ${locale.id}: FAQPage missing`);
+  const blocks = [...entry.html.matchAll(/<(h3|p)>([\s\S]*?)<\/\1>/g)].map(match => text(match[2]));
+  for (const question of faq.mainEntity) {
+    assert(blocks.includes(question.name), `${path} ${locale.id}: FAQ question not visible`);
+    assert(blocks.includes(question.acceptedAnswer.text), `${path} ${locale.id}: FAQ answer not visible`);
+  }
+  assert.match(entry.html, /6\.4\.0/, `${path} ${locale.id}: REA version missing`);
 }
+assert.equal(pages.get(origin + languagePath(locale.id,'/compare/')).page['@type'], 'WebPage');
+}
+assert.match(pages.get(origin + '/compare/').html, /Placeholder\. This site has no head-to-head numbers yet\./);
+assert.match(pages.get(origin + '/install/').html, /Last verified: October 12, 2026 · REA version 6\.4\.0/);
+assert.match(pages.get(origin + '/first-analysis/').html, /Last verified: October 12, 2026 · REA version 6\.4\.0/);
 console.log(`${pages.size} indexable pages: unique REA metadata, matching breadcrumbs, ${articles} article entities, catalog and sitemap passed.`);

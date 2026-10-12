@@ -1,0 +1,62 @@
+---
+import Guide from '../../layouts/Guide.astro';
+import {compareFaqs, compareRows} from '../../data/compare';
+import {reaRelease} from '../../data/rea-release';
+const toc = [
+  {id: 'table', label: 'Comparison table'},
+  {id: 'skip', label: 'When you don’t need REA'},
+  {id: 'published-tests', label: 'Published tests'},
+  {id: 'our-test', label: 'Our hands-on test'},
+  {id: 'faq', label: 'FAQ'},
+  {id: 'sources', label: 'Sources'},
+];
+---
+<Guide eyebrow="02 / Comparison" minutes="12 min" toc={toc} faq={compareFaqs} article={false}>
+  <h2 id="table">What each project actually is</h2>
+  <p>The rows below use the public README of each project, plus REA’s installation reference and get-started page. A cell does not rank the tools. Where a README is silent, the cell says so instead of guessing.</p>
+  <div class="table-scroll"><table class="compare-table"><caption>{`REA and five other ways to inspect software with a coding agent. Checked against public READMEs on ${reaRelease.lastVerifiedLabel}.`}</caption><thead><tr><th>Tool</th><th>Backend</th><th>Documented agents</th><th>Install effort</th><th>Strengths</th><th>Limits</th><th>Best for</th></tr></thead><tbody>
+    {compareRows.map(row => <tr><td><a href={row.href}>{row.tool}</a></td><td>{row.backend}</td><td>{row.agents}</td><td>{row.install}</td><td>{row.strengths}</td><td>{row.limits}</td><td>{row.bestFor}</td></tr>)}
+  </tbody></table></div>
+  <p>REA, ida-pro-mcp, radare2-mcp, and @electron/asar publish MIT licenses. The GhidraMCP and GhydraMCP READMEs display an Apache-2.0 badge. REA’s current npm release is <a href={reaRelease.releaseUrl}>{reaRelease.tag}</a>, published on 2026-10-11.</p>
+
+  <h2 id="skip">When you don’t need REA</h2>
+  <p>Use a smaller tool when it already answers the question.</p>
+  <ul>
+    <li>The files are already unpacked and a search such as rg finds the function. @electron/asar extracts an Electron archive; it does not need an MCP server.</li>
+    <li>The target is a small native binary and the agent can already explain it from a disassembler. GitTested’s review of version 6.2.0, cited below, is the public measurement we found for that case.</li>
+    <li>You only want one engine you already run. GhidraMCP and GhydraMCP speak Ghidra. ida-pro-mcp speaks IDA Pro. radare2-mcp speaks radare2. REA is the broader setup, not a requirement for those single-tool jobs.</li>
+    <li>The program is JavaScript or .NET and you only need static inspection. REA’s README says those paths do not need Hopper, Ghidra, or IDA.</li>
+    <li>You are not allowed to examine the software. REA’s README limits the project to lawful research and to software you own or are authorized to analyze.</li>
+  </ul>
+
+  <h2 id="published-tests">Published tests we could read</h2>
+  <p>These are other people’s results. This site did not re-run them. They are not interchangeable: they used different REA versions and different targets.</p>
+  <h3>GitTested, tested 9 October 2026</h3>
+  <p>The review covers tag <code>rea-agents-6.2.0</code> at commit <code>a64851f2592cd353600d54864b38524705341dd1</code>. The agent was Claude Code 2.1.295 with <code>claude-sonnet-5-5</code> at medium effort. The native scope was four small stripped binaries up to 264 KB.</p>
+  <p>On that native checklist, ordinary shell tools scored 74 of 75 and REA scored 73 of 75. Median tokens were 94,663 without REA and 233,951 with REA, about 2.5 times as many. The review says most of the extra tokens were cached reads, so computed cost was about 1.5 times. It also reports 92 of 95 REA calls returned usable output. Electron sessions scored 57 of 60 with or without REA, because the agent searched the unpacked app instead of using REA’s summary. A full analysis of one 22 MB asar wrote a 692 MB document that could not be returned in one MCP call.</p>
+  <p><a href="https://gittested.com/reviews/morluto-rea/">Read the GitTested review</a></p>
+  <h3>System Design Academy, 12 October 2026</h3>
+  <p>The article reports a hands-on test of REA 6.4.0 on Electron API Demos. It says all 30 file and line locations REA returned were correct, and that REA found a channel a text search missed. It also says REA recorded none of the 8 places that send a reply to a window, and counted 1 window where the app creates 8. The article quotes REA’s own limit: a missing finding does not prove the feature is absent. The article’s author describes this as one app, one target type, and version 6.4.0.</p>
+  <p><a href="https://www.systemdesign.academy/explained/rea-reverse-engineer-anything">Read the System Design Academy test</a></p>
+
+  <h2 id="our-test">Our hands-on test</h2>
+  <div class="callout"><p><strong>Placeholder. This site has no head-to-head numbers yet.</strong></p><p>Put the owner’s accuracy, time, and token comparison here when it exists. Do not fill this section with estimates. The third-party figures above are not measurements by reatool.dev. This site’s current checks are narrower: slugify package assertions, the Notes CSV formatter, and browser labs that test teaching code. Passing those checks does not mean a whole application was rebuilt, and it is not a bake-off against GhidraMCP or a bare coding agent.</p></div>
+
+  <h2 id="faq">FAQ</h2>
+  {compareFaqs.map(item => <section class="faq-item"><h3>{item.question}</h3><p>{item.answer}</p></section>)}
+
+  <h2 id="sources">Sources</h2>
+  <ul class="source-list">
+    <li><a href="https://github.com/morluto/rea">REA README</a> and <a href="https://github.com/morluto/rea/blob/main/LICENSE">MIT license</a></li>
+    <li><a href="https://rea.tools/get-started">REA get-started</a>, <a href="https://morluto.github.io/rea/">morluto.github.io/rea</a>, and <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">installation reference</a></li>
+    <li><a href={reaRelease.releaseUrl}>GitHub release {reaRelease.tag}</a>, published 2026-10-11</li>
+    <li><a href="https://github.com/LaurieWired/GhidraMCP">GhidraMCP README</a></li>
+    <li><a href="https://github.com/starsong-consulting/GhydraMCP">GhydraMCP README</a></li>
+    <li><a href="https://github.com/mrexodia/ida-pro-mcp">ida-pro-mcp README</a> and <a href="https://github.com/mrexodia/ida-pro-mcp/blob/main/LICENSE">MIT license</a></li>
+    <li><a href="https://github.com/HexRaysSA/ida-mcp">Official Hex-Rays IDA MCP server</a>, as recommended by the ida-pro-mcp README</li>
+    <li><a href="https://github.com/radareorg/radare2-mcp">radare2-mcp README</a> and <a href="https://github.com/radareorg/radare2-mcp/blob/main/LICENSE">MIT license</a></li>
+    <li><a href="https://github.com/electron/asar">@electron/asar README</a> and <a href="https://github.com/electron/asar/blob/main/LICENSE.md">MIT license</a></li>
+    <li><a href="https://gittested.com/reviews/morluto-rea/">GitTested review of rea-agents 6.2.0</a></li>
+    <li><a href="https://www.systemdesign.academy/explained/rea-reverse-engineer-anything">System Design Academy hands-on test of REA 6.4.0</a></li>
+  </ul>
+</Guide>

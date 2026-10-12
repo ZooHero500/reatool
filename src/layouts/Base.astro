@@ -6,15 +6,16 @@ import '../styles/redesign.css';
 import '../styles/motion.css';
 import '../styles/seo.css';
 import {pageSeo,breadcrumbsFor} from '../data/seo';
-interface Props { title?: string; description?: string; article?: boolean; noindex?: boolean; collectionItems?:{name:string;url:string}[]; }
-const {article = false, noindex = false,collectionItems} = Astro.props;
+import type {FaqItem} from '../data/compare';
+interface Props { title?: string; description?: string; article?: boolean; noindex?: boolean; collectionItems?:{name:string;url:string}[]; faq?:FaqItem[]; }
+const {article = false, noindex = false,collectionItems,faq} = Astro.props;
 const path = Astro.url.pathname;
 const metadata=pageSeo[path];
 const title=metadata?.title??Astro.props.title;
 const description=metadata?.description??Astro.props.description;
 if(!title||!description)throw new Error(`Missing page metadata for ${path}`);
 const canonical = new URL(path, Astro.site);
-const nav = [{href:'/tutorials/',label:'Tutorials'},{href:'/install/',label:'Install REA'},{href:'/#play-cases',label:'Interactive labs'}];
+const nav = [{href:'/tutorials/',label:'Tutorials'},{href:'/install/',label:'Install REA'},{href:'/compare/',label:'Compare'},{href:'/#play-cases',label:'Interactive labs'}];
 const siteUrl='https://reatool.dev/';
 const breadcrumbs=breadcrumbsFor(path);
 const pageEntity={
@@ -29,7 +30,8 @@ const structured={'@context':'https://schema.org','@graph':[
   {'@type':'Organization','@id':`${siteUrl}#publisher`,name:'REA Tool',url:`${siteUrl}about/`,description:'Independent publisher of REA tutorials and teaching experiments.'},
   {'@type':'WebSite','@id':`${siteUrl}#website`,name:'REA Tool',url:siteUrl,inLanguage:'en',publisher:{'@id':`${siteUrl}#publisher`}},
   pageEntity,
-  ...(breadcrumbs.length?[{'@type':'BreadcrumbList','@id':`${canonical}#breadcrumbs`,itemListElement:breadcrumbs.map((item,i)=>({'@type':'ListItem',position:i+1,name:item.name,item:new URL(item.path,siteUrl).toString()}))}]:[])
+  ...(breadcrumbs.length?[{'@type':'BreadcrumbList','@id':`${canonical}#breadcrumbs`,itemListElement:breadcrumbs.map((item,i)=>({'@type':'ListItem',position:i+1,name:item.name,item:new URL(item.path,siteUrl).toString()}))}]:[]),
+  ...(faq?.length?[{'@type':'FAQPage','@id':`${canonical}#faq`,mainEntity:faq.map(item=>({'@type':'Question',name:item.question,acceptedAnswer:{'@type':'Answer',text:item.answer}}))}]:[])
 ]};
 ---
 <!doctype html>
@@ -60,7 +62,7 @@ const structured={'@context':'https://schema.org','@graph':[
     <main id="main"><slot/></main>
     <footer class="site-footer wrap">
       <div><a class="footer-brand" href="/">reatool<span>.</span>dev</a><p>REA setup, tutorials and worked examples.<br/>An independent learning resource.</p></div>
-      <div class="footer-links"><a href="/install/">Install REA</a><a href="/about/">About & editorial method</a><a href="https://rea.tools/">Official website ↗</a><a href="https://github.com/morluto/rea">GitHub ↗</a></div>
+      <div class="footer-links"><a href="/install/">Install REA</a><a href="/compare/">Compare REA</a><a href="/about/">About & editorial method</a><a href="https://rea.tools/">Official website ↗</a><a href="https://github.com/morluto/rea">GitHub ↗</a></div>
       <div class="footer-bottom"><span>Independent community resource. Not affiliated with the REA maintainers.</span><span>© 2026 REA Tool</span></div>
     </footer>
     <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>
