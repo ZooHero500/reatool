@@ -71,9 +71,10 @@ npm run verify:i18n
 - 发布网站更新时，先完成相关验证，再执行：
 
 ```sh
-wrangler pages deploy dist --project-name reatool --branch main
+npm run deploy
 ```
 
+- `deploy` 会依次执行源码检查、完整构建、站点/SEO/多语言验证，全部通过后再上传到生产环境。
 - 发布后验证线上页面、资源和关键交互，并更新 `DEPLOYMENT.md` 中的部署信息。
 - 用户自行绑定自定义域名，不擅自修改域名或 DNS。
 - 详细说明见 `README.md`、`MULTILINGUAL.md`、`DEPLOYMENT.md` 及各项 `*VERIFICATION.md`。历史验收记录不能代替新改动的验证。

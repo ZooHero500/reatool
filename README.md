@@ -72,4 +72,6 @@ These pages are independent walkthroughs. A passing check on one function is not
 
 ## Unofficial
 
+To build, verify and deploy this site to Cloudflare Pages, run `npm run deploy` with Wrangler installed and authenticated. See [DEPLOYMENT.md](DEPLOYMENT.md) for details.
+
 Independent community resource. Not affiliated with morluto or the REA maintainers. Report REA software bugs in the [official issue tracker](https://github.com/morluto/rea/issues). Site build, animation, and Cloudflare Pages notes are in [DEPLOYMENT.md](DEPLOYMENT.md). Translation workflow is in [MULTILINGUAL.md](MULTILINGUAL.md).

@@ -7,6 +7,7 @@
     "dev": "astro dev --host 127.0.0.1",
     "build": "astro build && node scripts/localize-site.mjs",
     "build:english": "astro build",
+    "deploy": "npm run check && npm run build && npm run verify:site && npm run verify:seo && npm run verify:i18n && wrangler pages deploy dist --project-name reatool --branch main",
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "verify:case": "node scripts/verify-case.mjs",

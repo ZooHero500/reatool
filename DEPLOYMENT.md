@@ -30,15 +30,10 @@ The prior English deployment's WebGPU and interactive labs were verified. The mu
 From this source directory with Wrangler already authenticated:
 
 ```sh
-npm run check
-npm run build
-npm run verify:site
-npm run verify:seo
-npm run verify:i18n
-wrangler pages deploy dist --project-name reatool --branch main
+npm run deploy
 ```
 
-This final command publishes to production. Bind the domain from Workers & Pages → reatool → Custom domains. After binding, verify HTTPS and submit `https://reatool.dev/sitemap.xml` in Google Search Console.
+This command checks the source, builds all languages, verifies the site, SEO and localization, then publishes `dist` to the `reatool` project's production branch `main`. A failed step stops deployment. Wrangler must be installed and authenticated. Bind the domain from Workers & Pages → reatool → Custom domains. After binding, verify HTTPS and submit `https://reatool.dev/sitemap.xml` in Google Search Console.
 
 The build also writes `dist/llms.txt` and `dist/llms-full.txt` from the English pages. `public/robots.txt` allows GPTBot, PerplexityBot, ClaudeBot, Google-Extended, and Bingbot, and points at the sitemap.
 
@@ -92,10 +87,10 @@ The delivered `reatool-cloudflare-pages.zip` contains the built site at its root
 Alternatively, with an authenticated Wrangler CLI:
 
 ```sh
-wrangler pages deploy dist --project-name=reatool
+npm run deploy
 ```
 
-This command publishes the build. The project name must match the Cloudflare project.
+This command builds, verifies and publishes to the `reatool` project's production branch `main`.
 
 ### Attach the domain
 
