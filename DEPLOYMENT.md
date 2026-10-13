@@ -1,18 +1,23 @@
 # Cloudflare Pages deployment
 
-Deployed on 2026-10-12 using the existing authenticated Wrangler account.
+Deployed on 2026-10-13 using the existing authenticated Wrangler account.
 
 - Project: `reatool`
 - Environment: Production
 - Production branch: `main`
 - Public URL: https://reatool.pages.dev/
-- Deployment URL: https://9fb95f9c.reatool.pages.dev/
-- Deployment ID: `9fb95f9c-282d-4209-b15a-e029d5af7ee7`
+- Deployment URL: https://b2444c24.reatool.pages.dev/
+- Deployment ID: `b2444c24-4864-44d2-9377-df8e54a48de8`
+- Source commit: `052a389`
 - Method: Direct Upload of `dist` using Wrangler. No Git auto-deployment was configured.
 - Custom domain: not attached by this task; the owner will bind `reatool.dev`.
 - Canonical and sitemap URLs remain `https://reatool.dev` as intended for the custom domain.
 
 ## Verification
+
+Latest deployment adds the deferred analytics script from `https://analysis.zoohero.me/script.js` with website ID `8bfccc0f-352c-431f-85b9-166b4eefe796`. All 136 built HTML pages contain exactly one matching script. Astro, site, SEO and localization checks passed. All eight production homepages and their installation pages were fetched successfully and contain the correct script once. The analytics script endpoint returned HTTP 200. Dashboard event receipt has not been verified. Cloudflare confirms this deployment is Production / main.
+
+### Previous feature verification
 
 Latest update: the hero points to an AI-first quick-install section on every homepage. Visitors copy a localized setup prompt, send it to their coding agent, approve setup, then restart and verify. All eight live homepages contain the new section and matching copy payload. Browser checks cover the CTA anchor, successful clipboard copy, label restoration and mobile layout. Screenshot: `../reatool-quick-install-live.png`.
 
