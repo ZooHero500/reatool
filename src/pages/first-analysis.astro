@@ -11,14 +11,27 @@ const toc=[{id:'question',label:'Choose one question'},{id:'sample',label:'Get t
   <CodeBlock prompt label="Our question" code="When I click Export notes, where does the CSV file go, and what happens if a note title contains commas or quotation marks?"/>
   <p>We use the <a href="https://rea.tools/first-investigation/">official REA Notes example</a>: six small files representing an Electron app. This is a teaching sample, not a production application. Its static analysis needs no Electron installation.</p>
   <h2 id="sample">02. Get the sample</h2>
-  <p><a href="https://rea.tools/examples/notes-example.zip">Download notes-example.zip from rea.tools</a> and extract it into a new folder. Keep the folder path handy. You should see:</p>
+  <div class="callout">
+    <p><strong>Start with the practice kit</strong></p>
+    <p>The kit includes the official six-file sample, a ready-to-run CSV check, expected output and instructions in eight languages. Extract it, open the notes-example folder in your coding agent, and copy the analysis prompt below. No npm install or Electron launch is needed.</p>
+    <p><a class="button primary" href="/downloads/notes-first-practice.zip" download data-track="sample_download" data-track-item="notes-kit">Download the practice kit</a></p>
+    <p>Open a terminal in the extracted folder and run the check:</p>
+    <CodeBlock code="node check.cjs" trackingId="practice-check"/>
+    <p>A successful run ends with PASS: 3 CSV checks. It checks commas, quotation marks, empty input and a multiline title. This tests the CSV formatter; it does not click the app’s export button.</p>
+  </div>
+  <h3>Find your folder on Windows</h3>
+  <p>In File Explorer, extract the ZIP first, open the notes-example folder, then right-click and open a terminal there. In PowerShell, the following prints the full path. Keep spaces inside quotes when using that path in a command.</p>
+  <CodeBlock code="(Get-Location).Path" label="PowerShell"/>
+  <p>If you only want the upstream sample, <a data-track="sample_download" data-track-item="notes-upstream" href="https://rea.tools/examples/notes-example.zip">Download notes-example.zip from rea.tools</a> and extract it into a new folder. Keep the folder path handy. You should see:</p>
   <CodeBlock label="Sample files" code={'notes-example/\n  package.json\n  index.html\n  renderer.js\n  preload.js\n  main.js\n  csv.js'}/>
   <p>If REA is not connected yet, follow the <a href="/install/">installation guide</a>. This sample can be inspected without launching a desktop window.</p>
   <h2 id="inspect">03. Ask your agent to inspect it</h2>
-  <p>Replace the sample path in this prompt with the absolute path to your extracted folder.</p>
-  <CodeBlock prompt label="Analysis prompt" code="Use REA to statically inspect /absolute/path/to/notes-example. Trace the Export notes button through the renderer, preload bridge and main process. Show the output file path, CSV columns, and the files and lines that support your answer. Do not launch Electron. Separate observed code from assumptions."/>
+  <p>Open the extracted notes-example folder in your coding agent before sending this prompt. If the agent is working elsewhere, give it the full folder path.</p>
+  <CodeBlock trackingId="first-analysis-prompt" prompt label="Analysis prompt" code="Use REA to statically inspect the notes-example folder open in this workspace. Trace the Export notes button through the renderer, preload bridge and main process. Show the output file path, CSV columns, and the files and lines that support your answer. Do not launch Electron. Separate observed code from assumptions."/>
   <p>You can also collect REA’s static evidence directly from the terminal:</p>
   <CodeBlock code={'npx -y rea-agents@6.4.0 analyze-javascript-application "/absolute/path/to/notes-example" --json > notes-analysis.json'}/>
+  <p>In Windows PowerShell, use this command from inside the extracted notes-example folder:</p>
+  <CodeBlock code="npx.cmd -y rea-agents@6.4.0 analyze-javascript-application . --json > notes-analysis.json"/>
   <p>The command pins the version used for this walkthrough. The JSON is analysis evidence, not a natural-language explanation; your coding agent uses it to guide follow-up inspection.</p>
   <h2 id="trace">04. Follow the export path</h2>
   <p><strong>The answer:</strong> the app is written to save <code>notes.csv</code> in the operating system’s Downloads folder. The setting is in <code>main.js</code>. Here is how the button reaches that code.</p>
@@ -29,10 +42,12 @@ const toc=[{id:'question',label:'Choose one question'},{id:'sample',label:'Get t
   <h2 id="check">05. Check a prediction</h2>
   <p>Give the formatter a note whose title is <code>Hello, "REA"</code>. The predicted CSV row is:</p>
   <CodeBlock label="Expected output" code={'id,title\n1,"Hello, ""REA"""'}/>
-  <p>The comma stays inside one quoted field. Each embedded quotation mark becomes two quotes. To verify this, save the following as <code>check.cjs</code> inside the extracted <code>notes-example</code> folder:</p>
+  <p>The kit already includes check.cjs. If you downloaded only the upstream sample, save the following as check.cjs in the notes-example folder:</p>
   <CodeBlock label="check.cjs" code={'const assert = require("node:assert/strict");\nconst { toCsv } = require("./csv.js");\n\nconst actual = toCsv([{ id: 1, title: \'Hello, "REA"\' }]);\nconst expected = \'id,title\\n1,"Hello, ""REA"""\\n\';\nassert.equal(actual, expected);\nconsole.log(actual);\nconsole.log("PASS: comma and quotes stay in one field.");'}/>
   <CodeBlock code="node check.cjs" label="Run from the sample folder"/>
   <div class="callout"><p><strong>Verified locally.</strong> We ran the REA 6.4.0 static analysis and this formatter check on October 12, 2026. The output matched. We did not launch the Electron UI or test filesystem permissions through its export button.</p></div>
+  <h3>If the check fails</h3>
+  <p>If Node cannot find check.cjs or csv.js, make sure you extracted the whole kit and opened the notes-example folder. If an assertion fails, compare the output with expected.csv and start again with a fresh extraction before changing any code.</p>
   <h2 id="next">06. Continue with a sharper question</h2>
   <p>Now try a follow-up that tests the explanation rather than asking for more general description:</p>
   <CodeBlock prompt label="Follow-up prompt" code="If writing notes.csv fails, how would that error travel back to the page? Trace the error handling in the supplied files. Identify any missing handler, but do not modify the app."/>

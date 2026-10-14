@@ -5072,6 +5072,66 @@
       "/first-analysis/ h2"
     ]
   },
+  "1cead7a130b2": {
+    "text": "Start with the practice kit",
+    "contexts": [
+      "/first-analysis/ strong"
+    ]
+  },
+  "da083d6ff9d3": {
+    "text": "The kit includes the official six-file sample, a ready-to-run CSV check, expected output and instructions in eight languages. Extract it, open the notes-example folder in your coding agent, and copy the analysis prompt below. No npm install or Electron launch is needed.",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "721c49da57a0": {
+    "text": "Download the practice kit",
+    "contexts": [
+      "/first-analysis/ a"
+    ]
+  },
+  "67892433da88": {
+    "text": "Open a terminal in the extracted folder and run the check:",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "5c6cd300fb86": {
+    "text": "A successful run ends with PASS: 3 CSV checks. It checks commas, quotation marks, empty input and a multiline title. This tests the CSV formatter; it does not click the app’s export button.",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "eb2b7df4f18b": {
+    "text": "Find your folder on Windows",
+    "contexts": [
+      "/first-analysis/ h3"
+    ]
+  },
+  "a93ab324345d": {
+    "text": "In File Explorer, extract the ZIP first, open the notes-example folder, then right-click and open a terminal there. In PowerShell, the following prints the full path. Keep spaces inside quotes when using that path in a command.",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "55947b6cce20": {
+    "text": "PowerShell",
+    "contexts": [
+      "/first-analysis/ span"
+    ]
+  },
+  "43c9c930742f": {
+    "text": "Copy powershell",
+    "contexts": [
+      "/first-analysis/ aria-label"
+    ]
+  },
+  "e810477b7e54": {
+    "text": "If you only want the upstream sample,",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
   "cc9053c33e3b": {
     "text": "Download notes-example.zip from rea.tools",
     "contexts": [
@@ -5120,8 +5180,8 @@
       "/first-analysis/ h2"
     ]
   },
-  "4602b413f63c": {
-    "text": "Replace the sample path in this prompt with the absolute path to your extracted folder.",
+  "47c96e05d494": {
+    "text": "Open the extracted notes-example folder in your coding agent before sending this prompt. If the agent is working elsewhere, give it the full folder path.",
     "contexts": [
       "/first-analysis/ p"
     ]
@@ -5138,14 +5198,20 @@
       "/first-analysis/ aria-label"
     ]
   },
-  "24da471a15b8": {
-    "text": "Use REA to statically inspect /absolute/path/to/notes-example. Trace the Export notes button through the renderer, preload bridge and main process. Show the output file path, CSV columns, and the files and lines that support your answer. Do not launch Electron. Separate observed code from assumptions.",
+  "ca85ff1971e1": {
+    "text": "Use REA to statically inspect the notes-example folder open in this workspace. Trace the Export notes button through the renderer, preload bridge and main process. Show the output file path, CSV columns, and the files and lines that support your answer. Do not launch Electron. Separate observed code from assumptions.",
     "contexts": [
       "/first-analysis/ code"
     ]
   },
   "c15691cfa2c7": {
     "text": "You can also collect REA’s static evidence directly from the terminal:",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "4faf82acd509": {
+    "text": "In Windows PowerShell, use this command from inside the extracted notes-example folder:",
     "contexts": [
       "/first-analysis/ p"
     ]
@@ -5321,20 +5387,8 @@
       "/first-analysis/ aria-label"
     ]
   },
-  "37513510fd3a": {
-    "text": "The comma stays inside one quoted field. Each embedded quotation mark becomes two quotes. To verify this, save the following as",
-    "contexts": [
-      "/first-analysis/ p"
-    ]
-  },
-  "ef0c4f6b85cc": {
-    "text": "inside the extracted",
-    "contexts": [
-      "/first-analysis/ p"
-    ]
-  },
-  "4adc89458adf": {
-    "text": "folder:",
+  "6809c7922cae": {
+    "text": "The kit already includes check.cjs. If you downloaded only the upstream sample, save the following as check.cjs in the notes-example folder:",
     "contexts": [
       "/first-analysis/ p"
     ]
@@ -5371,6 +5425,18 @@
   },
   "e29731a2d2cc": {
     "text": "We ran the REA 6.4.0 static analysis and this formatter check on October 12, 2026. The output matched. We did not launch the Electron UI or test filesystem permissions through its export button.",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "58de37f8b735": {
+    "text": "If the check fails",
+    "contexts": [
+      "/first-analysis/ h3"
+    ]
+  },
+  "a3771a9d49d2": {
+    "text": "If Node cannot find check.cjs or csv.js, make sure you extracted the whole kit and opened the notes-example folder. If an assertion fails, compare the output with expected.csv and start again with a fresh extraction before changing any code.",
     "contexts": [
       "/first-analysis/ p"
     ]
@@ -6781,6 +6847,42 @@
       "/install/ p"
     ]
   },
+  "583d8c7b2ff3": {
+    "text": "Choose your operating system",
+    "contexts": [
+      "/install/ aria-label"
+    ]
+  },
+  "d8d77996c499": {
+    "text": "Windows / PowerShell",
+    "contexts": [
+      "/install/ button"
+    ]
+  },
+  "0e7d13c9e450": {
+    "text": "macOS / Linux",
+    "contexts": [
+      "/install/ button"
+    ]
+  },
+  "1d0ef5d21394": {
+    "text": "Windows: start in PowerShell",
+    "contexts": [
+      "/install/ h3"
+    ]
+  },
+  "3a7aa63fba8e": {
+    "text": "Install a supported Node.js release, then open a new PowerShell window. Use the Windows commands below when your coding agent runs on Windows. If it runs in WSL, install Node.js and REA inside that same WSL distribution and use the Linux commands.",
+    "contexts": [
+      "/install/ p"
+    ]
+  },
+  "74e8ff9e36be": {
+    "text": "The .cmd commands avoid PowerShell blocking npm.ps1 or npx.ps1. You do not need to change the execution policy. If node is not found, reopen the terminal after installing Node.js and check that its installation folder is on PATH.",
+    "contexts": [
+      "/install/ p"
+    ]
+  },
   "fb2bbc08a37f": {
     "text": "Check your runtime",
     "contexts": [
@@ -6999,6 +7101,12 @@
   },
   "640447fe7ef0": {
     "text": "Doctor checks registration and prerequisites. A successful tool call from your restarted agent is the useful end-to-end check.",
+    "contexts": [
+      "/install/ p"
+    ]
+  },
+  "294f9919d183": {
+    "text": "Keep setup, doctor and your coding agent in the same environment. A Windows registration does not connect an agent running in WSL. After setup, fully close and reopen the selected client, then run the connection check above.",
     "contexts": [
       "/install/ p"
     ]

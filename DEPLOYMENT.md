@@ -122,7 +122,7 @@ Before changing tutorial versions, recheck commands against the npm release, rer
 
 ## Search and sharing
 
-Every page has a title, description, canonical URL, Open Graph tags and JSON-LD. The install and comparison pages add FAQPage entities for the questions visible on those pages. The build includes robots.txt, sitemap.xml, llms.txt, llms-full.txt, a 1200×630 social image and Cloudflare security/cache headers. No analytics or cookie banner is installed. After deployment, verify the domain in Google Search Console and submit `https://reatool.dev/sitemap.xml`.
+Every page has a title, description, canonical URL, Open Graph tags and JSON-LD. The install and comparison pages add FAQPage entities for the questions visible on those pages. The build includes robots.txt, sitemap.xml, llms.txt, llms-full.txt, a 1200×630 social image and Cloudflare security/cache headers. Umami records pageviews and key actions on reatool.dev; see ANALYTICS.md for event definitions. No cookie banner is installed. After deployment, verify the domain in Google Search Console and submit `https://reatool.dev/sitemap.xml`.
 
 `src/data/seo.ts` owns page titles, descriptions, guide headings, breadcrumb labels and related-guide links. Keep each page focused on one REA search intent. The shared layout emits linked publisher, website and page entities; articles use TechArticle, the catalog uses CollectionPage/ItemList, and visible breadcrumbs match BreadcrumbList. `verify:seo` checks the built metadata, graph relationships, catalog entries, FAQ visibility, crawler robots rules, llms files and sitemap coverage. See `SEO-IMPLEMENTATION.md` for the earlier verification notes. Historical notes do not replace a new check.
 

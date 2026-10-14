@@ -1,0 +1,36 @@
+name: Windows practice check
+on:
+  push:
+    paths:
+      - '.github/workflows/windows-practice.yml'
+      - 'fixtures/**'
+      - 'public/downloads/notes-first-practice.zip'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  practice:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.1'
+      - name: Extract and check the published practice kit
+        shell: pwsh
+        run: |
+          Expand-Archive public/downloads/notes-first-practice.zip "$env:RUNNER_TEMP/REA practice"
+          Set-Location "$env:RUNNER_TEMP/REA practice/notes-example"
+          node check.cjs
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npx.cmd -y rea-agents@6.4.0 analyze-javascript-application . --json > notes-analysis.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Get-Content notes-analysis.json -Raw | ConvertFrom-Json | Out-Null
+      - name: Preview Windows client setup without changing registration
+        shell: pwsh
+        run: |
+          foreach ($client in @('codex', 'claude_code', 'cursor')) {
+            npx.cmd -y rea-agents@6.4.0 setup --client $client --dry-run --json > "$client-plan.json"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            Get-Content "$client-plan.json" -Raw | ConvertFrom-Json | Out-Null
+          }

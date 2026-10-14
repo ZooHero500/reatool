@@ -49,17 +49,18 @@ const kindLabel: Record<PracticeKind, string> = {
           <h2 id={`preview-title-${note.id}`}>{note.title}</h2>
           <p>{note.preview}</p>
           <div class="practice-actions">
-            {primary && <a class="button primary" href={primary.url} target="_blank" rel="noopener noreferrer">{primary.label} <span aria-hidden="true">↗</span></a>}
-            {note.lab && <a class="button secondary" href={note.lab.href}>{note.lab.label}</a>}
-            {note.also && <a class="button secondary" href={note.also.href}>{note.also.label}</a>}
+            {primary && <a class="button primary" data-track="case_source" data-track-item={note.id} href={primary.url} target="_blank" rel="noopener noreferrer">{primary.label} <span aria-hidden="true">↗</span></a>}
+            {note.lab && <a class="button secondary" data-track="case_tutorial" data-track-item={note.id} href={note.lab.href}>{note.lab.label}</a>}
+            {note.also && <a class="button secondary" data-track="case_tutorial" data-track-item={note.id} href={note.also.href}>{note.also.label}</a>}
           </div>
-          {rest.length > 0 && <p class="practice-more">{rest.map(source => <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label} <span aria-hidden="true">↗</span></a>)}</p>}
+          {rest.length > 0 && <p class="practice-more">{rest.map(source => <a data-track="case_source" data-track-item={note.id} href={source.url} target="_blank" rel="noopener noreferrer">{source.label} <span aria-hidden="true">↗</span></a>)}</p>}
         </div>
       </div>
     </dialog>;
   })}
 </div>
 <script>
+  import {track} from '../lib/analytics';
   const previewDialog = (id: string) => {
     const dialog = document.getElementById(`preview-${id}`);
     return dialog instanceof HTMLDialogElement ? dialog : null;
@@ -75,7 +76,7 @@ const kindLabel: Record<PracticeKind, string> = {
   const openPreview = (id: string) => {
     const dialog = previewDialog(id);
     if (!dialog) return;
-    if (!dialog.open) dialog.showModal();
+    if (!dialog.open) { dialog.showModal(); track('case_preview', {item: id}); }
     setModal(true);
     const next = `#${id}`;
     if (location.hash !== next) history.replaceState(null, '', `${location.pathname}${location.search}${next}`);
@@ -106,6 +107,7 @@ const kindLabel: Record<PracticeKind, string> = {
   const count = document.querySelector<HTMLElement>('[data-practice-count]');
   filters.forEach(button => button.addEventListener('click', () => {
     const kind = button.dataset.practiceFilter;
+    track('case_filter', {item: kind || 'all'});
     filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     let visible = 0;
     cards.forEach(card => {
@@ -120,6 +122,7 @@ const kindLabel: Record<PracticeKind, string> = {
     const dialog = dialogFromHash(location.hash);
     if (!dialog || dialog.open) return;
     dialog.showModal();
+    track('case_preview', {item: dialog.id.replace(/^preview-/, '')});
     setModal(true);
   };
   openFromHash();
