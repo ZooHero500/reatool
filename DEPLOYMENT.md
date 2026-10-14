@@ -6,18 +6,20 @@ Latest feature deployment verified on 2026-10-14 via Cloudflare Pages Git integr
 - Environment: Production
 - Production branch: `main`
 - Public URL: https://reatool.pages.dev/
-- Deployment URL: https://7e47b020.reatool.pages.dev/
-- Deployment ID: `7e47b020-3954-4f25-a047-041111172f8b`
-- Feature source commit: `829bf70` (`feat(practice): 新增案例卡片并优化八语言文案`)
+- Deployment URL: https://ce058e0e.reatool.pages.dev/
+- Deployment ID: `ce058e0e-7599-4f2e-92c0-1f7f57ba32c0`
+- Feature source commit: `386d49d` (`feat(onboarding): 增加操作统计和八语言 Windows 入门练习`)
 - Method: Git integration with `ZooHero500/reatool`; pushing `main` triggers production deployment. Wrangler Direct Upload remains a manual fallback.
 - Custom domain: `https://reatool.dev/` is attached and serves the deployed site. No domain or DNS settings were changed by this task.
 - Canonical and sitemap URLs remain `https://reatool.dev` as intended for the custom domain.
 
 ## Verification
 
-The feature deployment adds 45 community cases, 12 homepage cards, category filters and preview dialogs, with revised copy in all eight languages. `check`, `build`, `verify:site`, `verify:seo` and `verify:i18n` passed: 152 localized pages, 144 indexable URLs and 6,144 internal links/assets. All eight live homepages and practice pages were compared with the local build for titles, language, headings, canonicals and card counts; each has nine alternate-language links. Referenced build assets return HTTP 200. Live browser checks cover the Chinese case preview and original link, REA filtering, Escape dismissal, Russian same-page language switching, narrow-screen overflow, and installation-prompt clipboard contents. Community projects themselves have not been independently reproduced.
+The feature deployment adds key-action tracking, Windows PowerShell/client-specific setup commands, and a downloadable first-practice kit with eight-language instructions. `check`, `build`, `verify:site`, `verify:seo` and `verify:i18n` passed: 152 localized pages, 144 indexable URLs and 6,176 internal links/assets. Browser checks cover all eight languages, three client choices, clipboard success/failure, tracker failure, narrow screens and same-page language switching. See `ONBOARDING-VERIFICATION.md` and `ANALYTICS.md`. Windows Actions run [38519249150](https://github.com/ZooHero500/reatool/actions/runs/38519249150) also passed the packaged exercise, REA static analysis and three client setup previews.
 
-Cloudflare confirms the feature deployment is Production / main for commit `829bf70`. The following documentation commit records this verification and corrects the former Direct Upload instructions; it does not change the built site.
+All 16 live installation/first-analysis pages match local metadata, contain the new controls/download and nine alternate-language links. All three referenced build assets return 200; the live ZIP is byte-identical to the checked local archive. A real production browser copied the correct Windows/Codex setup command; `os_select`, `client_select` and `copy_success` requests each returned HTTP 200 from Umami. This one QA visit used `?qa=onboarding`. Dashboard receipt could not be checked: the existing Umami login expired and refreshing redirected to login. This does not establish report-level receipt.
+
+Cloudflare confirms Production / main for feature commit `386d49d`, deployment `ce058e0e-7599-4f2e-92c0-1f7f57ba32c0`. The following documentation commit records live verification without changing built pages.
 
 ### Previous feature verification
 
