@@ -15,7 +15,7 @@ const title=metadata?.title??Astro.props.title;
 const description=metadata?.description??Astro.props.description;
 if(!title||!description)throw new Error(`Missing page metadata for ${path}`);
 const canonical = new URL(path, Astro.site);
-const nav = [{href:'/tutorials/',label:'Tutorials'},{href:'/install/',label:'Install REA'},{href:'/compare/',label:'Compare'},{href:'/#play-cases',label:'Interactive labs'}];
+const nav = [{href:'/practice/',label:'Practice'},{href:'/tutorials/',label:'Tutorials'},{href:'/install/',label:'Install REA'},{href:'/compare/',label:'Compare'},{href:'/#play-cases',label:'Labs'}];
 const siteUrl='https://reatool.dev/';
 const breadcrumbs=breadcrumbsFor(path);
 const pageEntity={
@@ -63,7 +63,7 @@ const structured={'@context':'https://schema.org','@graph':[
     <main id="main"><slot/></main>
     <footer class="site-footer wrap">
       <div><a class="footer-brand" href="/">reatool<span>.</span>dev</a><p>REA setup, tutorials and worked examples.<br/>An independent learning resource.</p></div>
-      <div class="footer-links"><a href="/install/">Install REA</a><a href="/compare/">Compare REA</a><a href="/about/">About & editorial method</a><a href="https://rea.tools/">Official website ↗</a><a href="https://github.com/morluto/rea">GitHub ↗</a></div>
+      <div class="footer-links"><a href="/practice/">Practice</a><a href="/install/">Install REA</a><a href="/compare/">Compare REA</a><a href="/about/">About & editorial method</a><a href="https://rea.tools/">Official website ↗</a><a href="https://github.com/morluto/rea">GitHub ↗</a></div>
       <div class="footer-bottom"><span>Independent community resource. Not affiliated with the REA maintainers.</span><span>© 2026 REA Tool</span></div>
     </footer>
     <div id="copy-status" class="sr-only" role="status" aria-live="polite"></div>

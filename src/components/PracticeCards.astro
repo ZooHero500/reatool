@@ -1,0 +1,127 @@
+---
+import {type PracticeNote, type PracticeKind} from '../data/field-notes';
+interface Props { notes: PracticeNote[]; filterable?: boolean }
+const {notes, filterable = false} = Astro.props;
+const kindLabel: Record<PracticeKind, string> = {
+  rea: 'REA in practice',
+  other: 'AI reverse engineering',
+  unconfirmed: 'Community projects',
+  official: 'Official examples'
+};
+---
+<div class:list={['practice-block', {wrap: filterable}]}>
+  {filterable && <div class="practice-toolbar">
+    <div class="practice-filters" role="toolbar" aria-label="Filter cases">
+      <button type="button" data-practice-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-practice-filter="rea" aria-pressed="false">REA in practice</button>
+      <button type="button" data-practice-filter="other" aria-pressed="false">AI reverse engineering</button>
+      <button type="button" data-practice-filter="unconfirmed" aria-pressed="false">Community projects</button>
+      <button type="button" data-practice-filter="official" aria-pressed="false">Official examples</button>
+    </div>
+    <p class="practice-count"><span data-practice-count>{notes.length}</span> <span>cases</span></p>
+  </div>}
+  <p class="practice-empty" hidden>No cases in this category yet.</p>
+  <div class="practice-grid">
+    {notes.map(note => <button type="button" class="practice-card" id={note.id} data-practice-kind={note.kind} data-practice-open={note.id} aria-haspopup="dialog" aria-controls={`preview-${note.id}`}>
+      <span class="practice-cover">
+        {note.image && <img src={note.image} alt={note.imageAlt} loading="lazy" decoding="async" referrerpolicy="no-referrer"/>}
+        <span class="practice-fallback" aria-hidden="true" translate="no"><span>{note.mark}</span></span>
+        <span class={`practice-badge kind-${note.kind}`}>{kindLabel[note.kind]}</span>
+        {note.likes && <span class="practice-heat">{note.likes} <span>likes</span></span>}
+      </span>
+      <span class="practice-card-body">
+        <span class="practice-title">{note.title}</span>
+        <span class="practice-line">{note.line}</span>
+      </span>
+    </button>)}
+  </div>
+  {notes.map(note => {
+    const [primary, ...rest] = note.sources;
+    return <dialog id={`preview-${note.id}`} class="practice-dialog" aria-labelledby={`preview-title-${note.id}`}>
+      <div class="practice-sheet">
+        <button type="button" class="practice-close" data-practice-close>Close</button>
+        <div class="practice-cover">
+          {note.image && <img src={note.image} alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"/>}
+          <div class="practice-fallback" aria-hidden="true" translate="no"><span>{note.mark}</span></div>
+        </div>
+        <div class="practice-sheet-body">
+          <p class="practice-kicker"><span class={`kind-${note.kind}`}>{kindLabel[note.kind]}</span>{note.likes && <span class="practice-kicker-heat">{note.likes} <span>likes</span></span>}</p>
+          <h2 id={`preview-title-${note.id}`}>{note.title}</h2>
+          <p>{note.preview}</p>
+          <div class="practice-actions">
+            {primary && <a class="button primary" href={primary.url} target="_blank" rel="noopener noreferrer">{primary.label} <span aria-hidden="true">↗</span></a>}
+            {note.lab && <a class="button secondary" href={note.lab.href}>{note.lab.label}</a>}
+            {note.also && <a class="button secondary" href={note.also.href}>{note.also.label}</a>}
+          </div>
+          {rest.length > 0 && <p class="practice-more">{rest.map(source => <a href={source.url} target="_blank" rel="noopener noreferrer">{source.label} <span aria-hidden="true">↗</span></a>)}</p>}
+        </div>
+      </div>
+    </dialog>;
+  })}
+</div>
+<script>
+  const previewDialog = (id: string) => {
+    const dialog = document.getElementById(`preview-${id}`);
+    return dialog instanceof HTMLDialogElement ? dialog : null;
+  };
+  const dialogFromHash = (hash: string) => {
+    const id = decodeURIComponent(hash.replace(/^#/, ''));
+    if (!id) return null;
+    const direct = document.getElementById(id);
+    if (direct instanceof HTMLDialogElement) return direct;
+    return previewDialog(id);
+  };
+  const setModal = (open: boolean) => document.body.classList.toggle('practice-modal', open);
+  const openPreview = (id: string) => {
+    const dialog = previewDialog(id);
+    if (!dialog) return;
+    if (!dialog.open) dialog.showModal();
+    setModal(true);
+    const next = `#${id}`;
+    if (location.hash !== next) history.replaceState(null, '', `${location.pathname}${location.search}${next}`);
+  };
+  document.querySelectorAll<HTMLButtonElement>('[data-practice-open]').forEach(button => {
+    button.addEventListener('click', () => openPreview(button.dataset.practiceOpen || ''));
+  });
+  document.querySelectorAll<HTMLElement>('[data-practice-close]').forEach(button => {
+    button.addEventListener('click', () => button.closest('dialog')?.close());
+  });
+  document.querySelectorAll<HTMLDialogElement>('.practice-dialog').forEach(dialog => {
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => {
+      if (document.querySelector('dialog[open]')) return;
+      setModal(false);
+      const noteId = dialog.id.replace(/^preview-/, '');
+      if (location.hash === `#${noteId}` || location.hash === `#${dialog.id}`) {
+        history.replaceState(null, '', `${location.pathname}${location.search}`);
+      }
+    });
+  });
+  document.querySelectorAll<HTMLImageElement>('.practice-cover img').forEach(img => {
+    img.addEventListener('error', () => img.parentElement?.classList.add('is-fallback'));
+  });
+  const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-practice-filter]')];
+  const cards = [...document.querySelectorAll<HTMLElement>('.practice-card')];
+  const empty = document.querySelector<HTMLElement>('.practice-empty');
+  const count = document.querySelector<HTMLElement>('[data-practice-count]');
+  filters.forEach(button => button.addEventListener('click', () => {
+    const kind = button.dataset.practiceFilter;
+    filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    let visible = 0;
+    cards.forEach(card => {
+      const show = kind === 'all' || card.dataset.practiceKind === kind;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (count) count.textContent = String(visible);
+    if (empty) empty.hidden = visible !== 0;
+  }));
+  const openFromHash = () => {
+    const dialog = dialogFromHash(location.hash);
+    if (!dialog || dialog.open) return;
+    dialog.showModal();
+    setModal(true);
+  };
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+</script>

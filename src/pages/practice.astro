@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PracticeCards from '../components/PracticeCards.astro';
+import {fieldNotes} from '../data/field-notes';
+
+const collectionItems = fieldNotes.map(note => ({name: note.title, url: `/practice/#${note.id}`}));
+---
+<Base collectionItems={collectionItems}>
+  <div class="practice-page">
+    <header class="wrap practice-intro">
+      <Breadcrumbs/>
+      <p class="eyebrow">REA / Community showcase</p>
+      <h1>REA in action</h1>
+      <p class="article-intro">From smart devices to desktop apps and classic games: explore what developers have built with REA and other reverse-engineering tools. Open a case to see the approach, the result, and the original project.</p>
+    </header>
+    <PracticeCards notes={fieldNotes} filterable/>
+    <div class="wrap practice-foot">
+      <h2>About this collection</h2>
+      <p>These summaries follow the authors’ public posts and projects; community results have not been independently reproduced here. Linked tutorials and interactive demos are our own teaching examples, with their verification scope documented on each page.</p>
+      <p class="sources"><a href="https://github.com/songshikang0111/awesome-REA-cases">Browse the community case directory</a></p>
+      <p>Like counts were recorded from 12 to 14 October 2026.</p>
+      <a class="next-guide" href="/tutorials/"><span>Try it yourself</span><strong>Choose an REA tutorial <span>→</span></strong></a>
+    </div>
+  </div>
+</Base>

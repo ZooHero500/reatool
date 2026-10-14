@@ -1,0 +1,15 @@
+---
+import PracticeCards from './PracticeCards.astro';
+import {featuredNotes, fieldNotes} from '../data/field-notes';
+---
+<section class="practice-home wrap" id="in-practice" aria-labelledby="practice-heading">
+  <div class="section-top">
+    <div>
+      <p class="eyebrow">Community showcase</p>
+      <h2 id="practice-heading">What people are building with REA</h2>
+    </div>
+    <a class="text-link" href="/practice/">All {fieldNotes.length} cases <span>↗</span></a>
+  </div>
+  <p class="practice-lead">Control devices, build new tools, and bring old games back to life. Explore REA projects and related work from the reverse-engineering community.</p>
+  <PracticeCards notes={featuredNotes}/>
+</section>

@@ -39,6 +39,8 @@
       "/ schema",
       "/install/ schema",
       "/install/ a",
+      "/practice/ schema",
+      "/practice/ a",
       "/tutorials/android-api/ schema",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ schema",
@@ -68,6 +70,7 @@
       "/first-analysis/ schema",
       "/ schema",
       "/install/ schema",
+      "/practice/ schema",
       "/tutorials/android-api/ schema",
       "/tutorials/browser-export/ schema",
       "/tutorials/compare-releases/ schema",
@@ -91,6 +94,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -114,6 +118,7 @@
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
+      "/practice/ aria-label",
       "/tutorials/android-api/ aria-label",
       "/tutorials/browser-export/ aria-label",
       "/tutorials/compare-releases/ aria-label",
@@ -149,6 +154,8 @@
       "/ a",
       "/install/ span",
       "/install/ a",
+      "/practice/ span",
+      "/practice/ a",
       "/tutorials/android-api/ span",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ span",
@@ -178,6 +185,7 @@
       "/first-analysis/ span",
       "/ span",
       "/install/ span",
+      "/practice/ span",
       "/tutorials/android-api/ span",
       "/tutorials/browser-export/ span",
       "/tutorials/compare-releases/ span",
@@ -201,12 +209,37 @@
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
+      "/practice/ aria-label",
       "/tutorials/android-api/ aria-label",
       "/tutorials/browser-export/ aria-label",
       "/tutorials/compare-releases/ aria-label",
       "/tutorials/electron-clipboard/ aria-label",
       "/tutorials/ aria-label",
       "/tutorials/native-error/ aria-label"
+    ]
+  },
+  "d3857b12b4ce": {
+    "text": "Practice",
+    "contexts": [
+      "/404.html a",
+      "/about/ a",
+      "/cases/aegis/ a",
+      "/cases/calculator/ a",
+      "/cases/dino/ a",
+      "/cases/dx-ball/ a",
+      "/cases/slugify/ a",
+      "/cases/th04/ a",
+      "/compare/ a",
+      "/first-analysis/ a",
+      "/ a",
+      "/install/ a",
+      "/practice/ a",
+      "/tutorials/android-api/ a",
+      "/tutorials/browser-export/ a",
+      "/tutorials/compare-releases/ a",
+      "/tutorials/electron-clipboard/ a",
+      "/tutorials/ a",
+      "/tutorials/native-error/ a"
     ]
   },
   "8d9f66992dd4": {
@@ -224,6 +257,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -249,6 +283,7 @@
       "/install/ schema",
       "/install/ a",
       "/install/ span",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -272,6 +307,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -280,8 +316,8 @@
       "/tutorials/native-error/ a"
     ]
   },
-  "125dfcae9419": {
-    "text": "Interactive labs",
+  "d181843c9a23": {
+    "text": "Labs",
     "contexts": [
       "/404.html a",
       "/about/ a",
@@ -295,6 +331,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -318,6 +355,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -341,6 +379,7 @@
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
+      "/practice/ aria-label",
       "/tutorials/android-api/ aria-label",
       "/tutorials/browser-export/ aria-label",
       "/tutorials/compare-releases/ aria-label",
@@ -365,6 +404,7 @@
       "/first-analysis/ aria-label",
       "/ aria-label",
       "/install/ aria-label",
+      "/practice/ aria-label",
       "/tutorials/android-api/ aria-label",
       "/tutorials/browser-export/ aria-label",
       "/tutorials/compare-releases/ aria-label",
@@ -388,6 +428,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -429,6 +470,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -452,6 +494,7 @@
       "/first-analysis/ p",
       "/ p",
       "/install/ p",
+      "/practice/ p",
       "/tutorials/android-api/ p",
       "/tutorials/browser-export/ p",
       "/tutorials/compare-releases/ p",
@@ -475,6 +518,7 @@
       "/first-analysis/ p",
       "/ p",
       "/install/ p",
+      "/practice/ p",
       "/tutorials/android-api/ p",
       "/tutorials/browser-export/ p",
       "/tutorials/compare-releases/ p",
@@ -500,6 +544,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -525,6 +570,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -548,6 +594,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -571,6 +618,7 @@
       "/first-analysis/ a",
       "/ a",
       "/install/ a",
+      "/practice/ a",
       "/tutorials/android-api/ a",
       "/tutorials/browser-export/ a",
       "/tutorials/compare-releases/ a",
@@ -594,6 +642,7 @@
       "/first-analysis/ span",
       "/ span",
       "/install/ span",
+      "/practice/ span",
       "/tutorials/android-api/ span",
       "/tutorials/browser-export/ span",
       "/tutorials/compare-releases/ span",
@@ -617,6 +666,7 @@
       "/first-analysis/ span",
       "/ span",
       "/install/ span",
+      "/practice/ span",
       "/tutorials/android-api/ span",
       "/tutorials/browser-export/ span",
       "/tutorials/compare-releases/ span",
@@ -653,6 +703,7 @@
       "/compare/ aria-label",
       "/first-analysis/ aria-label",
       "/install/ aria-label",
+      "/practice/ aria-label",
       "/tutorials/android-api/ aria-label",
       "/tutorials/browser-export/ aria-label",
       "/tutorials/compare-releases/ aria-label",
@@ -5631,6 +5682,12 @@
       "/ a"
     ]
   },
+  "34e608fc4257": {
+    "text": "How people use REA →",
+    "contexts": [
+      "/ a"
+    ]
+  },
   "f1c4058124db": {
     "text": "Compare REA →",
     "contexts": [
@@ -5647,6 +5704,419 @@
     "text": "Official REA project ↗",
     "contexts": [
       "/ a"
+    ]
+  },
+  "720820953e64": {
+    "text": "Community showcase",
+    "contexts": [
+      "/ p"
+    ]
+  },
+  "f9d037e7593f": {
+    "text": "What people are building with REA",
+    "contexts": [
+      "/ h2"
+    ]
+  },
+  "499e8296bf3b": {
+    "text": "All 45 cases",
+    "contexts": [
+      "/ a"
+    ]
+  },
+  "d7401d25676a": {
+    "text": "Control devices, build new tools, and bring old games back to life. Explore REA projects and related work from the reverse-engineering community.",
+    "contexts": [
+      "/ p"
+    ]
+  },
+  "ca5fb26775b0": {
+    "text": "No cases in this category yet.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "fcbab90defa2": {
+    "text": "Cover from the original post",
+    "contexts": [
+      "/ alt",
+      "/practice/ alt"
+    ]
+  },
+  "5a9a46df8609": {
+    "text": "AI reverse engineering",
+    "contexts": [
+      "/ span",
+      "/practice/ button",
+      "/practice/ span"
+    ]
+  },
+  "b0aa8a6c35b4": {
+    "text": "likes",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "53cfdb7a787e": {
+    "text": "Control an air conditioner from the Mac menu bar",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "37f29b0c7f8e": {
+    "text": "Analyze the phone app’s network calls with Codex, then build a Mac control.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "8f26f7faeebb": {
+    "text": "Universal Modder: mods across existing games",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "965e52d8f049": {
+    "text": "Claude is shown adding a civilization to Age of Empires II and Minecraft pieces to GTA V.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "067c73bc2325": {
+    "text": "REA in practice",
+    "contexts": [
+      "/ span",
+      "/practice/ button",
+      "/practice/ span"
+    ]
+  },
+  "daec9c7c5df5": {
+    "text": "A purchased Steam game, opened in Unity",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "c2508d9dd3e2": {
+    "text": "The author reports recovering C# from a purchased Steam game with REA.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "16c09229c1ff": {
+    "text": "Firefighter: an old DOS game, rewritten in Rust",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "42556d3eeaca": {
+    "text": "The author reports recovering Pascal-shaped logic from the binary, then rewriting it.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "9f9238564691": {
+    "text": "A faster Plex client for one LG TV",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "f48a754a65b5": {
+    "text": "Ghidra and Claude Code led to a Rust client.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "ebbaeb2600d1": {
+    "text": "Modern Warfare 2, checked against the original bytes",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "5634d1f8d904": {
+    "text": "A three-month, multi-agent decompilation. The author says the code stays private.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "e18d065333c5": {
+    "text": "Community projects",
+    "contexts": [
+      "/ span",
+      "/practice/ button",
+      "/practice/ span"
+    ]
+  },
+  "428b8ef8c309": {
+    "text": "An Apple TV remote, driving Linux",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "012882007f30": {
+    "text": "A published bridge for touch, buttons and the microphone.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "2010194e811b": {
+    "text": "Blue Star, controlled from the menu bar",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "81f5aeba4395": {
+    "text": "An MCP server for one air conditioner, then a menu-bar app.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "473ae4310668": {
+    "text": "Claude’s Chrome control, pointed at a remote browser",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "0dc278a7b197": {
+    "text": "A public plugin forwards browser actions to a cloud browser.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "1f4c8c0b95fb": {
+    "text": "Tuya lights, controlled from a Mac",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "a492995d253e": {
+    "text": "Claude read phone Bluetooth traffic. A script then changed the bulbs.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "a82a2b35d22a": {
+    "text": "Claude Slides: an editor rebuilt from the page bundle",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "ce6fd1fff35c": {
+    "text": "Analyze the front-end bundle with Codex and REA, then build an editor in BaoCut.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "f36990b50cc2": {
+    "text": "macOS Preview: once with REA, once without",
+    "contexts": [
+      "/ span",
+      "/ h2",
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "274f3fd7e0b9": {
+    "text": "The author says Claude alone finished faster. The REA pass came closer on the features that matter.",
+    "contexts": [
+      "/ span",
+      "/practice/ span"
+    ]
+  },
+  "7d9eb7acb13e": {
+    "text": "Close",
+    "contexts": [
+      "/ button",
+      "/practice/ button"
+    ]
+  },
+  "30f91970da50": {
+    "text": "Ilter Canberk used Codex to inspect an air conditioner app’s network calls in an Android emulator and built a Mac menu-bar control. He later used Codex and Lens Studio to bring the same controls to AR glasses.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "845c9f264c9a": {
+    "text": "Original post",
+    "contexts": [
+      "/ a",
+      "/practice/ a"
+    ]
+  },
+  "2d2af5ac947c": {
+    "text": "Author’s reply",
+    "contexts": [
+      "/ a",
+      "/practice/ a"
+    ]
+  },
+  "ffe33a144a8a": {
+    "text": "Follow-up post",
+    "contexts": [
+      "/ a",
+      "/practice/ a"
+    ]
+  },
+  "745cf97af672": {
+    "text": "Rehan Sheikh demonstrates an agent analyzing game files, generating mods, and testing them in the running game. Examples include a new civilization in Age of Empires II and Minecraft characters in GTA V.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "d29a0b2e0cc5": {
+    "text": "A.I.Warper says a first session with REA decompiled a Steam game he had already bought and opened it in Unity in under 30 minutes, using Opus 5.5. The post names neither the game nor a repository, and there is no clip.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "6c0f0c7309b0": {
+    "text": "Eric S. Raymond wanted the DOS game Firefighter in a maintainable form for an old-game collection.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "f3307a3c6d43": {
+    "text": "Ghidra and Claude Code were used to study that TV’s media stack, then a Rust and OpenGL client called PlxNative was built. The author says the menu on that set dropped from about 30 seconds to about 3, with 4K playback.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "8760103a91f4": {
+    "text": "Developer write-up",
+    "contexts": [
+      "/ a",
+      "/practice/ a"
+    ]
+  },
+  "cd12d58ba599": {
+    "text": "Maurice Heumann describes about three months of work on Call of Duty: Modern Warfare 2, with many agents plus IDA. His recap says the game runs and that 83% of functions match the original bytes. He also says the source will not be published.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "8328c7b66431": {
+    "text": "Alex Funk wanted a first-generation Siri Remote to talk to a Linux machine instead of only an Apple TV. He published open-appleremote and a clip of touch, buttons, gestures and the microphone.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "d6e6cdd8433d": {
+    "text": "Project page",
+    "contexts": [
+      "/ a",
+      "/practice/ a"
+    ]
+  },
+  "8fe95261f56b": {
+    "text": "MC reverse engineered the Blue Star air conditioner app, built an MCP server, and connected it to a Mac menu-bar app. His earlier post shows how the server lets Claude or ChatGPT set the temperature.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "1a43383d692a": {
+    "text": "Earlier post",
+    "contexts": [
+      "/ a",
+      "/practice/ a"
+    ]
+  },
+  "12e9dfd4f3f3": {
+    "text": "Paul Klein wanted Claude Code to drive a browser that was not on the same machine. The thread shows the local Chrome connection being translated into commands for a Browserbase cloud browser, with a demo and a public plugin.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "45dae81a75df": {
+    "text": "Lucho did not want the Tuya phone app to be the only way to run RGB bulbs he owned. He reports that Claude read the Bluetooth traffic from the phone, and a Mac script then sent the commands. The post includes the lights actually changing.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "8d238ba80ac7": {
+    "text": "Baoyu downloaded the scripts and styles behind Claude’s slide editor, used Codex with REA to analyze the obfuscated code, and had Claude Code organize the project. He shared an editor demo and a code commit in JimLiu/baocut.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
+    ]
+  },
+  "8dc4570887a4": {
+    "text": "Code commit",
+    "contexts": [
+      "/ a",
+      "/practice/ a"
+    ]
+  },
+  "65db118238d7": {
+    "text": "The same Preview rebuild was run twice: Claude with REA, and Claude alone. The author says the REA version came closer on zoom, sharing, rotation, annotation and saving, and felt faster at drawing, while the plain Claude pass was faster to finish.",
+    "contexts": [
+      "/ p",
+      "/practice/ p"
     ]
   },
   "8845031be090": {
@@ -6762,6 +7232,852 @@
       "/install/ p"
     ]
   },
+  "180db57d54c0": {
+    "text": "REA Case Studies: Projects, Demos and Original Sources",
+    "contexts": [
+      "/practice/ title",
+      "/practice/ metadata",
+      "/practice/ schema"
+    ]
+  },
+  "d8ff31b6e647": {
+    "text": "Explore REA case studies and AI reverse-engineering projects for smart devices, desktop apps and classic games, with demos and links to the original work.",
+    "contexts": [
+      "/practice/ metadata",
+      "/practice/ schema"
+    ]
+  },
+  "93a010b66946": {
+    "text": "Claude Code: reading a 47 MB compressed package",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "41feabbc84ae": {
+    "text": "A menu-bar control for a smart-toilet lid",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "c7e3f032a449": {
+    "text": "Open Codex annotations from a web page",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "118bc245528f": {
+    "text": "Apple Notes, imported into another notes app",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "fc78d741cba5": {
+    "text": "Boba Fett, dropped into Red Dead Redemption 2",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "f66f79a43aba": {
+    "text": "Urban Terror, running in the browser",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "435519ac43df": {
+    "text": "GarageBand’s project format, used to score a video",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "37b0e0326337": {
+    "text": "Claude Design, wired into BaoCut",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "7e7755899cfa": {
+    "text": "An unnamed binary library",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "70cff5b60bf0": {
+    "text": "Port Virtual Desktop Streamer to Linux",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "556addd89593": {
+    "text": "Fix analysis of Obsidian’s large application archive",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "ae893620b55e": {
+    "text": "Trace MarkText’s HTML export",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "d205f22add66": {
+    "text": "Axure .rp files, opened for an agent",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "357fb1c2121c": {
+    "text": "CapCut, edited from the chat",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "11bad28ee90e": {
+    "text": "A video editor sketched from CapCut",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "3ed1be8c2be2": {
+    "text": "Cameo: a desktop character, rebuilt from the app",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "5899b3ded2c4": {
+    "text": "Recreate a notes app’s CSV export",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "926ad69c9cd7": {
+    "text": "A 20-line Electron notes app on Windows",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "e3b08d556fe5": {
+    "text": "Small binaries, where REA added little",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "a224eb3333ac": {
+    "text": "Stretchly: eight windows, counted in 14 seconds",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "c36bef1e7f17": {
+    "text": "Aegis: the 30-second login code",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "d4e9b2612c96": {
+    "text": "DX-Ball: one stereo-pan function",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "c319e7357c17": {
+    "text": "TH04: how a ring of bullets is aimed",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "2765806287d5": {
+    "text": "Notion: three clipboard paths",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "74c2f00897f1": {
+    "text": "Dinosaur speed, and the calculator percent key",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "153ac74660b4": {
+    "text": "Identify a Flutter APK’s runtime and build",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "61625a8f8ce0": {
+    "text": "ApiDemos: from an APK to one Java method",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "63370b3abda8": {
+    "text": "A HarmonyOS package inventory",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "737b2fa51349": {
+    "text": "PSP programs: teach Ghidra the processor",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "5b2772c3495b": {
+    "text": "Fix architecture detection for MIPS32 firmware",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "284eb8ca0002": {
+    "text": "Extract firmware files and pass them to Ghidra",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "ab131ca9973b": {
+    "text": "CTF: recover a program’s input validation rules",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "7575b647f75c": {
+    "text": "Touhou rebuilds: a method, plus separate projects",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span",
+      "/practice/ h2"
+    ]
+  },
+  "8cb38fad2441": {
+    "text": "REA case studies",
+    "contexts": [
+      "/practice/ schema",
+      "/practice/ span"
+    ]
+  },
+  "1de488e9ea6f": {
+    "text": "REA / Community showcase",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "f4b9ae879f24": {
+    "text": "REA in action",
+    "contexts": [
+      "/practice/ h1"
+    ]
+  },
+  "c55bd1bb9dc5": {
+    "text": "From smart devices to desktop apps and classic games: explore what developers have built with REA and other reverse-engineering tools. Open a case to see the approach, the result, and the original project.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "9fec841b1fe7": {
+    "text": "Filter cases",
+    "contexts": [
+      "/practice/ aria-label"
+    ]
+  },
+  "a52ace420f21": {
+    "text": "All",
+    "contexts": [
+      "/practice/ button",
+      "/tutorials/ button"
+    ]
+  },
+  "9f303dc008a6": {
+    "text": "Official examples",
+    "contexts": [
+      "/practice/ button",
+      "/practice/ span"
+    ]
+  },
+  "352b84777d8d": {
+    "text": "cases",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "ec64b3bc7ef5": {
+    "text": "Muse installed REA and inspected the bundle.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "2c7c7611dfdc": {
+    "text": "REA and Codex read a mini program’s Bluetooth traffic.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "961d06e9239a": {
+    "text": "A test page can open the annotation box and fill it. The comment never reaches the composer.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "b67b59db3558": {
+    "text": "Claude Code is shown moving folders, notes and images into Grape.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "1bc1be5346ee": {
+    "text": "A character mod with a jetpack, built from another game’s model.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "62fc8641912a": {
+    "text": "A Quake-family port started working after a data-layout mismatch was fixed.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "590acae516a1": {
+    "text": "Claude is said to have read the format so local instruments could be composed by an agent.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "f5e4045df41a": {
+    "text": "Add a design skill to BaoCut for editing, revisions and annotations.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "3f8ccd4aa137": {
+    "text": "REA, then a private reimplementation. The library and the scores stay private.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "3379947460c0": {
+    "text": "Cover from the project page",
+    "contexts": [
+      "/practice/ alt"
+    ]
+  },
+  "1cb55fd4b05a": {
+    "text": "Reuse the protocol libraries and replace the audio, video and input layer.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "bbbf2e3199b9": {
+    "text": "REA 4.1.0 failed on a 24 MB archive. Later runs on the same file completed.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "2bdb1cc3be6f": {
+    "text": "The author says 17 tests passed. One Windows check is described as unfinished.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "e94cdf4c5cd5": {
+    "text": "zee-rp says REA helped read the prototype format. The engine is public.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "7405bfe74008": {
+    "text": "Edit an open CapCut project from chat while keeping preview, undo and save working.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "472466182728": {
+    "text": "The author shows captions, transitions, animation and text.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "57621488ee8b": {
+    "text": "Use REA to extract pseudocode, then reimplement the behavior with Claude Code.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "cf5145f16171": {
+    "text": "Cover from the original article",
+    "contexts": [
+      "/practice/ alt"
+    ]
+  },
+  "30d7ba85b77f": {
+    "text": "Trace an Electron export and test a separate CSV formatter.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "b1683dda978c": {
+    "text": "REA 4.1.0 returned a 27-node graph and both IPC channel names.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "3e8454cf1a0a": {
+    "text": "On four stripped binaries, ordinary shell tools scored 74 of 75. REA scored 73.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "cc9c0c90b14c": {
+    "text": "The public introduction says the counts matched a hand check.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "84807b757220": {
+    "text": "The REA project traces one TOTP path and reports 133 agreeing inputs.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "925ea4845e99": {
+    "text": "Recompile a stereo-pan function and match all 63 original bytes.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "84a4bbd5f385": {
+    "text": "Angle spacing for one pattern.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "2c7c4201eebe": {
+    "text": "Copy, copy text, copy image.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "5928f22002f4": {
+    "text": "Explore two familiar rules through analysis and interactive demos.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "cd2fd284340e": {
+    "text": "A pull request reports the snapshot hash and per-ABI digests.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "5f6e78809a99": {
+    "text": "Classes, one overload, and callers. The APK was not executed.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "f0dfdbe16be5": {
+    "text": "Components and hashes from a published HAP. Ark bytecode stayed unread.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "29678155dfc9": {
+    "text": "Allegrex support, checked on a program the contributor compiled.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "56a5c7875861": {
+    "text": "Four real MIPS32 firmware images needed the 32-bit setting.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "e10a39c0384c": {
+    "text": "gzip, USTAR and ext4 fixtures.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "8aedd1a45e80": {
+    "text": "The recovered input was accepted. One changed character was rejected.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "7187d329cab7": {
+    "text": "REA’s note describes the check. Playable builds belong to other repositories.",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "a100017aa744": {
+    "text": "The recording shows Muse installing REA and working through a compressed Claude Code package described as about 47 MB. A later post says the same kind of inspection was used on the language setting.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "c01d782a9333": {
+    "text": "The author wanted the lid controlled from a computer instead of a WeChat mini program. The posts say REA plus Codex read the Bluetooth traffic and produced a Mac menu-bar control. A follow-up says the same menu bar later covered other devices already in that home.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "25e1d3f24243": {
+    "text": "Baoyu wanted a page inside the Codex desktop browser to hand a comment to the conversation. Codex with REA read the Electron code while he clicked through the app. The reported call opens the comment box and pre-fills it. It does not place the comment into the composer or send the message. The call named in the post is document.oai.annotation.request().",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "657451a5f285": {
+    "text": "Ozgur Ozer wanted a path from Apple Notes into his notes app, Grape. The clip shows folders, notes and images coming across after Claude Code inspected Notes.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "8d25ff999028": {
+    "text": "Chris shows Boba Fett moving inside Red Dead Redemption 2. The post says Claude helped read the asset format, export a Battlefront II model, and fit it to Arthur’s rig, with a jetpack, weapons and voice.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "4c4149ecb892": {
+    "text": "levelsio had been trying to put Urban Terror in the browser through ioquake3 and WebAssembly. The new post says the blocker was a layout mismatch between engine structures and the game bytecode. After that fix, the author reports the game joining a multiplayer server.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "1020bf3566f0": {
+    "text": "Anshu was making a music video and wanted the instruments already on the Mac. He says Claude read the GarageBand project format as one step in a larger pipeline that also used Blender and local voice models.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "73111854a333": {
+    "text": "Baoyu added a Claude Design skill to BaoCut, his video agent, and published the commit. He says a standalone skill could not edit, revise and mark, so the integration lives inside the product.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "2f8986fce15e": {
+    "text": "Leo Xiang reports using REA on an encrypted binary library, then asking Claude Code to reimplement it. He says private evaluation numbers landed close to the original. The library, source and test method are not public.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "48ef04f294f3": {
+    "text": "The project keeps the vendor’s macOS protocol libraries and replaces the platform layer with Linux audio, video and input calls. The README says Claude Code and REA built that port from one prompt, plus a later prompt for fixes. It also says the repository does not contain Virtual Desktop code: the build extracts libraries from an installer the user downloads. SteamVR and OpenXR games stay with the Windows streamer.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "3456e4c0c0b4": {
+    "text": "GitHub issue 746 says rea analyze-javascript-application sat quiet, then failed, on obsidian.asar from Obsidian 1.12.7. After the fix, maintainers and the reporter posted completed runs, from 86 to 186 seconds depending on the machine.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "48dc76dfa23a": {
+    "text": "Issue",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "cef653bc382b": {
+    "text": "The author says agents used REA to follow HTML export inside a built MarkText app, and that 17 tests passed. One Windows check is described as still open.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "e24f78814c6c": {
+    "text": "LilZee’s zee-rp project says REA helped read the Axure .rp format. The repository publishes a JavaScript engine and MCP tools so an agent can edit a prototype.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "0bc2274815a5": {
+    "text": "gkxspace says Claude and Codex, with REA, can change an open CapCut project from the chat: the player refreshes, and CapCut’s own undo and save still work. There is no public repository.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "f692c9b672cb": {
+    "text": "Mehal Kumar reports using REA with Claude Code to study CapCut, then generating an editor with captions, transitions, animation and text. He says the first pass took about 30 minutes and that more features are still missing.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "c20a5bb2627e": {
+    "text": "Cameo is a macOS menu-bar app that puts a small animated character on the desktop. The author describes installing REA, taking pseudocode from the compiled app, and asking Claude Code to rebuild the behavior.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "502bfc451955": {
+    "text": "Curtis Pyke’s Kingy AI test followed an export from the renderer to the main-process handler and wrote a separate CSV formatter. The article says all 14 declared tests matched, including a title that contains quotation marks. The boundary is explicit: source analysis and a controlled Node run only.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "127cd5a317f9": {
+    "text": "Original article",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "11300fe0020c": {
+    "text": "Kore D wrote the sample before pointing REA at anything larger: a main process, a preload script, and a store that writes JSON. The article says analyze-javascript-application returned 27 nodes, named notes:search and notes:save, and gave line ranges in the preload file. It parsed three JavaScript files and did not run them.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "e58426538fb5": {
+    "text": "GitTested reviewed rea-agents 6.2.0 with Claude Code. On the native checklist, REA used more tokens and did not win the score. Electron sessions tied, because the agent searched the unpacked app. A full analysis of one 22 MB archive wrote a document too large for one MCP call.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "5f776bfb1560": {
+    "text": "Comparison page",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "9acc3c8d8021": {
+    "text": "A Medium review uses Stretchly, an open-source Electron break app, as a readable target. The visible introduction says a 10 October run finished in 14 seconds: 8 windows, 30 main-process handlers, 31 messages and 9 page-side listeners, all matching a hand check. The full article is member-only.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "fb4bfc629685": {
+    "text": "The official showcase follows the login-code path in an Aegis APK and reports 133 agreeing inputs across three implementations. Our page is a teaching demo with public test vectors.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "e8335afd8c88": {
+    "text": "Official showcase",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "b1c9177d7c9d": {
+    "text": "Aegis lab",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "257e942bb7a1": {
+    "text": "Evidence note",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "e38ec52a3342": {
+    "text": "The upstream case recovers one sound-pan function, reports 3,205 original x86 checks, and says the recompiled function matches all 63 bytes. Our tone demo illustrates direction.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "d506983e49d4": {
+    "text": "DX-Ball lab",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "a0232aaa9608": {
+    "text": "The REA project explains angle spacing, aim and rotation for one bullet ring in Touhou’s Lotus Land Story. The instruction checks cite an existing reconstruction project. Our diagram approximates pointer aiming.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "3a9af161e5df": {
+    "text": "TH04 lab",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "662a6b439af8": {
+    "text": "The official investigation follows copy actions from the renderer through preload and IPC. A later pass names copy, copyText and copyImage as static candidates. Our guide teaches that path.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "f9e6b694f027": {
+    "text": "Clipboard guide",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "f3dba6629c69": {
+    "text": "Pull request",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "170cb36bdf28": {
+    "text": "One investigation checks how a Chromium-derived dinosaur page accelerates. Another reads Windows Calculator’s model library and separates the percent rule for addition from the rule for multiplication. Our labs cover those two rules.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "175a3f6cbbd4": {
+    "text": "Dinosaur lab",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "df74801e9d5d": {
+    "text": "Calculator lab",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "ec667a170468": {
+    "text": "Pull request 1582 parses an APK and reports the Dart snapshot hash plus per-ABI library digests. That identifies which runtime is present. It does not recover a Dart project.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "8e682e9d5789": {
+    "text": "Pull request 738 uses the real ApiDemos APK to list classes, choose an overload and trace callers through JADX. The write-up says the APK was not executed.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "3c4d8d67fe0b": {
+    "text": "Pull request 1447 checks a published HAP and compares CLI and MCP inventories of components, hashes and runtime clues. The case notes say Ark bytecode was not decoded.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "ae6c95553721": {
+    "text": "Issue 1330 asks for Allegrex support. Pull request 1599 connects a Ghidra extension and checks known functions on a PSP program the contributor compiled.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "f984ef0c9c5a": {
+    "text": "Issue 1620 says automatic analysis chose a 64-bit processor for MIPS32 firmware and missed functions. Pull request 1898 sets the 32-bit language and compares four real firmware ELFs with a separate Ghidra export.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "00162878ae66": {
+    "text": "Pull request 741 walks gzip, USTAR and ext4 images the contributor generated, checks extracted hashes, and hands one ELF to Ghidra.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "43fa8a94600b": {
+    "text": "REA’s evidence file for a DownUnderCTF challenge says a recovered input was accepted by the original program and rejected after one character changed.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "350292b7c06a": {
+    "text": "REA’s method note describes recovering old Touhou executables into C++ and checking compiled output. Playable Linux, browser or Windows builds belong to the linked reconstruction projects. Our TH04 page is only the bullet-ring diagram.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "d5e79b327c74": {
+    "text": "About this collection",
+    "contexts": [
+      "/practice/ h2"
+    ]
+  },
+  "d098b40c45c3": {
+    "text": "These summaries follow the authors’ public posts and projects; community results have not been independently reproduced here. Linked tutorials and interactive demos are our own teaching examples, with their verification scope documented on each page.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "c2be4ced4c0b": {
+    "text": "Browse the community case directory",
+    "contexts": [
+      "/practice/ a"
+    ]
+  },
+  "cbb980371edd": {
+    "text": "Like counts were recorded from 12 to 14 October 2026.",
+    "contexts": [
+      "/practice/ p"
+    ]
+  },
+  "4ddaece08b73": {
+    "text": "Try it yourself",
+    "contexts": [
+      "/practice/ span"
+    ]
+  },
+  "fa0fe2d5a7cc": {
+    "text": "Choose an REA tutorial",
+    "contexts": [
+      "/practice/ strong"
+    ]
+  },
   "196a6e87a449": {
     "text": "REA Android Tutorial: Find Request Code in an APK",
     "contexts": [
@@ -7672,12 +8988,6 @@
     "text": "Filter tutorials",
     "contexts": [
       "/tutorials/ aria-label"
-    ]
-  },
-  "a52ace420f21": {
-    "text": "All",
-    "contexts": [
-      "/tutorials/ button"
     ]
   },
   "61a62a841f54": {

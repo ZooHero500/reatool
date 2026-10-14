@@ -117,7 +117,7 @@ const meta=html=>decode(html.match(/<meta name="description" content="([^"]*)"/)
 const textOf=html=>decode(html.replace(/<br\s*\/?>/gi,' ').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim());
 const heading=html=>textOf(html.match(/<h1[^>]*>(.*?)<\/h1>/s)?.[1]??'');
 const sections=html=>[...html.matchAll(/<h2[^>]*>(.*?)<\/h2>/gs)].map(match=>textOf(match[1])).filter(Boolean);
-const preferred=['/','/compare/','/install/','/first-analysis/','/tutorials/','/about/'];
+const preferred=['/','/practice/','/compare/','/install/','/first-analysis/','/tutorials/','/about/'];
 const listed=english.filter(page=>page.path!=='/404.html').sort((a,b)=>{
   const ai=preferred.indexOf(a.path),bi=preferred.indexOf(b.path);
   return (ai<0?preferred.length:ai)-(bi<0?preferred.length:bi)||a.path.localeCompare(b.path);

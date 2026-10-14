@@ -17,6 +17,7 @@ export const pageSeo:Record<string,PageSeo>={
   '/tutorials/native-error/':{title:'REA Native Analysis: Trace a File Size Error',description:'Use REA and Ghidra to trace an error string to a native function. Recover the file size check and design boundary tests for a replacement.',heading:'REA native analysis: what triggers “File too large”?',label:'Native function analysis',related:['/cases/dx-ball/','/cases/th04/','/cases/calculator/']},
   '/tutorials/browser-export/':{title:'REA Browser Tutorial: Trace a File Export',description:'Use REA to investigate a browser export action. Connect requests to loaded code and find when the page generates a download without a server.',heading:'REA browser analysis: what happens after Export?',label:'Browser export analysis',related:['/cases/dino/','/first-analysis/']},
   '/tutorials/compare-releases/':{title:'REA Version Comparison: Investigate an Electron Update',description:'Compare two Electron releases with REA. Find the code change behind a broken workflow, replay the same input, and build a focused regression test.',heading:'REA version comparison: what did the update change?',label:'Electron version comparison',related:['/tutorials/electron-clipboard/','/cases/slugify/']},
+  '/practice/':{title:'REA Case Studies: Projects, Demos and Original Sources',description:'Explore REA case studies and AI reverse-engineering projects for smart devices, desktop apps and classic games, with demos and links to the original work.',heading:'REA in action',label:'REA case studies'},
   '/about/':{title:'About REA Tool: Independent Guides & Editorial Method',description:'How REA Tool writes and checks independent REA tutorials: source attribution, versioned examples, local tests, and clear limits on reconstruction claims.',heading:'About REA Tool',label:'About & editorial method'},
   '/compare/':{title:'REA vs GhidraMCP, ida-pro-mcp, and radare2-mcp',description:`Compare REA ${reaRelease.version} with GhidraMCP, GhydraMCP, ida-pro-mcp, radare2-mcp, and extracting an Electron asar. Facts are cited from public READMEs.`,heading:'REA compared with other agent reverse-engineering tools',label:'Compare REA',intro:'REA (Reverse Engineer Anything) is an MCP server and CLI from morluto/rea. This page compares it with other public tools using their READMEs and two published tests. reatool.dev is an unofficial tutorial site and is not affiliated with the REA maintainers.',related:['/install/','/first-analysis/','/tutorials/electron-clipboard/']}
 };
@@ -24,6 +25,6 @@ export interface Breadcrumb {name:string;path:string}
 export function breadcrumbsFor(path:string):Breadcrumb[]{
   if(path==='/'||!pageSeo[path])return [];
   const items:Breadcrumb[]=[{name:'REA Tool',path:'/'}];
-  if(path!=='/tutorials/'&&path!=='/about/')items.push({name:'REA tutorials',path:'/tutorials/'});
+  if(path!=='/tutorials/'&&path!=='/about/'&&path!=='/practice/')items.push({name:'REA tutorials',path:'/tutorials/'});
   items.push({name:pageSeo[path].label,path});return items;
 }
