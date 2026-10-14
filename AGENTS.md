@@ -67,14 +67,14 @@ npm run verify:i18n
 ## Git 与发布
 
 - GitHub 私库：`ZooHero500/reatool`，默认分支 `main`。提交本次任务相关文件，推送后确认远端提交与本地一致。
-- Cloudflare Pages 项目：`reatool`。当前使用 Wrangler Direct Upload；GitHub 推送不等于网站自动部署。
-- 发布网站更新时，先完成相关验证，再执行：
+- Cloudflare Pages 项目：`reatool`。已接入 GitHub；推送到 `main` 会触发生产环境自动部署。2026-10-14 已核实。
+- 发布网站更新时，先完成相关验证，再提交并推送到 `main`，确认 Cloudflare 对应提交的部署成功。需要手动发布时，可使用备用命令：
 
 ```sh
 npm run deploy
 ```
 
-- `deploy` 会依次执行源码检查、完整构建、站点/SEO/多语言验证，全部通过后再上传到生产环境。
+- 手动 `deploy` 会依次执行源码检查、完整构建、站点/SEO/多语言验证，全部通过后再上传到生产环境。Git 自动部署正常时，无需重复手动上传。
 - 发布后验证线上页面、资源和关键交互，并更新 `DEPLOYMENT.md` 中的部署信息。
 - 用户自行绑定自定义域名，不擅自修改域名或 DNS。
 - 详细说明见 `README.md`、`MULTILINGUAL.md`、`DEPLOYMENT.md` 及各项 `*VERIFICATION.md`。历史验收记录不能代替新改动的验证。
