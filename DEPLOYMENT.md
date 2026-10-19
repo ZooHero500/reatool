@@ -1,19 +1,25 @@
 # Cloudflare Pages deployment
 
-Latest feature deployment verified on 2026-10-14 via Cloudflare Pages Git integration.
+Latest feature deployment verified on 2026-10-19 via Cloudflare Pages Git integration.
 
 - Project: `reatool`
 - Environment: Production
 - Production branch: `main`
 - Public URL: https://reatool.pages.dev/
-- Deployment URL: https://ce058e0e.reatool.pages.dev/
-- Deployment ID: `ce058e0e-7599-4f2e-92c0-1f7f57ba32c0`
-- Feature source commit: `386d49d` (`feat(onboarding): 增加操作统计和八语言 Windows 入门练习`)
+- Deployment URL: https://5e7f44b3.reatool.pages.dev/
+- Deployment ID: `5e7f44b3-e326-4dae-bf3e-d8775e787300`
+- Feature source commit: `afc0e59` (`feat(onboarding): 串联安装与首次练习并同步八语言引导`)
 - Method: Git integration with `ZooHero500/reatool`; pushing `main` triggers production deployment. Wrangler Direct Upload remains a manual fallback.
 - Custom domain: `https://reatool.dev/` is attached and serves the deployed site. No domain or DNS settings were changed by this task.
 - Canonical and sitemap URLs remain `https://reatool.dev` as intended for the custom domain.
 
 ## Verification
+
+The 2026-10-19 update links setup copying and the connection check to the localized first exercise, adds three exercise shortcuts and records the entry point with `practice_start`. All eight language catalogs are complete. `check`, `build`, `verify:site`, `verify:seo` and `verify:i18n` passed: 152 pages, 144 indexable routes and 6,216 internal links/assets. Browser checks covered all eight languages at desktop and mobile widths, with additional real-clipboard, three-client/two-shell, download and language-switch tests in English and Spanish. See `ONBOARDING-VERIFICATION.md`.
+
+GitHub's Cloudflare Pages check reports `completed / success` for `afc0e59`; the production deployment is `5e7f44b3-e326-4dae-bf3e-d8775e787300`. All 24 live homepage/install/first-analysis routes match the local build after excluding Cloudflare's injected analytics script. Their seven build assets return 200, and the practice ZIP is byte-identical to the local archive. A fresh browser context verified the English and Spanish production journey: copy the Windows/Codex command, follow the first-exercise CTA, download the ZIP and copy the localized analysis prompt. Analytics requests were blocked during this production QA; new event payloads were validated with a local tracker spy, not dashboard receipt. The following documentation commit records these results without changing built pages.
+
+### Previous feature verification — 2026-10-14
 
 The feature deployment adds key-action tracking, Windows PowerShell/client-specific setup commands, and a downloadable first-practice kit with eight-language instructions. `check`, `build`, `verify:site`, `verify:seo` and `verify:i18n` passed: 152 localized pages, 144 indexable URLs and 6,176 internal links/assets. Browser checks cover all eight languages, three client choices, clipboard success/failure, tracker failure, narrow screens and same-page language switching. See `ONBOARDING-VERIFICATION.md` and `ANALYTICS.md`. Windows Actions run [38519249150](https://github.com/ZooHero500/reatool/actions/runs/38519249150) also passed the packaged exercise, REA static analysis and three client setup previews.
 
