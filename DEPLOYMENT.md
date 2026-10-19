@@ -6,9 +6,9 @@ Latest feature deployment verified on 2026-10-19 via Cloudflare Pages Git integr
 - Environment: Production
 - Production branch: `main`
 - Public URL: https://reatool.pages.dev/
-- Deployment URL: https://5e7f44b3.reatool.pages.dev/
-- Deployment ID: `5e7f44b3-e326-4dae-bf3e-d8775e787300`
-- Feature source commit: `afc0e59` (`feat(onboarding): 串联安装与首次练习并同步八语言引导`)
+- Deployment URL: https://458f9171.reatool.pages.dev/
+- Deployment ID: `458f9171-7cdf-46fe-aead-c8c34d9b7133`
+- Feature source commit: `afc0e59` (`feat(onboarding): 串联安装与首次练习并同步八语言引导`), followed by command-display fix `4df5a8b`
 - Method: Git integration with `ZooHero500/reatool`; pushing `main` triggers production deployment. Wrangler Direct Upload remains a manual fallback.
 - Custom domain: `https://reatool.dev/` is attached and serves the deployed site. No domain or DNS settings were changed by this task.
 - Canonical and sitemap URLs remain `https://reatool.dev` as intended for the custom domain.
@@ -20,6 +20,8 @@ The 2026-10-19 update links setup copying and the connection check to the locali
 GitHub's Cloudflare Pages check reports `completed / success` for `afc0e59`; the production deployment is `5e7f44b3-e326-4dae-bf3e-d8775e787300`. All 24 live homepage/install/first-analysis routes have the expected metadata, alternates and new navigation. Their seven build assets return 200, and the practice ZIP is byte-identical to the local archive. A fresh browser context verified the English and Spanish production journey: copy the Windows/Codex command, follow the first-exercise CTA, download the ZIP and copy the localized analysis prompt. Analytics requests were blocked during this production QA; new event payloads were validated with a local tracker spy, not dashboard receipt.
 
 Raw HTML comparison also exposed Cloudflare email obfuscation rewriting `rea-agents@6.4.0` inside code blocks. CodeBlock now uses Cloudflare's documented `email_off` comments so commands remain readable without its decoding script. This is a local HTML exception; no Cloudflare zone or DNS setting was changed. Reference: https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/#prevent-cloudflare-from-obfuscating-email
+
+The follow-up fix `4df5a8b` passed all five required checks and Cloudflare's `completed / success` deployment check (`458f9171-7cdf-46fe-aead-c8c34d9b7133`). All 24 live pages match the local HTML after normalizing Cloudflare's injected analytics script and consumed `email_off` comments; seven build assets and the ZIP pass again. With JavaScript disabled, all eight live first-analysis pages display the full pinned Windows command and contain no obfuscated email element. The following documentation commit records this final verification without changing built pages.
 
 ### Previous feature verification — 2026-10-14
 

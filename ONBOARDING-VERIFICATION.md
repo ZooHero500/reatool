@@ -11,6 +11,7 @@
 - The downloadable fixture and executable commands are unchanged. These checks validate the website flow; the prior Windows runner result below remains the evidence for Windows CLI execution.
 - Production: feature `afc0e59` passed the Cloudflare Pages deployment check (`5e7f44b3-e326-4dae-bf3e-d8775e787300`). All 24 live homepage/install/first-analysis routes have the expected metadata, alternates and new navigation; seven build assets and the unchanged ZIP passed HTTP checks. English and Spanish production browser journeys passed command copying, localized CTA navigation, ZIP downloading and analysis-prompt copying. Production QA blocked analytics requests; report-level receipt of the new event was not tested.
 - Raw HTML checks found Cloudflare treating the pinned npm package/version as an email address. CodeBlock now surrounds its displayed code with the documented `email_off` comments to preserve commands without requiring Cloudflare's decoder.
+- Fix `4df5a8b` passed the five required checks and deployed successfully (`458f9171-7cdf-46fe-aead-c8c34d9b7133`). All 24 production pages match the local HTML after normalizing Cloudflare analytics injection and consumed protection comments. With JavaScript disabled, the complete pinned Windows analysis command is readable on all eight live first-analysis pages; no email-obfuscation element remains.
 
 ## Original checks — 2026-10-14
 
