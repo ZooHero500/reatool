@@ -84,6 +84,8 @@ const structured={'@context':'https://schema.org','@graph':[
             if(label) label.textContent=t('Copied');
             button.classList.add('copied');
             document.getElementById('copy-status')!.textContent=t('Copied to clipboard.');
+            const next=button.closest('.code-block, .quick-install-panel')?.querySelector<HTMLElement>('[data-practice-next]');
+            if(next) next.hidden=false;
           } catch {
             if(label) label.textContent=t('Select text');
             document.getElementById('copy-status')!.textContent=t('Copy unavailable. Select and copy the command manually.');

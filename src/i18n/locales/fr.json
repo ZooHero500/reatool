@@ -1407,5 +1407,13 @@
   "ed97fe774a52": "{input} devient {operand}. Appuyez maintenant sur =.",
   "23ad2a41249f": "La division par zéro n’a pas de résultat fini.",
   "bd73e5eea3a3": "Pour + et −, le pourcentage est relatif à {base}.",
-  "c5bfabf38c45": "Pour × et ÷, le second nombre est divisé par 100."
+  "c5bfabf38c45": "Pour × et ÷, le second nombre est divisé par 100.",
+  "d24129123e93": "REA est connecté ? Commencez ici.",
+  "47781d5f3d79": "Téléchargez et décompressez le kit, ouvrez le dossier notes-example dans votre agent de programmation, puis envoyez le prompt d’analyse.",
+  "06ec0e5f8745": "1. Télécharger le kit d’exercice",
+  "51ed259fe75e": "2. Copier le prompt d’analyse",
+  "b61be512b625": "3. Vérifier le résultat",
+  "9e5e959481d4": "Étape suivante : votre première analyse avec REA",
+  "bde34cdcc3b1": "Terminez l’installation, redémarrez votre agent de programmation et vérifiez la connexion à REA. Essayez ensuite l’exemple : trouvez où une application de notes enregistre son export CSV.",
+  "31816728a3d4": "Commencer le premier exercice →"
 }

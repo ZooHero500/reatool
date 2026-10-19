@@ -1407,5 +1407,13 @@
   "ed97fe774a52": "{input} pasa a ser {operand}. Ahora pulsa =.",
   "23ad2a41249f": "La división entre cero no tiene un resultado finito.",
   "bd73e5eea3a3": "Para + y −, el porcentaje es relativo a {base}.",
-  "c5bfabf38c45": "Para × y ÷, el segundo número se divide entre 100."
+  "c5bfabf38c45": "Para × y ÷, el segundo número se divide entre 100.",
+  "d24129123e93": "¿Ya conectaste REA? Empieza aquí.",
+  "47781d5f3d79": "Descarga y descomprime el kit, abre notes-example en tu agente de programación y envía el prompt de análisis.",
+  "06ec0e5f8745": "1. Descarga el kit de práctica",
+  "51ed259fe75e": "2. Copia el prompt de análisis",
+  "b61be512b625": "3. Comprueba el resultado",
+  "9e5e959481d4": "Siguiente paso: tu primera tarea con REA",
+  "bde34cdcc3b1": "Termina la instalación, reinicia tu agente de programación y comprueba la conexión con REA. Después prueba el ejemplo: descubre dónde guarda una aplicación de notas su archivo CSV.",
+  "31816728a3d4": "Empezar el primer ejercicio →"
 }

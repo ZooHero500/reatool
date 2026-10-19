@@ -1,4 +1,4 @@
-type EventName = 'copy_success' | 'client_select' | 'os_select' | 'sample_download' | 'case_preview' | 'case_filter' | 'case_source' | 'case_tutorial' | 'guide_open';
+type EventName = 'copy_success' | 'client_select' | 'os_select' | 'sample_download' | 'case_preview' | 'case_filter' | 'case_source' | 'case_tutorial' | 'guide_open' | 'practice_start';
 
 /** Fixed editorial IDs only: never send clipboard contents, local paths or input. */
 export function track(name: EventName, data: {item: string; client?: string; os?: string}) {

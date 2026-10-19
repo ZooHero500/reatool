@@ -1,4 +1,5 @@
 ---
+import PracticeNext from './PracticeNext.astro';
 const prompt = 'Install REA for this coding agent using npx rea-agents@latest setup. Show me the proposed configuration changes before applying them. Then tell me how to restart and verify the connection. My first target will be a local JavaScript package.';
 ---
 <section class="quick-install wrap" id="quick-install" aria-labelledby="quick-install-title">
@@ -16,6 +17,7 @@ const prompt = 'Install REA for this coding agent using npx rea-agents@latest se
     <div class="quick-install-label"><span class="blue-dot" aria-hidden="true"></span><span>Copy into your coding agent</span></div>
     <pre><code>{prompt}</code></pre>
     <button type="button" class="copy-button button primary" data-copy={prompt} data-copy-id="setup-prompt" aria-label="Copy setup prompt"><span>Copy setup prompt</span><svg aria-hidden="true" viewBox="0 0 20 20" width="17" height="17"><rect x="7" y="7" width="10" height="11" rx="2"/><path d="M13 7V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"/></svg></button>
+    <PracticeNext afterCopy source="home-setup-prompt"/>
     <div class="quick-install-links"><a href="/install/">Manual setup & troubleshooting →</a><a href="/first-analysis/">Your first REA analysis →</a></div>
   </div>
 </section>

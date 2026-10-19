@@ -1,0 +1,19 @@
+---
+interface Props { source: string; afterCopy?: boolean }
+const {source, afterCopy = false} = Astro.props;
+---
+<aside class="practice-next" data-practice-next={afterCopy ? '' : undefined} hidden={afterCopy} aria-live={afterCopy ? 'polite' : undefined}>
+  <strong>Next: your first REA task</strong>
+  <p>Finish setup, restart your coding agent and check the REA connection. Then try the sample: find where a notes app saves its CSV export.</p>
+  <a href="/first-analysis/#sample" data-track="practice_start" data-track-item={source}>Start the first exercise →</a>
+</aside>
+<style>
+  .practice-next{padding:18px 20px;background:#211418;border:1px solid #643344;border-radius:8px;margin:18px 0;color:#c3babe;font:13px/1.75 var(--font)}
+  .practice-next[hidden]{display:none}
+  .practice-next strong{display:block;color:#f0dfe6;font-size:15px}
+  .practice-next p{margin:8px 0 12px}
+  .practice-next a{display:inline-block;min-height:44px;padding:10px 14px;background:#bc2946;border:1px solid #e24965;border-radius:6px;color:#fff!important;text-decoration:none!important;font-weight:600;line-height:1.6;overflow-wrap:anywhere}
+  .practice-next a:hover{background:#d03553}
+  .practice-next a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  :global(.code-block)>.practice-next{margin:0;border:0;border-top:1px solid #643344;border-radius:0}
+</style>

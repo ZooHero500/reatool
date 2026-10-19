@@ -5018,6 +5018,36 @@
       "/first-analysis/ li"
     ]
   },
+  "d24129123e93": {
+    "text": "REA connected? Start here.",
+    "contexts": [
+      "/first-analysis/ strong"
+    ]
+  },
+  "47781d5f3d79": {
+    "text": "Download and extract the kit, open notes-example in your coding agent, then send the analysis prompt.",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "06ec0e5f8745": {
+    "text": "1. Get the practice kit",
+    "contexts": [
+      "/first-analysis/ a"
+    ]
+  },
+  "51ed259fe75e": {
+    "text": "2. Copy the analysis prompt",
+    "contexts": [
+      "/first-analysis/ a"
+    ]
+  },
+  "b61be512b625": {
+    "text": "3. Check the result",
+    "contexts": [
+      "/first-analysis/ a"
+    ]
+  },
   "3017a64afef3": {
     "text": "01. Choose one question",
     "contexts": [
@@ -5704,6 +5734,27 @@
     "contexts": [
       "/ aria-label",
       "/ span"
+    ]
+  },
+  "9e5e959481d4": {
+    "text": "Next: your first REA task",
+    "contexts": [
+      "/ strong",
+      "/install/ strong"
+    ]
+  },
+  "bde34cdcc3b1": {
+    "text": "Finish setup, restart your coding agent and check the REA connection. Then try the sample: find where a notes app saves its CSV export.",
+    "contexts": [
+      "/ p",
+      "/install/ p"
+    ]
+  },
+  "31816728a3d4": {
+    "text": "Start the first exercise →",
+    "contexts": [
+      "/ a",
+      "/install/ a"
     ]
   },
   "a6fef313a405": {

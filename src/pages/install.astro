@@ -1,6 +1,7 @@
 ---
 import Guide from '../layouts/Guide.astro';
 import CodeBlock from '../components/CodeBlock.astro';
+import PracticeNext from '../components/PracticeNext.astro';
 import {installFaqs} from '../data/compare';
 import {reaRelease} from '../data/rea-release';
 const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect your agent'},{id:'verify',label:'Check the connection'},{id:'engines',label:'Choose an analysis engine'},{id:'troubleshooting',label:'If something goes wrong'},{id:'update',label:'Keep REA up to date'},{id:'faq',label:'Install FAQ'}];
@@ -33,6 +34,7 @@ const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect y
   <CodeBlock trackingId="doctor-command" code="npx -y rea-agents@latest doctor --client codex --json"/>
   <div class="callout"><p><strong>Configuration health and a live connection are different.</strong> Doctor checks registration and prerequisites. A successful tool call from your restarted agent is the useful end-to-end check.</p></div>
   <p data-windows-help hidden>Keep setup, doctor and your coding agent in the same environment. A Windows registration does not connect an agent running in WSL. After setup, fully close and reopen the selected client, then run the connection check above.</p>
+  <PracticeNext source="install-connection-section"/>
   <h2 id="engines">04. Add the tools your target needs</h2>
   <p>Start with the type of software you want to inspect. You do not need every analysis engine installed.</p>
   <div class="table-scroll"><table><thead><tr><th>Target</th><th>What to prepare</th><th>Start here</th></tr></thead><tbody><tr><td>JavaScript / Electron</td><td>Node.js, npm and local package files</td><td><a href="/first-analysis/">First analysis</a></td></tr><tr><td>Native binary</td><td>A supported Ghidra, Hopper or IDA installation</td><td><a href="https://rea.tools/guides/native/">Official native guide</a></td></tr><tr><td>Android APK</td><td>JDK and the headless JADX bridge required by REA</td><td><a href="https://github.com/morluto/rea/blob/main/docs/android-analysis.md">Official Android reference</a></td></tr><tr><td>Browser behavior</td><td>A Chrome-family browser and an explicitly configured debugging connection</td><td><a href="https://rea.tools/guides/browser/">Official browser guide</a></td></tr></tbody></table></div>

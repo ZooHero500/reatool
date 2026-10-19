@@ -4,6 +4,7 @@ document.addEventListener('click', event => {
   const link = (event.target as Element)?.closest<HTMLAnchorElement>('a[href]');
   if (!link) return;
   const name = link.dataset.track;
+  if (name === 'practice_start') track('practice_start', {item: link.dataset.trackItem || 'install'});
   if (name === 'sample_download' || name === 'case_source' || name === 'case_tutorial') {
     track(name, {item: link.dataset.trackItem || 'notes-kit'});
     return;
