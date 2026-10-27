@@ -1,16 +1,28 @@
 ---
 import Guide from '../layouts/Guide.astro';
 import CodeBlock from '../components/CodeBlock.astro';
-const toc=[{id:'question',label:'Choose one question'},{id:'sample',label:'Get the sample'},{id:'inspect',label:'Ask REA to inspect it'},{id:'trace',label:'Follow the export path'},{id:'check',label:'Check a prediction'},{id:'next',label:'Continue the investigation'}];
+const toc=[{id:'start',label:'Before you start'},{id:'workflow',label:'The REA workflow'},{id:'question',label:'Choose one question'},{id:'sample',label:'Get the sample'},{id:'inspect',label:'Ask REA to inspect it'},{id:'trace',label:'Follow the export path'},{id:'check',label:'Check a prediction'},{id:'next',label:'Continue the investigation'}];
 ---
 <Guide eyebrow="02 / Beginner tutorial" minutes="8 min" toc={toc}>
   <div class="case-meta"><span>JavaScript / Electron</span><span>No native engine</span><span>Official teaching sample</span></div>
-  <div class="lesson-summary"><strong>What you will learn</strong><ul><li>Download a small app and give its folder path to REA.</li><li>Find the export handler and the intended destination: <code>Downloads/notes.csv</code>.</li><li>Run a short check to see whether commas and quotation marks export correctly.</li></ul></div>
-  <div class="callout">
+  <section class="callout first-start" aria-labelledby="start">
+    <h2 id="start">Before you start</h2>
+    <p><strong>Not connected yet?</strong> <a href="/install/">Install REA and verify the connection →</a></p>
+    <p>Choose Claude Code, Codex or Cursor, finish setup, restart the client and verify that it can call REA.</p>
     <p><strong>REA connected? Start here.</strong></p>
     <p>Download and extract the kit, open notes-example in your coding agent, then send the analysis prompt.</p>
     <p><a href="#sample">1. Get the practice kit</a> · <a href="#inspect">2. Copy the analysis prompt</a> · <a href="#check">3. Check the result</a></p>
-  </div>
+  </section>
+  <section class="lesson-summary investigation-workflow" aria-labelledby="workflow">
+    <h2 id="workflow">How a REA investigation works</h2>
+    <ol>
+      <li><strong>Connect REA.</strong> Install it, restart your client, and verify a tool call.</li>
+      <li><strong>Choose a target.</strong> Open the extracted notes-example folder in your coding agent.</li>
+      <li><strong>Ask one question.</strong> Find where Export notes saves the CSV file.</li>
+      <li><strong>Read the evidence.</strong> Follow the cited files and lines; separate observed code from assumptions.</li>
+      <li><strong>Verify the result.</strong> Run the included CSV checks for commas, quotation marks and empty input.</li>
+    </ol>
+  </section>
   <h2 id="question">01. Choose one question</h2>
   <p>“Explain this app” is a large request. Start with a behavior you can name and an answer you can check:</p>
   <CodeBlock prompt label="Our question" code="When I click Export notes, where does the CSV file go, and what happens if a note title contains commas or quotation marks?"/>
@@ -60,3 +72,9 @@ const toc=[{id:'question',label:'Choose one question'},{id:'sample',label:'Get t
   <a class="next-guide" href="/cases/slugify/"><span>Next / Real package example</span><strong>Find why a generated URL still contains “!”. <span aria-hidden="true">↗</span></strong></a>
   <div class="sources"><p>Sample and workflow: <a href="https://rea.tools/first-investigation/">REA’s official first investigation</a>. This page is an independent walkthrough, with an additional local analysis and formatter check. <a href="/evidence/notes-analysis-summary.json">Download the analysis summary</a>.</p></div>
 </Guide>
+<style>
+  .first-start h2,.investigation-workflow h2{font-size:18px;margin:0 0 12px;line-height:1.5}
+  .first-start p:nth-of-type(3){margin-top:18px}
+  .investigation-workflow ol{font-size:13px;margin:0;padding-left:22px}
+  .investigation-workflow li:last-child{margin-bottom:0}
+</style>

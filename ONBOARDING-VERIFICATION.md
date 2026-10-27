@@ -1,5 +1,16 @@
 # Installation and first-practice checks — 2026-10-14
 
+## Search-to-first-practice update — 2026-10-27
+
+- The homepage's secondary hero button now opens the localized first-analysis guide directly. The AI setup button and tutorial navigation remain available.
+- The first-analysis introduction separates readers who still need to install/connect REA from readers ready to download the kit, copy the prompt and check a result. A five-step overview explains connection, target selection, one focused question, evidence review and verification. The existing sample, executable commands and copy behavior are unchanged.
+- All eight languages include the changes; the seven translated catalogs each received 16 new units and had five obsolete units removed. Existing URLs and page titles are preserved.
+- `check`, `build`, `verify:site`, `verify:seo` and `verify:i18n` passed: 152 pages, 144 indexable routes, 6,224 internal links/assets. Astro reports zero errors/warnings and the three existing CommonJS fixture hints.
+- A live-versus-local comparison of the 24 homepage/install/first-analysis pages confirmed unchanged titles, H1s, descriptions, canonical URLs and hreflang sets before release. All 143 existing metadata/title/schema translation units also match the previous commit.
+- Browser checks covered the homepage and first-analysis guide in all eight languages at 1280px and 320px (32 page/viewport combinations): no horizontal page overflow, five workflow steps, localized direct tutorial links and localized installation branches. Keyboard activation followed homepage → first-analysis → installation in every language.
+- Actual clipboard reads matched the displayed analysis prompt in every language, with localized success feedback. Japanese → French → Japanese language switching retained the first-analysis route. Sample, analysis-prompt and result anchors were checked; Japanese desktop and Russian narrow-screen layouts were visually reviewed. The browser log check returned no errors or warnings. Local QA does not send analytics events because tracking is restricted to the production hostname.
+- These are website checks. The prior CLI/fixture evidence below remains unchanged; this update does not establish a successful reader installation, a new REA runtime test or an improvement in search rankings.
+
 ## Installation-to-practice update — 2026-10-19
 
 - Added a first-exercise card after successful setup/connection copying on the installation page and after setup-prompt copying on the homepage. A permanent link sits beside the connection-check instructions, including when JavaScript is disabled. The card asks readers to finish setup, restart and verify the connection before beginning the sample; clipboard success does not represent a completed installation.

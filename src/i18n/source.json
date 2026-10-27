@@ -1266,6 +1266,8 @@
     "text": "Before you start",
     "contexts": [
       "/cases/aegis/ strong",
+      "/first-analysis/ a",
+      "/first-analysis/ h2",
       "/install/ a"
     ]
   },
@@ -4921,6 +4923,12 @@
       "/tutorials/ h2"
     ]
   },
+  "2d9436cab8ff": {
+    "text": "The REA workflow",
+    "contexts": [
+      "/first-analysis/ a"
+    ]
+  },
   "52178b62c46b": {
     "text": "Choose one question",
     "contexts": [
@@ -4994,28 +5002,22 @@
       "/first-analysis/ span"
     ]
   },
-  "a4899f3e9b74": {
-    "text": "What you will learn",
+  "68d07f04e6a4": {
+    "text": "Not connected yet?",
     "contexts": [
       "/first-analysis/ strong"
     ]
   },
-  "a6e8b7aa5759": {
-    "text": "Download a small app and give its folder path to REA.",
+  "f3d15ddf54f3": {
+    "text": "Install REA and verify the connection →",
     "contexts": [
-      "/first-analysis/ li"
+      "/first-analysis/ a"
     ]
   },
-  "75a4f3757850": {
-    "text": "Find the export handler and the intended destination:",
+  "ca12b3f9acf0": {
+    "text": "Choose Claude Code, Codex or Cursor, finish setup, restart the client and verify that it can call REA.",
     "contexts": [
-      "/first-analysis/ li"
-    ]
-  },
-  "42160bd522be": {
-    "text": "Run a short check to see whether commas and quotation marks export correctly.",
-    "contexts": [
-      "/first-analysis/ li"
+      "/first-analysis/ p"
     ]
   },
   "d24129123e93": {
@@ -5046,6 +5048,72 @@
     "text": "3. Check the result",
     "contexts": [
       "/first-analysis/ a"
+    ]
+  },
+  "41c964050333": {
+    "text": "How a REA investigation works",
+    "contexts": [
+      "/first-analysis/ h2"
+    ]
+  },
+  "76c263e1dd82": {
+    "text": "Connect REA.",
+    "contexts": [
+      "/first-analysis/ strong"
+    ]
+  },
+  "696bd274ad3a": {
+    "text": "Install it, restart your client, and verify a tool call.",
+    "contexts": [
+      "/first-analysis/ li"
+    ]
+  },
+  "4434326e7339": {
+    "text": "Choose a target.",
+    "contexts": [
+      "/first-analysis/ strong"
+    ]
+  },
+  "4c00dd9a9969": {
+    "text": "Open the extracted notes-example folder in your coding agent.",
+    "contexts": [
+      "/first-analysis/ li"
+    ]
+  },
+  "47dde220c6cd": {
+    "text": "Ask one question.",
+    "contexts": [
+      "/first-analysis/ strong"
+    ]
+  },
+  "0dfa57e8fa3b": {
+    "text": "Find where Export notes saves the CSV file.",
+    "contexts": [
+      "/first-analysis/ li"
+    ]
+  },
+  "d0c9dc63cb9d": {
+    "text": "Read the evidence.",
+    "contexts": [
+      "/first-analysis/ strong"
+    ]
+  },
+  "ac7872ffd000": {
+    "text": "Follow the cited files and lines; separate observed code from assumptions.",
+    "contexts": [
+      "/first-analysis/ li"
+    ]
+  },
+  "05b4dd50aad0": {
+    "text": "Verify the result.",
+    "contexts": [
+      "/first-analysis/ strong"
+    ]
+  },
+  "f5f5ce46c66b": {
+    "text": "Run the included CSV checks for commas, quotation marks and empty input.",
+    "contexts": [
+      "/first-analysis/ li"
     ]
   },
   "3017a64afef3": {
@@ -5644,8 +5712,8 @@
       "/ a"
     ]
   },
-  "80a19a450a1f": {
-    "text": "Explore REA tutorials",
+  "8885a6d641a3": {
+    "text": "Try using REA",
     "contexts": [
       "/ a"
     ]
