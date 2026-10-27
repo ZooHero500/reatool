@@ -1,19 +1,25 @@
 # Cloudflare Pages deployment
 
-Latest feature deployment verified on 2026-10-19 via Cloudflare Pages Git integration.
+Latest feature deployment verified on 2026-10-27 via Cloudflare Pages Git integration.
 
 - Project: `reatool`
 - Environment: Production
 - Production branch: `main`
 - Public URL: https://reatool.pages.dev/
-- Deployment URL: https://458f9171.reatool.pages.dev/
-- Deployment ID: `458f9171-7cdf-46fe-aead-c8c34d9b7133`
-- Feature source commit: `afc0e59` (`feat(onboarding): 串联安装与首次练习并同步八语言引导`), followed by command-display fix `4df5a8b`
+- Deployment URL: https://17003367.reatool.pages.dev/
+- Deployment ID: `17003367-c1f8-438f-a17d-5bccece94791`
+- Feature source commit: `2300dda` (`feat(onboarding): 优化首次使用入口并同步八语言引导`)
 - Method: Git integration with `ZooHero500/reatool`; pushing `main` triggers production deployment. Wrangler Direct Upload remains a manual fallback.
 - Custom domain: `https://reatool.dev/` is attached and serves the deployed site. No domain or DNS settings were changed by this task.
 - Canonical and sitemap URLs remain `https://reatool.dev` as intended for the custom domain.
 
 ## Verification
+
+The 2026-10-27 update sends the homepage's secondary hero button directly to the localized first-analysis guide. The guide now opens with separate installation/ready-to-practice paths and a five-step investigation overview. All eight languages are synchronized; existing URLs, page titles, H1s, descriptions, canonical URLs and hreflang sets remain unchanged. The five required checks passed: 152 pages, 144 indexable routes and 6,224 internal links/assets. Browser checks covered eight languages at 1280px and 320px, real clipboard equality and localized success feedback, keyboard navigation, and same-page language switching. See `ONBOARDING-VERIFICATION.md`.
+
+GitHub's Cloudflare Pages check reports `completed / success` for `2300dda`; Wrangler confirms Production / main with deployment `17003367-c1f8-438f-a17d-5bccece94791`. All 24 custom-domain homepage/install/first-analysis pages match the local build for metadata, new sections, hero copy, all links and every code/prompt block. Seven build assets match byte-for-byte, and the practice ZIP is unchanged. A real browser on the production deployment's Pages URL verified the Japanese homepage → tutorial → installation journey, analysis-prompt anchor and actual clipboard contents with localized feedback. Browser interactions used the Pages URL, where the existing hostname allowlist prevents QA analytics events; the custom domain was verified by HTTP. The following documentation commit records these checks without changing built pages.
+
+### Previous feature verification — 2026-10-19
 
 The 2026-10-19 update links setup copying and the connection check to the localized first exercise, adds three exercise shortcuts and records the entry point with `practice_start`. All eight language catalogs are complete. `check`, `build`, `verify:site`, `verify:seo` and `verify:i18n` passed: 152 pages, 144 indexable routes and 6,216 internal links/assets. Browser checks covered all eight languages at desktop and mobile widths, with additional real-clipboard, three-client/two-shell, download and language-switch tests in English and Spanish. See `ONBOARDING-VERIFICATION.md`.
 
