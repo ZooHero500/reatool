@@ -1178,8 +1178,8 @@
       "/cases/aegis/ a"
     ]
   },
-  "6c53ca21991f": {
-    "text": "Last verified: October 12, 2026 · REA version 6.4.0",
+  "aea8311885a7": {
+    "text": "Last verified: October 29, 2026 · REA version 6.8.0",
     "contexts": [
       "/cases/aegis/ div",
       "/cases/aegis/ p",
@@ -1457,8 +1457,8 @@
       "/cases/aegis/ a"
     ]
   },
-  "9a473120e000": {
-    "text": ", record its hash and search for the TOTP class. Commands below use REA 6.4.0.",
+  "0d62be4c3100": {
+    "text": ", record its hash and search for the TOTP class. Commands below pin REA 6.8.0. Their names and arguments were checked against that release’s CLI help on October 29, 2026. This site did not re-run them against the APK.",
     "contexts": [
       "/cases/aegis/ p"
     ]
@@ -1688,6 +1688,7 @@
       "/cases/dino/ p",
       "/cases/dx-ball/ p",
       "/cases/th04/ p",
+      "/compare/ p",
       "/install/ p"
     ]
   },
@@ -2895,8 +2896,14 @@
       "/cases/dx-ball/ p"
     ]
   },
-  "c92c93804061": {
-    "text": "Inspect my matching DX-Ball 1.07 executable with REA. Start from the pan helper identified in the official report and inspect its brick-hit caller. Explain how the caller constructs the argument. Cite both call-site instructions and the helper’s input load. Do not assume the decompiler signature is complete.",
+  "2c6f8fc9dec7": {
+    "text": "If the agent calls analyze_function, rea-agents 6.8.0 returns a retained summary unless you ask for detail: \"complete\" or page the retained dossier with inspect_analysis_view. The CLI decompile command is separate and still returns pseudocode.",
+    "contexts": [
+      "/cases/dx-ball/ p"
+    ]
+  },
+  "021871df42fb": {
+    "text": "Inspect my matching DX-Ball 1.07 executable with REA. Start from the pan helper identified in the official report and inspect its brick-hit caller. If you call analyze_function, pass detail: \"complete\" or page the retained 6.8.0 summary with inspect_analysis_view. Explain how the caller constructs the argument. Cite both call-site instructions and the helper’s input load. Do not assume the decompiler signature is complete.",
     "contexts": [
       "/cases/dx-ball/ code"
     ]
@@ -3160,8 +3167,8 @@
       "/cases/slugify/ span"
     ]
   },
-  "48c396d281f3": {
-    "text": "REA 6.4.0",
+  "8f7cb624273b": {
+    "text": "Recorded with REA 6.4.0",
     "contexts": [
       "/cases/slugify/ span"
     ]
@@ -3366,14 +3373,14 @@
       "/cases/slugify/ p"
     ]
   },
-  "5f2acb3eb665": {
-    "text": "Then we ran REA’s JavaScript application analyzer on the extracted",
+  "fd9d30e3b9c5": {
+    "text": "Then we ran REA 6.4.0’s JavaScript application analyzer on the extracted",
     "contexts": [
       "/cases/slugify/ p"
     ]
   },
-  "cb76f2a353bd": {
-    "text": "directory:",
+  "86191382b799": {
+    "text": "directory. The published summary is from that run. To repeat the inspection with the release these pages document, pin 6.8.0. That later run has not been recorded here.",
     "contexts": [
       "/cases/slugify/ p"
     ]
@@ -3411,8 +3418,8 @@
       "/cases/slugify/ p"
     ]
   },
-  "e1508f4fe9ab": {
-    "text": "REA identified the package as",
+  "f7cdb1994257": {
+    "text": "The REA 6.4.0 report identified the package as",
     "contexts": [
       "/cases/slugify/ p"
     ]
@@ -3429,8 +3436,8 @@
       "/cases/slugify/ p"
     ]
   },
-  "0de461e27d90": {
-    "text": ". The report recorded three relevant files and zero parse failures. It also marked overall graph coverage as",
+  "9d6dbd4af267": {
+    "text": ". It recorded three relevant files and zero parse failures. It also marked overall graph coverage as",
     "contexts": [
       "/cases/slugify/ p"
     ]
@@ -3441,8 +3448,14 @@
       "/cases/slugify/ strong"
     ]
   },
-  "69b83de69299": {
-    "text": ", which we retained in the published summary.",
+  "4e3bf85e3d75": {
+    "text": ", which we retained in the published summary. Since REA 6.5.0, repeated",
+    "contexts": [
+      "/cases/slugify/ p"
+    ]
+  },
+  "7e8ae14b4ed6": {
+    "text": "can limit analysis to exact files; this recorded run did not use that flag.",
     "contexts": [
       "/cases/slugify/ p"
     ]
@@ -4166,8 +4179,8 @@
       "/compare/ schema"
     ]
   },
-  "2b47b3aa148b": {
-    "text": "Compare REA 6.4.0 with GhidraMCP, GhydraMCP, ida-pro-mcp, radare2-mcp, and extracting an Electron asar. Facts are cited from public READMEs.",
+  "8e912b1bc1f0": {
+    "text": "Compare REA 6.8.0 with GhidraMCP, GhydraMCP, ida-pro-mcp, radare2-mcp, and extracting an Electron asar. Facts are cited from public READMEs.",
     "contexts": [
       "/compare/ metadata",
       "/compare/ schema"
@@ -4187,8 +4200,8 @@
       "/compare/ h3"
     ]
   },
-  "5721333c7540": {
-    "text": "Install Node.js 22.19 or newer in the 22.x line, 24.11 or newer in the 24.x line, or Node.js 26 or newer. In a terminal, run npx rea-agents@latest setup, review the plan, approve the changes you want, and restart the coding agent. Copying a prompt in the browser does not install REA. The same package is on npm as rea-agents.",
+  "f454ee196054": {
+    "text": "Install Node.js 22.23.4 or newer in the 22.x line, 24.22.1 or newer in the 24.x line, or Node.js 26.12.1 or newer. Node.js 23, 25, earlier 26.x releases, and prereleases are unsupported. Upgrade Node.js yourself; the REA installer does not upgrade it. In a terminal, run npx rea-agents@latest setup, review the plan, approve the changes you want, and restart the coding agent. Copying a prompt in the browser does not install REA. The same package is on npm as rea-agents.",
     "contexts": [
       "/compare/ schema",
       "/compare/ p"
@@ -4271,8 +4284,8 @@
       "/compare/ h3"
     ]
   },
-  "82fb944acb32": {
-    "text": "This site has not measured token use. In the GitTested review of rea-agents 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA, about 2.5 times as many. That review says most of the extra tokens were cached reads, so computed cost rose by about 1.5 times. It also says a full analysis of one 22 MB Electron archive wrote a 692 MB document that could not be returned in a single MCP call. Those figures are that review’s measurements of version 6.2.0, not a measurement of the current 6.4.0 release and not a result from this site.",
+  "f32ab72cf71b": {
+    "text": "This site has not measured token use. In the GitTested review of rea-agents 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA, about 2.5 times as many. That review says most of the extra tokens were cached reads, so computed cost rose by about 1.5 times. It also says a full analysis of one 22 MB Electron archive wrote a 692 MB document that could not be returned in a single MCP call. Those figures are that review’s measurements of version 6.2.0, not a measurement of the current 6.8.0 release and not a result from this site.",
     "contexts": [
       "/compare/ schema",
       "/compare/ p"
@@ -4280,6 +4293,12 @@
   },
   "fd11506ed546": {
     "text": "Comparison table",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "0b39b3f92de2": {
+    "text": "Since 6.4.0",
     "contexts": [
       "/compare/ a"
     ]
@@ -4354,8 +4373,8 @@
       "/compare/ p"
     ]
   },
-  "364ef9b15f8a": {
-    "text": "REA and five other ways to inspect software with a coding agent. Checked against public READMEs on October 12, 2026.",
+  "44b0b49640ab": {
+    "text": "REA and five other ways to inspect software with a coding agent. Competitor rows were checked against public READMEs on October 12, 2026. The REA row was checked against rea-agents 6.8.0 on October 29, 2026.",
     "contexts": [
       "/compare/ caption"
     ]
@@ -4420,8 +4439,8 @@
       "/compare/ td"
     ]
   },
-  "a3f85ec03b2c": {
-    "text": "Node.js 22.19+ (22.x), 24.11+ (24.x), or 26+, then npx rea-agents@latest setup. Restart the agent after approving the plan.",
+  "36fa5e7508ba": {
+    "text": "Node.js 22.23.4+ (22.x), 24.22.1+ (24.x), or 26.12.1+, then npx rea-agents@latest setup. Restart the agent after approving the plan. The installer does not upgrade Node.js.",
     "contexts": [
       "/compare/ td"
     ]
@@ -4660,14 +4679,128 @@
       "/compare/ p"
     ]
   },
-  "92eb57728ce5": {
-    "text": "rea-agents-6.4.0",
+  "244d36107d8f": {
+    "text": "rea-agents-6.8.0",
     "contexts": [
       "/compare/ a"
     ]
   },
-  "15ca70abdf72": {
-    "text": ", published on 2026-10-11.",
+  "ae3e55a7b4a8": {
+    "text": ", published on 2026-10-25.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "b693347c77b7": {
+    "text": "What changed after 6.4.0",
+    "contexts": [
+      "/compare/ h2"
+    ]
+  },
+  "5851ddf254a3": {
+    "text": "These pages previously documented rea-agents 6.4.0. The notes below come from the upstream changelog and the 6.8.0 package. This site did not re-run its October 12, 2026 fixture checks on the newer releases. The third-party tests further down stay tied to the versions those authors named.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "6d9859e0a89f": {
+    "text": "(changelog 2026-10-13, published to npm on 2026-10-14). Static JavaScript analysis can take exact application-relative paths with repeated",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "e0e2192ee9da": {
+    "text": ". Imports are not added automatically. Unselected files remain in the inventory and their relationships stay unknown, so application coverage is partial. Omit the flag for the previous whole-application analysis.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "b1951b4bb19f": {
+    "text": "was tagged on 2026-10-18 and was not published to npm.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "c3251ff5decb": {
+    "text": ", published the same day, includes those changes. Setup edits the last repeated JSON or JSONC member, which is the member clients read. Setup and uninstall refuse a removal that would make an earlier shadowed duplicate active again, and they keep the original file.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "e50656aa0d25": {
+    "text": "(2026-10-25). The MCP tool",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "32e01cb8e5c0": {
+    "text": "defaults to a retained summary: procedure identity, pseudocode size, facet counts, and value-flow availability. The complete dossier stays in the session. Page it with",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "8bdc02112d78": {
+    "text": ", or pass",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "3a5c9881d779": {
+    "text": "for the previous inline dossier. The CLI command",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "a1e89b917743": {
+    "text": "still defaults to complete output; selecting a summary requires",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "d487eb0975ef": {
+    "text": ". The CLI command",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "5784a6fa1784": {
+    "text": "is a different operation and still returns pseudocode. Node.js must satisfy",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "76e0faa4c4ce": {
+    "text": ". This release also accepts",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "b79f62a262f3": {
+    "text": ", an inline JSON array or a JSON file, for a long JavaScript source selection.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "bc077f46c0bc": {
+    "text": "changelog at rea-agents-6.8.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "cb14785f1257": {
+    "text": "GitHub release rea-agents-6.8.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "de9a0c04a5fb": {
+    "text": "JavaScript source selection",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "0f7b9c0206b0": {
+    "text": ", and REA 6.8.0 CLI help checked on October 29, 2026.",
     "contexts": [
       "/compare/ p"
     ]
@@ -4822,16 +4955,16 @@
       "/compare/ a"
     ]
   },
-  "14ef959d3164": {
-    "text": "GitHub release rea-agents-6.4.0",
-    "contexts": [
-      "/compare/ a"
-    ]
-  },
-  "67e5b9b37af3": {
-    "text": ", published 2026-10-11",
+  "b5eed8057771": {
+    "text": ", published 2026-10-25",
     "contexts": [
       "/compare/ li"
+    ]
+  },
+  "3c5a8520b4a3": {
+    "text": "Changelog through rea-agents-6.8.0",
+    "contexts": [
+      "/compare/ a"
     ]
   },
   "ddaf219fdbcf": {
@@ -5314,8 +5447,26 @@
       "/first-analysis/ p"
     ]
   },
-  "fb55b29fb8b7": {
-    "text": "The command pins the version used for this walkthrough. The JSON is analysis evidence, not a natural-language explanation; your coding agent uses it to guide follow-up inspection.",
+  "5820fbfe7bb6": {
+    "text": "The command pins rea-agents 6.8.0, the npm release these pages document. The JSON is analysis evidence, not a natural-language explanation. The local static analysis recorded below was run with REA 6.4.0 on October 12, 2026, and was not repeated on 6.8.0.",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "7f8188939dcb": {
+    "text": "Since REA 6.5.0, repeated",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "eaf7cc4c0975": {
+    "text": "analyzes only those exact application-relative files. Imports are not added automatically. REA 6.8.0 also accepts",
+    "contexts": [
+      "/first-analysis/ p"
+    ]
+  },
+  "1f72dd86cba1": {
+    "text": "as an inline JSON array or a JSON file. This sample is small, so the command above still analyzes the whole folder. Unselected files would remain in the inventory with unknown relationships.",
     "contexts": [
       "/first-analysis/ p"
     ]
@@ -5515,14 +5666,14 @@
       "/first-analysis/ aria-label"
     ]
   },
-  "a0f2ced4cea1": {
-    "text": "Verified locally.",
+  "12692b12af46": {
+    "text": "Verified locally on October 12, 2026, with REA 6.4.0.",
     "contexts": [
       "/first-analysis/ strong"
     ]
   },
-  "e29731a2d2cc": {
-    "text": "We ran the REA 6.4.0 static analysis and this formatter check on October 12, 2026. The output matched. We did not launch the Electron UI or test filesystem permissions through its export button.",
+  "588a7d822020": {
+    "text": "The formatter check output matched that static analysis. We did not launch the Electron UI or test filesystem permissions through its export button. That run was not repeated on REA 6.8.0.",
     "contexts": [
       "/first-analysis/ p"
     ]
@@ -6852,8 +7003,8 @@
       "/install/ h3"
     ]
   },
-  "64d92d181b4b": {
-    "text": "REA currently supports Node.js 22.19+ within 22.x, 24.11+ within 24.x, or 26+. Versions 23, 25, and prereleases are outside its supported range.",
+  "ab6018fc7847": {
+    "text": "REA 6.8.0 supports Node.js 22.23.4 or newer within 22.x, 24.22.1 or newer within 24.x, or 26.12.1 or newer. Node.js 23, 25, earlier 26.x releases, and prereleases are unsupported. Upgrade Node.js before installing or updating REA; the installer does not upgrade it.",
     "contexts": [
       "/install/ schema",
       "/install/ p"
@@ -7014,20 +7165,14 @@
       "/install/ aria-label"
     ]
   },
-  "97a93fbf9816": {
-    "text": "REA currently supports",
-    "contexts": [
-      "/install/ p"
-    ]
-  },
-  "c5aef8911017": {
-    "text": "Node.js 22.19+ within 22.x, 24.11+ within 24.x, or 26+",
+  "f58b6ee6db90": {
+    "text": "REA 6.8.0 supports Node.js 22.x at 22.23.4 or newer, 24.x at 24.22.1 or newer, and 26.12.1 or newer. Node.js 23, 25, earlier 26.x releases, and prereleases are unsupported. Upgrade Node.js before installing or updating REA; the installer does not upgrade it.",
     "contexts": [
       "/install/ strong"
     ]
   },
-  "38cbdb954dd1": {
-    "text": ". Versions 23, 25 and prereleases are outside its supported range. Get a compatible release from",
+  "672d81dedcde": {
+    "text": "Get a compatible release from",
     "contexts": [
       "/install/ p"
     ]
@@ -7038,14 +7183,32 @@
       "/install/ a"
     ]
   },
-  "80b41565d71a": {
-    "text": "if needed.",
+  "1686a978c94d": {
+    "text": "if needed. The range is the one in the",
     "contexts": [
       "/install/ p"
     ]
   },
-  "3219b38a5221": {
-    "text": "Our example checks were run on macOS arm64 with Node.js 22.23.1 and REA 6.4.0. Platform support for additional engines varies; see the",
+  "3ed7370f3f1e": {
+    "text": "rea-agents 6.8.0 installation reference",
+    "contexts": [
+      "/install/ a"
+    ]
+  },
+  "0eaa9b1e51f8": {
+    "text": "and in that package’s",
+    "contexts": [
+      "/install/ p"
+    ]
+  },
+  "db9c4870c159": {
+    "text": "field.",
+    "contexts": [
+      "/install/ p"
+    ]
+  },
+  "91546caa1046": {
+    "text": "Example checks recorded on this site were run on macOS arm64 with Node.js 22.23.1 and REA 6.4.0 on October 12, 2026. Node.js 22.23.1 is older than the 6.8.0 minimum, and those checks were not repeated on 6.8.0. Platform support for additional engines varies; see the",
     "contexts": [
       "/install/ p"
     ]
@@ -7148,6 +7311,12 @@
   },
   "b12fbd9e0b3d": {
     "text": "The setup installs both the MCP registration and the matching workflow instructions. Installing only a skill does not establish the tool connection.",
+    "contexts": [
+      "/install/ p"
+    ]
+  },
+  "e40a65842841": {
+    "text": "From rea-agents 6.7.0, setup edits the last repeated JSON or JSONC member, which is the member clients read. If removing a member would make an earlier shadowed duplicate active again, setup and uninstall refuse that change and keep the original file. rea-agents 6.6.0 was tagged on 2026-10-18 and was not published to npm; 6.7.0 includes it. For Claude Code, setup, doctor, and uninstall accept only the strict JSON Claude Code reads, including a leading UTF-8 BOM. Comments and trailing commas are refused before backup or writing. Clients that use JSONC keep that format.",
     "contexts": [
       "/install/ p"
     ]
@@ -7435,8 +7604,8 @@
       "/install/ a"
     ]
   },
-  "fb026036a305": {
-    "text": "REA installation reference",
+  "3fadd39c3291": {
+    "text": "REA 6.8.0 installation reference",
     "contexts": [
       "/install/ a"
     ]
@@ -7453,8 +7622,14 @@
       "/install/ a"
     ]
   },
-  "1be18434a168": {
-    "text": ", and the locally checked REA 6.4.0 CLI help. Reviewed October 12, 2026. Upstream main may describe features newer than the npm release.",
+  "6665bc2f57c4": {
+    "text": "changelog",
+    "contexts": [
+      "/install/ a"
+    ]
+  },
+  "6c898fa56ab1": {
+    "text": ", and REA 6.8.0 CLI help. Reviewed October 29, 2026. Upstream main may describe features newer than the npm release.",
     "contexts": [
       "/install/ p"
     ]
@@ -8533,8 +8708,8 @@
       "/tutorials/android-api/ p"
     ]
   },
-  "2434e030ffff": {
-    "text": "Commands checked against REA 6.4.0. Target-specific results depend on your artifact and provider.",
+  "386a568ffa8f": {
+    "text": "Command names and flags were checked against REA 6.8.0 CLI help on October 29, 2026. These workflows were not re-run on a target for that release. Target-specific results depend on your artifact and provider.",
     "contexts": [
       "/tutorials/android-api/ p",
       "/tutorials/browser-export/ p",
@@ -8837,8 +9012,8 @@
       "/tutorials/compare-releases/ p"
     ]
   },
-  "dc374204a906": {
-    "text": "Both releases of an app you can inspect, their ASAR archives or extracted folders, and REA 6.4.0.",
+  "f203ec786aa0": {
+    "text": "Both releases of an app you can inspect, their ASAR archives or extracted folders, and REA 6.8.0.",
     "contexts": [
       "/tutorials/compare-releases/ p"
     ]
@@ -8873,14 +9048,20 @@
       "/tutorials/compare-releases/ p"
     ]
   },
-  "ca0826ce95e1": {
-    "text": "Ask your connected agent to inspect the available compare_application_versions schema and supply the two results accordingly. This avoids guessing nested input fields that may change between releases. The CLI can show the same contract.",
+  "bc207dedb398": {
+    "text": "Ask your connected agent to inspect the available compare_application_versions schema and supply the two results accordingly. This avoids guessing nested input fields that may change between releases. The CLI can show the same contract. On rea-agents 6.8.0, compare-application-versions --schema requires inputJson: inline workflow JSON or a path to a JSON file.",
     "contexts": [
       "/tutorials/compare-releases/ p"
     ]
   },
-  "6a2d95fd30de": {
-    "text": "Use REA compare_application_versions with the complete application evidence in before.json and after.json. Check the installed tool schema first. Focus the report on CSV export: changed modules, related call paths and unresolved matches. Do not interpret a missing node in partial coverage as proof of deletion.",
+  "10ac38ad5e23": {
+    "text": "The analysis commands above omit --source-path, so they request the whole application. Since REA 6.5.0, repeated --source-path analyzes only those exact paths. REA 6.8.0 also accepts --source-paths-json. Unselected files remain inventoried with unknown relationships. Use that only when the question is already confined to known files, and do not treat the partial graph as a complete diff.",
+    "contexts": [
+      "/tutorials/compare-releases/ p"
+    ]
+  },
+  "68e3d54f5dc8": {
+    "text": "Use REA compare_application_versions with the complete application evidence in before.json and after.json. Check the installed tool schema first. On rea-agents 6.8.0 the CLI schema requires inputJson, either inline workflow JSON or a JSON file path. Focus the report on CSV export: changed modules, related call paths and unresolved matches. Do not interpret a missing node in partial coverage as proof of deletion.",
     "contexts": [
       "/tutorials/compare-releases/ code"
     ]
@@ -9075,6 +9256,12 @@
   },
   "7f62a1d51e4f": {
     "text": "Keep any app.asar.unpacked companion directory beside the archive. Review parse failures, skipped files and the discovered main entry before trusting the map. An incomplete inventory can hide the receiver you need.",
+    "contexts": [
+      "/tutorials/electron-clipboard/ p"
+    ]
+  },
+  "617a2d00ef86": {
+    "text": "Since REA 6.5.0, repeated --source-path limits static analysis to exact application-relative paths. Imports are not added automatically, and unselected files stay in the inventory with unknown relationships, so coverage is partial. REA 6.8.0 also accepts --source-paths-json as an inline JSON array or a JSON file. Omit both when you want the whole application, as this command does.",
     "contexts": [
       "/tutorials/electron-clipboard/ p"
     ]
@@ -9432,6 +9619,12 @@
       "/tutorials/native-error/ p"
     ]
   },
+  "f5708467b4d5": {
+    "text": "The decompile command below reads one procedure’s pseudocode. It is not the MCP tool analyze_function. In rea-agents 6.8.0 that tool defaults to a retained summary: procedure identity, pseudocode size, facet counts, and value-flow availability. The complete dossier stays in the session. Page pseudocode, references, assembly, and value-flow with inspect_analysis_view using normalized_result.parent_evidence_id, or pass detail: \"complete\" for the previous inline dossier. The CLI command function still defaults to complete output; a summary there requires --evidence_output.",
+    "contexts": [
+      "/tutorials/native-error/ p"
+    ]
+  },
   "aec6d9d5fa3b": {
     "text": "03. Recover the comparison, including its units",
     "contexts": [
@@ -9450,8 +9643,8 @@
       "/tutorials/native-error/ p"
     ]
   },
-  "1a16537b0eaf": {
-    "text": "Use the returned function evidence to explain the branch that emits this error. Trace the compared value back to its input. Identify the threshold, units, signedness and exact comparison. If decompilation is incomplete, inspect instructions and the relevant helper. Cite addresses and mark unresolved types instead of guessing.",
+  "ffda09110cd7": {
+    "text": "Use the returned function evidence to explain the branch that emits this error. If you call the MCP tool analyze_function, rea-agents 6.8.0 defaults to a retained summary. Pass detail: \"complete\" for the inline dossier, or page the retained Evidence with inspect_analysis_view. The CLI decompile command is separate and still returns pseudocode. Trace the compared value back to its input. Identify the threshold, units, signedness and exact comparison. If decompilation is incomplete, inspect instructions and the relevant helper. Cite addresses and mark unresolved types instead of guessing.",
     "contexts": [
       "/tutorials/native-error/ code"
     ]

@@ -1,5 +1,7 @@
 # Verification — October 12, 2026
 
+This file records the October 12, 2026 check against REA 6.4.0. The pages now document rea-agents 6.8.0, checked from upstream sources on October 29, 2026. The fixture runs below were not repeated on 6.8.0.
+
 ## Current revision
 
 Dark red presentation with an original Three.js WebGPU module-disassembly cover. Nine guides/cases, a filterable tutorial library, and an independently authored TOTP demo. Existing installation, Notes and slugify lessons retained.

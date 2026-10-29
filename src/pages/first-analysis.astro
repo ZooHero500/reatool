@@ -1,6 +1,7 @@
 ---
 import Guide from '../layouts/Guide.astro';
 import CodeBlock from '../components/CodeBlock.astro';
+import {reaRelease} from '../data/rea-release';
 const toc=[{id:'start',label:'Before you start'},{id:'workflow',label:'The REA workflow'},{id:'question',label:'Choose one question'},{id:'sample',label:'Get the sample'},{id:'inspect',label:'Ask REA to inspect it'},{id:'trace',label:'Follow the export path'},{id:'check',label:'Check a prediction'},{id:'next',label:'Continue the investigation'}];
 ---
 <Guide eyebrow="02 / Beginner tutorial" minutes="8 min" toc={toc}>
@@ -46,10 +47,11 @@ const toc=[{id:'start',label:'Before you start'},{id:'workflow',label:'The REA w
   <p>Open the extracted notes-example folder in your coding agent before sending this prompt. If the agent is working elsewhere, give it the full folder path.</p>
   <CodeBlock trackingId="first-analysis-prompt" prompt label="Analysis prompt" code="Use REA to statically inspect the notes-example folder open in this workspace. Trace the Export notes button through the renderer, preload bridge and main process. Show the output file path, CSV columns, and the files and lines that support your answer. Do not launch Electron. Separate observed code from assumptions."/>
   <p>You can also collect REA’s static evidence directly from the terminal:</p>
-  <CodeBlock code={'npx -y rea-agents@6.4.0 analyze-javascript-application "/absolute/path/to/notes-example" --json > notes-analysis.json'}/>
+  <CodeBlock code={`npx -y rea-agents@${reaRelease.version} analyze-javascript-application "/absolute/path/to/notes-example" --json > notes-analysis.json`}/>
   <p>In Windows PowerShell, use this command from inside the extracted notes-example folder:</p>
-  <CodeBlock code="npx.cmd -y rea-agents@6.4.0 analyze-javascript-application . --json > notes-analysis.json"/>
-  <p>The command pins the version used for this walkthrough. The JSON is analysis evidence, not a natural-language explanation; your coding agent uses it to guide follow-up inspection.</p>
+  <CodeBlock code={`npx.cmd -y rea-agents@${reaRelease.version} analyze-javascript-application . --json > notes-analysis.json`}/>
+  <p>{`The command pins rea-agents ${reaRelease.version}, the npm release these pages document. The JSON is analysis evidence, not a natural-language explanation. The local static analysis recorded below was run with REA 6.4.0 on October 12, 2026, and was not repeated on ${reaRelease.version}.`}</p>
+  <p>Since REA 6.5.0, repeated <code>--source-path</code> analyzes only those exact application-relative files. Imports are not added automatically. REA 6.8.0 also accepts <code>--source-paths-json</code> as an inline JSON array or a JSON file. This sample is small, so the command above still analyzes the whole folder. Unselected files would remain in the inventory with unknown relationships.</p>
   <h2 id="trace">04. Follow the export path</h2>
   <p><strong>The answer:</strong> the app is written to save <code>notes.csv</code> in the operating system’s Downloads folder. The setting is in <code>main.js</code>. Here is how the button reaches that code.</p>
   <div class="flow"><span>Button</span><i>→</i><span>Preload</span><i>→</i><span>IPC</span><i>→</i><span>CSV file</span></div>
@@ -62,7 +64,7 @@ const toc=[{id:'start',label:'Before you start'},{id:'workflow',label:'The REA w
   <p>The kit already includes check.cjs. If you downloaded only the upstream sample, save the following as check.cjs in the notes-example folder:</p>
   <CodeBlock label="check.cjs" code={'const assert = require("node:assert/strict");\nconst { toCsv } = require("./csv.js");\n\nconst actual = toCsv([{ id: 1, title: \'Hello, "REA"\' }]);\nconst expected = \'id,title\\n1,"Hello, ""REA"""\\n\';\nassert.equal(actual, expected);\nconsole.log(actual);\nconsole.log("PASS: comma and quotes stay in one field.");'}/>
   <CodeBlock code="node check.cjs" label="Run from the sample folder"/>
-  <div class="callout"><p><strong>Verified locally.</strong> We ran the REA 6.4.0 static analysis and this formatter check on October 12, 2026. The output matched. We did not launch the Electron UI or test filesystem permissions through its export button.</p></div>
+  <div class="callout"><p><strong>Verified locally on October 12, 2026, with REA 6.4.0.</strong> The formatter check output matched that static analysis. We did not launch the Electron UI or test filesystem permissions through its export button. That run was not repeated on REA 6.8.0.</p></div>
   <h3>If the check fails</h3>
   <p>If Node cannot find check.cjs or csv.js, make sure you extracted the whole kit and opened the notes-example folder. If an assertion fails, compare the output with expected.csv and start again with a fresh extraction before changing any code.</p>
   <h2 id="next">06. Continue with a sharper question</h2>

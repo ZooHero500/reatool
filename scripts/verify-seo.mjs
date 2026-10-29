@@ -96,11 +96,13 @@ for (const path of ['/compare/', '/install/']) {
     assert(blocks.includes(question.name), `${path} ${locale.id}: FAQ question not visible`);
     assert(blocks.includes(question.acceptedAnswer.text), `${path} ${locale.id}: FAQ answer not visible`);
   }
-  assert.match(entry.html, /6\.4\.0/, `${path} ${locale.id}: REA version missing`);
+  assert.match(entry.html, /6\.8\.0/, `${path} ${locale.id}: REA version missing`);
 }
 assert.equal(pages.get(origin + languagePath(locale.id,'/compare/')).page['@type'], 'WebPage');
 }
 assert.match(pages.get(origin + '/compare/').html, /Placeholder\. This site has no head-to-head numbers yet\./);
-assert.match(pages.get(origin + '/install/').html, /Last verified: October 12, 2026 · REA version 6\.4\.0/);
-assert.match(pages.get(origin + '/first-analysis/').html, /Last verified: October 12, 2026 · REA version 6\.4\.0/);
+assert.match(pages.get(origin + '/install/').html, /Last verified: October 29, 2026 · REA version 6\.8\.0/);
+assert.match(pages.get(origin + '/first-analysis/').html, /Last verified: October 29, 2026 · REA version 6\.8\.0/);
+assert.match(pages.get(origin + '/compare/').html, /What changed after 6\.4\.0/);
+assert.match(pages.get(origin + '/compare/').html, /analyze_function/);
 console.log(`${pages.size} indexable pages: unique REA metadata, matching breadcrumbs, ${articles} article entities, catalog and sitemap passed.`);

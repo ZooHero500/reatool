@@ -4,6 +4,7 @@ import {compareFaqs, compareRows} from '../../data/compare';
 import {reaRelease} from '../../data/rea-release';
 const toc = [
   {id: 'table', label: 'Comparison table'},
+  {id: 'release', label: 'Since 6.4.0'},
   {id: 'skip', label: 'When you don’t need REA'},
   {id: 'published-tests', label: 'Published tests'},
   {id: 'our-test', label: 'Our hands-on test'},
@@ -14,10 +15,19 @@ const toc = [
 <Guide eyebrow="02 / Comparison" minutes="12 min" toc={toc} faq={compareFaqs} article={false}>
   <h2 id="table">What each project actually is</h2>
   <p>The rows below use the public README of each project, plus REA’s installation reference and get-started page. A cell does not rank the tools. Where a README is silent, the cell says so instead of guessing.</p>
-  <div class="table-scroll"><table class="compare-table"><caption>{`REA and five other ways to inspect software with a coding agent. Checked against public READMEs on ${reaRelease.lastVerifiedLabel}.`}</caption><thead><tr><th>Tool</th><th>Backend</th><th>Documented agents</th><th>Install effort</th><th>Strengths</th><th>Limits</th><th>Best for</th></tr></thead><tbody>
+  <div class="table-scroll"><table class="compare-table"><caption>REA and five other ways to inspect software with a coding agent. Competitor rows were checked against public READMEs on October 12, 2026. The REA row was checked against rea-agents 6.8.0 on October 29, 2026.</caption><thead><tr><th>Tool</th><th>Backend</th><th>Documented agents</th><th>Install effort</th><th>Strengths</th><th>Limits</th><th>Best for</th></tr></thead><tbody>
     {compareRows.map(row => <tr><td><a href={row.href}>{row.tool}</a></td><td>{row.backend}</td><td>{row.agents}</td><td>{row.install}</td><td>{row.strengths}</td><td>{row.limits}</td><td>{row.bestFor}</td></tr>)}
   </tbody></table></div>
-  <p>REA, ida-pro-mcp, radare2-mcp, and @electron/asar publish MIT licenses. The GhidraMCP and GhydraMCP READMEs display an Apache-2.0 badge. REA’s current npm release is <a href={reaRelease.releaseUrl}>{reaRelease.tag}</a>, published on 2026-10-11.</p>
+  <p>REA, ida-pro-mcp, radare2-mcp, and @electron/asar publish MIT licenses. The GhidraMCP and GhydraMCP READMEs display an Apache-2.0 badge. REA’s current npm release is <a href={reaRelease.releaseUrl}>{reaRelease.tag}</a>, published on {reaRelease.publishedOn}.</p>
+
+  <h2 id="release">What changed after 6.4.0</h2>
+  <p>These pages previously documented rea-agents 6.4.0. The notes below come from the upstream changelog and the 6.8.0 package. This site did not re-run its October 12, 2026 fixture checks on the newer releases. The third-party tests further down stay tied to the versions those authors named.</p>
+  <ul>
+    <li><strong>6.5.0</strong> (changelog 2026-10-13, published to npm on 2026-10-14). Static JavaScript analysis can take exact application-relative paths with repeated <code>--source-path</code>. Imports are not added automatically. Unselected files remain in the inventory and their relationships stay unknown, so application coverage is partial. Omit the flag for the previous whole-application analysis.</li>
+    <li><strong>6.6.0</strong> was tagged on 2026-10-18 and was not published to npm. <strong>6.7.0</strong>, published the same day, includes those changes. Setup edits the last repeated JSON or JSONC member, which is the member clients read. Setup and uninstall refuse a removal that would make an earlier shadowed duplicate active again, and they keep the original file.</li>
+    <li><strong>6.8.0</strong> (2026-10-25). The MCP tool <code>analyze_function</code> defaults to a retained summary: procedure identity, pseudocode size, facet counts, and value-flow availability. The complete dossier stays in the session. Page it with <code>inspect_analysis_view</code> and <code>normalized_result.parent_evidence_id</code>, or pass <code>detail: "complete"</code> for the previous inline dossier. The CLI command <code>function</code> still defaults to complete output; selecting a summary requires <code>--evidence_output</code>. The CLI command <code>decompile</code> is a different operation and still returns pseudocode. Node.js must satisfy <code>{reaRelease.nodeEngines}</code>. This release also accepts <code>--source-paths-json</code>, an inline JSON array or a JSON file, for a long JavaScript source selection.</li>
+  </ul>
+  <p>Sources: <a href={reaRelease.changelogUrl}>changelog at rea-agents-6.8.0</a>, <a href={reaRelease.releaseUrl}>GitHub release {reaRelease.tag}</a>, <a href="https://github.com/morluto/rea/blob/rea-agents-6.8.0/docs/javascript-artifact-reconstruction.md">JavaScript source selection</a>, and REA 6.8.0 CLI help checked on October 29, 2026.</p>
 
   <h2 id="skip">When you don’t need REA</h2>
   <p>Use a smaller tool when it already answers the question.</p>
@@ -49,7 +59,8 @@ const toc = [
   <ul class="source-list">
     <li><a href="https://github.com/morluto/rea">REA README</a> and <a href="https://github.com/morluto/rea/blob/main/LICENSE">MIT license</a></li>
     <li><a href="https://rea.tools/get-started">REA get-started</a>, <a href="https://morluto.github.io/rea/">morluto.github.io/rea</a>, and <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">installation reference</a></li>
-    <li><a href={reaRelease.releaseUrl}>GitHub release {reaRelease.tag}</a>, published 2026-10-11</li>
+    <li><a href={reaRelease.releaseUrl}>GitHub release {reaRelease.tag}</a>, published {reaRelease.publishedOn}</li>
+    <li><a href={reaRelease.changelogUrl}>Changelog through rea-agents-6.8.0</a></li>
     <li><a href="https://github.com/LaurieWired/GhidraMCP">GhidraMCP README</a></li>
     <li><a href="https://github.com/starsong-consulting/GhydraMCP">GhydraMCP README</a></li>
     <li><a href="https://github.com/mrexodia/ida-pro-mcp">ida-pro-mcp README</a> and <a href="https://github.com/mrexodia/ida-pro-mcp/blob/main/LICENSE">MIT license</a></li>

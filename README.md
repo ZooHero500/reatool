@@ -1,8 +1,14 @@
 # REA tutorials (unofficial)
 
-REA (Reverse Engineer Anything) is an MCP server and command-line tool from [morluto/rea](https://github.com/morluto/rea). It lets a coding agent inspect a program on your computer — native binaries through Hopper, Ghidra, or IDA, and JavaScript, Electron, .NET, Android, and websites with REA’s own tools — and return findings with evidence. Install a supported Node.js release (22.19+ in 22.x, 24.11+ in 24.x, or 26+), then run `npx rea-agents@latest setup`, approve the plan, and restart the agent. Official setup: [rea.tools/get-started](https://rea.tools/get-started) and [morluto.github.io/rea](https://morluto.github.io/rea/). **This repository is an unofficial tutorial collection for [reatool.dev](https://reatool.dev/). It is not affiliated with morluto or the REA maintainers.**
+REA (Reverse Engineer Anything) is an MCP server and command-line tool from [morluto/rea](https://github.com/morluto/rea). It lets a coding agent inspect a program on your computer — native binaries through Hopper, Ghidra, or IDA, and JavaScript, Electron, .NET, Android, and websites with REA’s own tools — and return findings with evidence. Install a supported Node.js release (22.23.4+ in 22.x, 24.22.1+ in 24.x, or 26.12.1+), then run `npx rea-agents@latest setup`, approve the plan, and restart the agent. Node.js 23, 25, earlier 26.x releases, and prereleases are unsupported, and the installer does not upgrade Node.js. Official setup: [rea.tools/get-started](https://rea.tools/get-started) and [morluto.github.io/rea](https://morluto.github.io/rea/). **This repository is an unofficial tutorial collection for [reatool.dev](https://reatool.dev/). It is not affiliated with morluto or the REA maintainers.**
 
-The current npm release checked for these pages is [rea-agents 6.4.0](https://github.com/morluto/rea/releases/tag/rea-agents-6.4.0), published 2026-10-11. Last verified: October 12, 2026.
+The current npm release checked for these pages is [rea-agents 6.8.0](https://github.com/morluto/rea/releases/tag/rea-agents-6.8.0), published 2026-10-25. Last verified: October 29, 2026. Sources: the [6.8.0 changelog](https://github.com/morluto/rea/blob/rea-agents-6.8.0/CHANGELOG.md), the [6.8.0 installation reference](https://github.com/morluto/rea/blob/rea-agents-6.8.0/docs/installation.md), and that package’s npm `engines` field and CLI help. Local fixture checks recorded on October 12, 2026 used REA 6.4.0 and were not repeated.
+
+Since the 6.4.0 pages:
+
+- **6.5.0** (changelog 2026-10-13, npm 2026-10-14) can limit static JavaScript analysis to exact files with repeated `--source-path`. Imports are not pulled in. Unselected files stay inventoried with unknown relationships.
+- **6.6.0** was tagged on 2026-10-18 and was not published to npm. **6.7.0**, published the same day, includes it. Setup edits the last repeated JSON or JSONC member, and refuses a removal that would reactivate a shadowed duplicate.
+- **6.8.0** makes the MCP tool `analyze_function` default to a retained summary. Pass `detail: "complete"` for the previous inline dossier. The CLI command `function` still defaults to complete output and requires `--evidence_output` for a summary. `decompile` is a different command and still returns pseudocode. `--source-paths-json` accepts a long source selection as JSON.
 
 ## FAQ
 
@@ -42,11 +48,11 @@ When the unpacked files or a disassembly listing already answer the question, or
 
 ### Does REA use more tokens?
 
-This repository has not measured token use. In that same GitTested review of version 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA (about 2.5 times). The review says most extra tokens were cached reads, so computed cost was about 1.5 times. Those numbers are not a measurement of 6.4.0 and not a result from reatool.dev.
+This repository has not measured token use. In that same GitTested review of version 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA (about 2.5 times). The review says most extra tokens were cached reads, so computed cost was about 1.5 times. Those numbers are not a measurement of 6.8.0 and not a result from reatool.dev.
 
 ## Short comparison
 
-Facts below are from each project’s public README, checked October 12, 2026. The full table, limits, and source links are on the [comparison page](https://reatool.dev/compare/).
+Competitor rows below are from each project’s public README, checked October 12, 2026, and were not re-read for this update. The REA row follows rea-agents 6.8.0, checked October 29, 2026. The full table, limits, and source links are on the [comparison page](https://reatool.dev/compare/).
 
 | Tool | Backend | Documented agents | Best for |
 | --- | --- | --- | --- |

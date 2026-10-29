@@ -3,7 +3,7 @@ import Guide from '../layouts/Guide.astro';
 import CodeBlock from '../components/CodeBlock.astro';
 import PracticeNext from '../components/PracticeNext.astro';
 import {installFaqs} from '../data/compare';
-import {reaRelease} from '../data/rea-release';
+import {nodeSupportProse, reaRelease} from '../data/rea-release';
 const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect your agent'},{id:'verify',label:'Check the connection'},{id:'engines',label:'Choose an analysis engine'},{id:'troubleshooting',label:'If something goes wrong'},{id:'update',label:'Keep REA up to date'},{id:'faq',label:'Install FAQ'}];
 ---
 <Guide eyebrow="01 / Installation" minutes="6 min" toc={toc} faq={installFaqs}>
@@ -17,14 +17,15 @@ const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect y
     <p>The .cmd commands avoid PowerShell blocking npm.ps1 or npx.ps1. You do not need to change the execution policy. If node is not found, reopen the terminal after installing Node.js and check that its installation folder is on PATH.</p>
   </div>
   <CodeBlock trackingId="runtime-check" code={'node --version\nnpm --version'} label="Check your runtime"/>
-  <p>REA currently supports <strong>Node.js 22.19+ within 22.x, 24.11+ within 24.x, or 26+</strong>. Versions 23, 25 and prereleases are outside its supported range. Get a compatible release from <a href="https://nodejs.org/en/download">Node.js</a> if needed.</p>
-  <p>{`Our example checks were run on macOS arm64 with Node.js 22.23.1 and REA ${reaRelease.version}. Platform support for additional engines varies; see the`} <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">official installation reference</a> for your target.</p>
+  <p><strong>{nodeSupportProse}</strong> Get a compatible release from <a href="https://nodejs.org/en/download">Node.js</a> if needed. The range is the one in the <a href="https://github.com/morluto/rea/blob/rea-agents-6.8.0/docs/installation.md">rea-agents 6.8.0 installation reference</a> and in that package’s <code>engines</code> field.</p>
+  <p>Example checks recorded on this site were run on macOS arm64 with Node.js 22.23.1 and REA 6.4.0 on October 12, 2026. Node.js 22.23.1 is older than the 6.8.0 minimum, and those checks were not repeated on 6.8.0. Platform support for additional engines varies; see the <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">official installation reference</a> for your target.</p>
   <h2 id="connect">02. Connect your coding agent</h2>
   <p>Choose your client to get a scoped setup command. “Choose in setup” opens the interactive client selection.</p>
   <div class="client-chooser" role="group" aria-label="Choose your coding agent"><button aria-pressed="true" data-client="">Choose in setup</button><button aria-pressed="false" data-client="claude_code">Claude Code</button><button aria-pressed="false" data-client="codex">Codex</button><button aria-pressed="false" data-client="cursor">Cursor</button></div>
   <div id="setup-command"><CodeBlock trackingId="setup-command" code="npx rea-agents@latest setup" label="Run in your terminal"/></div>
   <ol><li>Run the command. npm may first ask to download the package.</li><li>Review REA’s own plan: client configuration files, matching skill instructions, and any optional engine setup.</li><li>Approve the changes you want. If your first target is JavaScript, you can start without a native engine.</li><li><strong>Restart or reconnect your coding agent</strong> so it loads the new MCP server.</li></ol>
   <p>The setup installs both the MCP registration and the matching workflow instructions. Installing only a skill does not establish the tool connection.</p>
+  <p>From rea-agents 6.7.0, setup edits the last repeated JSON or JSONC member, which is the member clients read. If removing a member would make an earlier shadowed duplicate active again, setup and uninstall refuse that change and keep the original file. rea-agents 6.6.0 was tagged on 2026-10-18 and was not published to npm; 6.7.0 includes it. For Claude Code, setup, doctor, and uninstall accept only the strict JSON Claude Code reads, including a leading UTF-8 BOM. Comments and trailing commas are refused before backup or writing. Clients that use JSONC keep that format.</p>
   <h3>Prefer to ask your agent?</h3>
   <CodeBlock trackingId="setup-prompt" prompt label="Copy into your coding agent" code="Install REA for this coding agent using npx rea-agents@latest setup. Show me the proposed configuration changes before applying them. Then tell me how to restart and verify the connection. My first target will be a local JavaScript package."/>
   <h2 id="verify">03. Check the connection</h2>
@@ -54,7 +55,7 @@ const toc=[{id:'before',label:'Before you start'},{id:'connect',label:'Connect y
   <h2 id="faq">Install FAQ</h2>
   {installFaqs.map(item => <section class="faq-item"><h3>{item.question}</h3><p>{item.answer}</p></section>)}
   <p><a href="/compare/">Compare REA with GhidraMCP and other tools</a></p>
-  <div class="sources"><p>Sources: <a href="https://github.com/morluto/rea/blob/main/docs/installation.md">REA installation reference</a>, <a href="https://github.com/morluto/rea">official README</a>, <a href="https://rea.tools/get-started">official get-started page</a>{`, and the locally checked REA ${reaRelease.version} CLI help. Reviewed ${reaRelease.lastVerifiedLabel}. Upstream main may describe features newer than the npm release.`}</p></div>
+  <div class="sources"><p>Sources: <a href="https://github.com/morluto/rea/blob/rea-agents-6.8.0/docs/installation.md">REA 6.8.0 installation reference</a>, <a href="https://github.com/morluto/rea">official README</a>, <a href="https://rea.tools/get-started">official get-started page</a>, <a href={reaRelease.changelogUrl}>changelog</a>{`, and REA ${reaRelease.version} CLI help. Reviewed ${reaRelease.lastVerifiedLabel}. Upstream main may describe features newer than the npm release.`}</p></div>
 </Guide>
 <script>
   import {track} from '../lib/analytics';
