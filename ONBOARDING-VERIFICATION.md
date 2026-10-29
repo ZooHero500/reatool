@@ -1,5 +1,7 @@
 # Installation and first-practice checks — 2026-10-14
 
+The REA commands recorded below were run with rea-agents 6.4.0. The site now documents 6.8.0. Those fixture runs were not repeated, and the counts below are not 6.8.0 results.
+
 ## Search-to-first-practice update — 2026-10-27
 
 - The homepage's secondary hero button now opens the localized first-analysis guide directly. The AI setup button and tutorial navigation remain available.

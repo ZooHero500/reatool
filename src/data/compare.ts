@@ -16,7 +16,7 @@ export const compareRows: CompareRow[] = [
     href: 'https://github.com/morluto/rea',
     backend: 'Hopper, Ghidra, or IDA for native binaries. Built-in static analysis for JavaScript, Electron, and .NET. Separate official guides cover Android, browsers, and other targets.',
     agents: 'Setup documents Claude Code, Codex, and Cursor, plus other MCP clients in the installation reference.',
-    install: 'Node.js 22.19+ (22.x), 24.11+ (24.x), or 26+, then npx rea-agents@latest setup. Restart the agent after approving the plan.',
+    install: 'Node.js 22.23.4+ (22.x), 24.22.1+ (24.x), or 26.12.1+, then npx rea-agents@latest setup. Restart the agent after approving the plan. The installer does not upgrade Node.js.',
     strengths: 'One MCP server and CLI for packaged apps and native binaries. Static JavaScript needs no native engine. Results include evidence and stated limits. Analysis runs locally.',
     limits: 'Hopper, IDA, and JEB keep their own licenses. A native engine is still required for deep native work. This site has not measured token cost; see the published tests below.',
     bestFor: 'An agent investigation that may cross JavaScript or Electron and a native binary, with one setup command.',
@@ -80,7 +80,7 @@ export const compareFaqs: FaqItem[] = [
   },
   {
     question: 'How do I install REA?',
-    answer: 'Install Node.js 22.19 or newer in the 22.x line, 24.11 or newer in the 24.x line, or Node.js 26 or newer. In a terminal, run npx rea-agents@latest setup, review the plan, approve the changes you want, and restart the coding agent. Copying a prompt in the browser does not install REA. The same package is on npm as rea-agents.',
+    answer: 'Install Node.js 22.23.4 or newer in the 22.x line, 24.22.1 or newer in the 24.x line, or Node.js 26.12.1 or newer. Node.js 23, 25, earlier 26.x releases, and prereleases are unsupported. Upgrade Node.js yourself; the REA installer does not upgrade it. In a terminal, run npx rea-agents@latest setup, review the plan, approve the changes you want, and restart the coding agent. Copying a prompt in the browser does not install REA. The same package is on npm as rea-agents.',
   },
   {
     question: 'Is REA free?',
@@ -104,14 +104,14 @@ export const compareFaqs: FaqItem[] = [
   },
   {
     question: 'Does REA use more tokens?',
-    answer: 'This site has not measured token use. In the GitTested review of rea-agents 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA, about 2.5 times as many. That review says most of the extra tokens were cached reads, so computed cost rose by about 1.5 times. It also says a full analysis of one 22 MB Electron archive wrote a 692 MB document that could not be returned in a single MCP call. Those figures are that review’s measurements of version 6.2.0, not a measurement of the current 6.4.0 release and not a result from this site.',
+    answer: 'This site has not measured token use. In the GitTested review of rea-agents 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA, about 2.5 times as many. That review says most of the extra tokens were cached reads, so computed cost rose by about 1.5 times. It also says a full analysis of one 22 MB Electron archive wrote a 692 MB document that could not be returned in a single MCP call. Those figures are that review’s measurements of version 6.2.0, not a measurement of the current 6.8.0 release and not a result from this site.',
   },
 ];
 
 export const installFaqs: FaqItem[] = [
   {
     question: 'Which Node.js versions does REA support?',
-    answer: 'REA currently supports Node.js 22.19+ within 22.x, 24.11+ within 24.x, or 26+. Versions 23, 25, and prereleases are outside its supported range.',
+    answer: 'REA 6.8.0 supports Node.js 22.23.4 or newer within 22.x, 24.22.1 or newer within 24.x, or 26.12.1 or newer. Node.js 23, 25, earlier 26.x releases, and prereleases are unsupported. Upgrade Node.js before installing or updating REA; the installer does not upgrade it.',
   },
   {
     question: 'How do I connect Claude Code, Codex, or Cursor?',

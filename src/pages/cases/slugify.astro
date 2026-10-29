@@ -2,10 +2,11 @@
 import Guide from '../../layouts/Guide.astro';
 import CodeBlock from '../../components/CodeBlock.astro';
 import SlugDemo from '../../components/SlugDemo.astro';
+import {reaRelease} from '../../data/rea-release';
 const toc=[{id:'question',label:'The URL we wanted'},{id:'artifact',label:'Download and inspect'},{id:'rule',label:'Find the right option'},{id:'verify',label:'Run the checks'},{id:'limits',label:'What we tested'},{id:'reproduce',label:'Download the example'}];
 ---
 <Guide eyebrow="03 / Real package example" minutes="7 min" toc={toc}>
-  <div class="case-meta"><span>slugify 1.6.6 / MIT</span><span>REA 6.4.0</span><span>Checked Oct 12, 2026</span></div>
+  <div class="case-meta"><span>slugify 1.6.6 / MIT</span><span>Recorded with REA 6.4.0</span><span>Checked Oct 12, 2026</span></div>
   <div class="answer-box"><p class="eyebrow">THE SHORT ANSWER</p><p><code>lower: true</code> only changes uppercase letters to lowercase. Add <code>strict: true</code> to remove punctuation too. This is an option you need to enable, not a bug in the library.</p><CodeBlock label="The working configuration" code={'slugify("Déjà Vu!", { lower: true, strict: true })\n// → "deja-vu"'}/></div>
   <h2 id="question">01. The URL we wanted</h2>
   <p>A <strong>slug</strong> is the readable last part of a URL, such as <code>deja-vu</code> in <code>example.com/posts/deja-vu</code>. This example uses the real <a href="https://www.npmjs.com/package/slugify/v/1.6.6">slugify 1.6.6 npm release</a>. The results below come from running that release locally.</p>
@@ -17,12 +18,12 @@ const toc=[{id:'question',label:'The URL we wanted'},{id:'artifact',label:'Downl
   <h2 id="artifact">02. Download the package and inspect it with REA</h2>
   <p>We downloaded the pinned npm tarball and unpacked it without installing or running the package. The following preparation commands work in a shell with <code>tar</code>:</p>
   <CodeBlock code={'mkdir rea-slugify-case\ncd rea-slugify-case\nnpm pack slugify@1.6.6\ntar -xzf slugify-1.6.6.tgz'}/>
-  <p>Then we ran REA’s JavaScript application analyzer on the extracted <code>package</code> directory:</p>
+  <p>Then we ran REA 6.4.0’s JavaScript application analyzer on the extracted <code>package</code> directory. The published summary is from that run. To repeat the inspection with the release these pages document, pin {reaRelease.version}. That later run has not been recorded here.</p>
   <p>If you prefer your coding agent, replace the path and paste this prompt:</p>
   <CodeBlock prompt label="Copy into your coding agent" code="Use REA to inspect /absolute/path/to/rea-slugify-case/package. I use slugify to make article URLs. Why does slugify('Déjà Vu!', { lower: true }) keep the exclamation mark? Find the entry file, show the code that allows it, and identify the option that removes it. Do not change the package."/>
   <p>Or collect the analysis directly in your terminal:</p>
-  <CodeBlock code={'npx -y rea-agents@6.4.0 analyze-javascript-application ./package --json > analysis.json'}/>
-  <p>REA identified the package as <code>slugify</code>, version <code>1.6.6</code>, with an entry point of <code>./slugify.js</code>. The report recorded three relevant files and zero parse failures. It also marked overall graph coverage as <strong>partial</strong>, which we retained in the published summary.</p>
+  <CodeBlock code={`npx -y rea-agents@${reaRelease.version} analyze-javascript-application ./package --json > analysis.json`}/>
+  <p>The REA 6.4.0 report identified the package as <code>slugify</code>, version <code>1.6.6</code>, with an entry point of <code>./slugify.js</code>. It recorded three relevant files and zero parse failures. It also marked overall graph coverage as <strong>partial</strong>, which we retained in the published summary. Since REA 6.5.0, repeated <code>--source-path</code> can limit analysis to exact files; this recorded run did not use that flag.</p>
   <p>This is a readable JavaScript distribution. REA supplied the artifact inventory and analysis context; subsequent source inspection and direct checks established the behavior. No native decompilation was involved.</p>
   <h2 id="rule">03. Find the option that removes punctuation</h2>
   <p>In the shipped <code>slugify.js</code>, lines 33–42 normalize the string, apply locale or character-map replacements, and filter characters. The default filter explicitly allows the exclamation mark.</p>
