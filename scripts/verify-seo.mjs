@@ -101,8 +101,10 @@ for (const path of ['/compare/', '/install/']) {
 assert.equal(pages.get(origin + languagePath(locale.id,'/compare/')).page['@type'], 'WebPage');
 }
 assert.match(pages.get(origin + '/compare/').html, /Placeholder\. This site has no head-to-head numbers yet\./);
-assert.match(pages.get(origin + '/install/').html, /Last verified: October 29, 2026 · REA version 6\.8\.0/);
-assert.match(pages.get(origin + '/first-analysis/').html, /Last verified: October 29, 2026 · REA version 6\.8\.0/);
+assert.match(pages.get(origin + '/install/').html, /Last verified: November 2, 2026 · REA version 6\.8\.0/);
+assert.match(pages.get(origin + '/first-analysis/').html, /Last verified: November 2, 2026 · REA version 6\.8\.0/);
+assert.match(llms, /Last verified 2026-11-02/);
+assert.match(llms, /rea-agents 6\.8\.0/);
 assert.match(pages.get(origin + '/compare/').html, /What changed after 6\.4\.0/);
 assert.match(pages.get(origin + '/compare/').html, /analyze_function/);
 console.log(`${pages.size} indexable pages: unique REA metadata, matching breadcrumbs, ${articles} article entities, catalog and sitemap passed.`);

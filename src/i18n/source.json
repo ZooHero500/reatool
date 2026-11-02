@@ -856,7 +856,8 @@
     "text": "The",
     "contexts": [
       "/about/ p",
-      "/cases/aegis/ p"
+      "/cases/aegis/ p",
+      "/compare/ li"
     ]
   },
   "810c6f9ed5dc": {
@@ -1178,8 +1179,8 @@
       "/cases/aegis/ a"
     ]
   },
-  "aea8311885a7": {
-    "text": "Last verified: October 29, 2026 · REA version 6.8.0",
+  "13a64a3837ab": {
+    "text": "Last verified: November 2, 2026 · REA version 6.8.0",
     "contexts": [
       "/cases/aegis/ div",
       "/cases/aegis/ p",
@@ -1457,8 +1458,8 @@
       "/cases/aegis/ a"
     ]
   },
-  "0d62be4c3100": {
-    "text": ", record its hash and search for the TOTP class. Commands below pin REA 6.8.0. Their names and arguments were checked against that release’s CLI help on October 29, 2026. This site did not re-run them against the APK.",
+  "adb3cf957b96": {
+    "text": ", record its hash and search for the TOTP class. Commands below pin REA 6.8.0. Their names and arguments were checked against that release’s CLI help on November 2, 2026. This site did not re-run them against the APK.",
     "contexts": [
       "/cases/aegis/ p"
     ]
@@ -4228,8 +4229,8 @@
       "/compare/ h3"
     ]
   },
-  "3ba55f84845a": {
-    "text": "Yes. The official get-started page names Claude Code, Codex, and Cursor among the clients setup can connect. The installation reference uses the client ids claude_code, codex, and cursor. Run npx rea-agents@latest setup, approve the plan, and restart that agent so it loads the MCP server.",
+  "7fbeda31a46f": {
+    "text": "Yes. The official get-started page names Claude Code, Codex, and Cursor among the clients setup can connect. The 6.8.0 installation reference uses the client ids claude_code, codex, and cursor, and lists further ids. It says droid, dsh, kimi, qoder, trae, workbuddy, and zcode require rea-agents 6.5.0 or later, and freebuff requires 6.8.0 or later. That get-started page still introduces its client table as the npm 6.4.0 release and says some of those clients are only on repository main. Where the two pages disagree, this site follows the 6.8.0 installation reference. Run npx rea-agents@latest setup, approve the plan, and restart that agent so it loads the MCP server. On November 2, 2026, npm latest was still 6.8.0.",
     "contexts": [
       "/compare/ schema",
       "/compare/ p"
@@ -4242,8 +4243,8 @@
       "/compare/ h3"
     ]
   },
-  "5aa3792c34b4": {
-    "text": "Not for static JavaScript, Electron, or .NET inspection. The REA README says those paths read the files you supply and do not need a native engine. Deep native analysis uses Hopper, Ghidra, or IDA. The get-started page documents Ghidra 12.1.x with JDK 21, an optional Hopper install after approval, and IDA through an existing MCP registration whose verified setups are on Windows.",
+  "d6dd6e24f105": {
+    "text": "Not for static JavaScript, Electron, or .NET inspection. The REA README says those paths read the files you supply and do not need a native engine. Deep native analysis uses Hopper, Ghidra, IDA, or a Kuna executable you supply. The 6.8.0 Kuna guide says REA verified Kuna 1.833 and does not support Windows, PE, or universal Mach-O. The Kuna guide on main recommends Kuna 1.988 and says those checks ran on macOS arm64; that recommendation is not in the 6.8.0 tag. The get-started page still documents Ghidra 12.1.x with JDK 21, an optional Hopper install after approval, and IDA through an existing MCP registration whose verified setups are on Windows. The installation reference on main says doctor validates Ghidra 12.x at 12.1 or newer. The 6.8.0 copy of that page says Ghidra 12.1.x.",
     "contexts": [
       "/compare/ schema",
       "/compare/ p"
@@ -4291,6 +4292,20 @@
       "/compare/ p"
     ]
   },
+  "178013ba8e5d": {
+    "text": "Is npm’s latest REA newer than 6.8.0?",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ h3"
+    ]
+  },
+  "f16771ddd822": {
+    "text": "No. On November 2, 2026, npm dist-tag latest and the latest GitHub release were both rea-agents 6.8.0, published 2026-10-25. The changelog on main has no section after 6.8.0, and package.json on main still says 6.8.0. Guides on that commit describe later behavior, including a Kuna 1.988 recommendation, REA_MCP_OUTPUT_SCHEMA_PROFILE=compact, and close_binary keeping investigation records until reset_investigation. Those guides are not the published package. This site did not re-run its October 12, 2026 fixture checks.",
+    "contexts": [
+      "/compare/ schema",
+      "/compare/ p"
+    ]
+  },
   "fd11506ed546": {
     "text": "Comparison table",
     "contexts": [
@@ -4299,6 +4314,12 @@
   },
   "0b39b3f92de2": {
     "text": "Since 6.4.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "814fadc16636": {
+    "text": "Checked November 2",
     "contexts": [
       "/compare/ a"
     ]
@@ -4373,8 +4394,8 @@
       "/compare/ p"
     ]
   },
-  "44b0b49640ab": {
-    "text": "REA and five other ways to inspect software with a coding agent. Competitor rows were checked against public READMEs on October 12, 2026. The REA row was checked against rea-agents 6.8.0 on October 29, 2026.",
+  "0b7c17a504bd": {
+    "text": "REA and five other ways to inspect software with a coding agent. Competitor rows were checked against public READMEs on October 12, 2026. The REA row was checked against rea-agents 6.8.0 on November 2, 2026.",
     "contexts": [
       "/compare/ caption"
     ]
@@ -4427,14 +4448,14 @@
       "/compare/ a"
     ]
   },
-  "13284313b92e": {
-    "text": "Hopper, Ghidra, or IDA for native binaries. Built-in static analysis for JavaScript, Electron, and .NET. Separate official guides cover Android, browsers, and other targets.",
+  "7adbd97437d6": {
+    "text": "Hopper, Ghidra, or IDA for native binaries, or a Kuna executable you supply. The 6.8.0 Kuna guide says REA verified Kuna 1.833, reports other releases as unverified, and does not install Kuna. That guide does not support Windows. Its supported targets are ELF and thin Mach-O for x86-64, AArch64, and ARM; PE and universal Mach-O are rejected. Built-in static analysis covers JavaScript, Electron, and .NET. Separate official guides cover Android, browsers, and other targets.",
     "contexts": [
       "/compare/ td"
     ]
   },
-  "2f6e5fa349ba": {
-    "text": "Setup documents Claude Code, Codex, and Cursor, plus other MCP clients in the installation reference.",
+  "99245c620bcf": {
+    "text": "The 6.8.0 installation reference lists claude_code, codex, and cursor among its setup client ids. It says droid, dsh, kimi, qoder, trae, workbuddy, and zcode require 6.5.0 or later, and freebuff requires 6.8.0 or later. The live get-started page still introduces its client table as the npm 6.4.0 release.",
     "contexts": [
       "/compare/ td"
     ]
@@ -4721,8 +4742,20 @@
       "/compare/ li"
     ]
   },
-  "c3251ff5decb": {
-    "text": ", published the same day, includes those changes. Setup edits the last repeated JSON or JSONC member, which is the member clients read. Setup and uninstall refuse a removal that would make an earlier shadowed duplicate active again, and they keep the original file.",
+  "aa8ed2ff0da0": {
+    "text": ", published the same day, includes those changes. Setup edits the last repeated JSON or JSONC member, which is the member clients read. Setup and uninstall refuse a removal that would make an earlier shadowed duplicate active again, and they keep the original file. The 6.6.0 changelog, which 6.7.0 and 6.8.0 include, adds a caller-supplied Kuna provider. It says recorded real-provider coverage uses Kuna 1.833 on Linux, and that Windows, PE, and universal Mach-O are unsupported. The",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "aad371cb1e3c": {
+    "text": "6.8.0 Kuna guide",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "bc6b3e22bae8": {
+    "text": "says REA verified Kuna 1.833, reports other releases as unverified, does not install Kuna, and accepts ELF and thin Mach-O for x86-64, AArch64, and ARM.",
     "contexts": [
       "/compare/ li"
     ]
@@ -4775,8 +4808,20 @@
       "/compare/ li"
     ]
   },
-  "b79f62a262f3": {
-    "text": ", an inline JSON array or a JSON file, for a long JavaScript source selection.",
+  "d829206fbbda": {
+    "text": ", an inline JSON array or a JSON file, for a long JavaScript source selection. The same changelog and the published CLI help include",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "4aa9bfd2f175": {
+    "text": ", and",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "68cd1f33e2da": {
+    "text": ". The changelog says this release adds opt-in Streamable HTTP and FreeBuff setup registration, and that installed native FreeBuff loading and skill discovery remain unverified.",
     "contexts": [
       "/compare/ li"
     ]
@@ -4799,8 +4844,170 @@
       "/compare/ a"
     ]
   },
-  "0f7b9c0206b0": {
-    "text": ", and REA 6.8.0 CLI help checked on October 29, 2026.",
+  "562101e4325f": {
+    "text": ", and REA 6.8.0 CLI help checked on November 2, 2026.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "800f07080f3d": {
+    "text": "Checked again on November 2, 2026",
+    "contexts": [
+      "/compare/ h2"
+    ]
+  },
+  "c45f9c3d89dc": {
+    "text": "npm dist-tag latest and the latest GitHub release were still rea-agents 6.8.0, published 2026-10-25. The changelog on main has no section after 6.8.0.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "b8d31e852725": {
+    "text": "on",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "4f159e089d39": {
+    "text": "main commit 8250bf2",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "22e3d15f527b": {
+    "text": "still says 6.8.0, so",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "de699df11deb": {
+    "text": "still installs that release. This site re-read the published package’s CLI help the same day. The command names and flags cited above still match that help. The October 12, 2026 fixture checks were not repeated, and competitor READMEs were not re-read.",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "8badbe385bda": {
+    "text": "Guides on that main commit describe behavior the 6.8.0 tag does not:",
+    "contexts": [
+      "/compare/ p"
+    ]
+  },
+  "31f2405d0e45": {
+    "text": "Kuna guide on main",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "e5b24eb4c8cd": {
+    "text": "recommends Kuna 1.988 for a new installation and says the 1.988 checks ran on macOS arm64. It says Linux and other hosts have not been verified with that release. Windows, PE, and universal Mach-O stay unsupported in both the 6.8.0 guide and this copy.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "7406f92ba95f": {
+    "text": "MCP contracts guide on main",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "8da91408dd1a": {
+    "text": "adds",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "871a4ab9bfdf": {
+    "text": ". That setting bounds each advertised output schema to 4,096 bytes. It also keeps",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "4706472a616f": {
+    "text": ". The",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "ac26aab4221a": {
+    "text": "6.8.0 copy",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "889d9fc62afd": {
+    "text": "documents only",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "6111ec47e060": {
+    "text": "plus the value",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "e452613badaa": {
+    "text": ". Both copies say the default is",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "3a4d686bcc7f": {
+    "text": "installation reference on main",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "79701392a991": {
+    "text": "says doctor validates Ghidra 12.x at 12.1 or newer. The",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "5bee1b3d9489": {
+    "text": "says Ghidra 12.1.x. The live",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "0fa1d3a7e5e9": {
+    "text": "get-started page",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "a0d6427098c8": {
+    "text": "still says to download Ghidra 12.1.4.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "1cb907aeaed0": {
+    "text": "The same main MCP contracts guide says",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "bd47873ba357": {
+    "text": "keeps investigation records and",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "7ccb40e60c56": {
+    "text": "clears them. The 6.8.0 copy says",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "d69df91a21d8": {
+    "text": "clears those records. There is no changelog entry for that change.",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "f7197f744f4f": {
+    "text": "Those main-branch sentences are not the published npm package. Do not treat them as the behavior of rea-agents 6.8.0.",
     "contexts": [
       "/compare/ p"
     ]
@@ -4943,12 +5150,6 @@
       "/compare/ a"
     ]
   },
-  "4aa9bfd2f175": {
-    "text": ", and",
-    "contexts": [
-      "/compare/ li"
-    ]
-  },
   "80bf4c6c9e78": {
     "text": "installation reference",
     "contexts": [
@@ -4965,6 +5166,42 @@
     "text": "Changelog through rea-agents-6.8.0",
     "contexts": [
       "/compare/ a"
+    ]
+  },
+  "44359e21492d": {
+    "text": "and the",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "7ad66b482100": {
+    "text": "changelog on main",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "2f99b704d92c": {
+    "text": ", which still starts at 6.8.0",
+    "contexts": [
+      "/compare/ li"
+    ]
+  },
+  "0a29e795a951": {
+    "text": "Kuna guide at rea-agents-6.8.0",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "b38eeb5f15bb": {
+    "text": "rea-agents on npm",
+    "contexts": [
+      "/compare/ a"
+    ]
+  },
+  "359d7f87ee7d": {
+    "text": ", dist-tag latest 6.8.0 on November 2, 2026",
+    "contexts": [
+      "/compare/ li"
     ]
   },
   "ddaf219fdbcf": {
@@ -7628,8 +7865,8 @@
       "/install/ a"
     ]
   },
-  "6c898fa56ab1": {
-    "text": ", and REA 6.8.0 CLI help. Reviewed October 29, 2026. Upstream main may describe features newer than the npm release.",
+  "d4b679310dd0": {
+    "text": ", and REA 6.8.0 CLI help. Reviewed November 2, 2026. Upstream main may describe features newer than the npm release.",
     "contexts": [
       "/install/ p"
     ]
@@ -8708,8 +8945,8 @@
       "/tutorials/android-api/ p"
     ]
   },
-  "386a568ffa8f": {
-    "text": "Command names and flags were checked against REA 6.8.0 CLI help on October 29, 2026. These workflows were not re-run on a target for that release. Target-specific results depend on your artifact and provider.",
+  "ee4ffb959066": {
+    "text": "Command names and flags were checked against REA 6.8.0 CLI help on November 2, 2026. These workflows were not re-run on a target for that release. Target-specific results depend on your artifact and provider.",
     "contexts": [
       "/tutorials/android-api/ p",
       "/tutorials/browser-export/ p",
