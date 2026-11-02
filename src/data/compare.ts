@@ -14,8 +14,8 @@ export const compareRows: CompareRow[] = [
   {
     tool: 'REA',
     href: 'https://github.com/morluto/rea',
-    backend: 'Hopper, Ghidra, or IDA for native binaries. Built-in static analysis for JavaScript, Electron, and .NET. Separate official guides cover Android, browsers, and other targets.',
-    agents: 'Setup documents Claude Code, Codex, and Cursor, plus other MCP clients in the installation reference.',
+    backend: 'Hopper, Ghidra, or IDA for native binaries, or a Kuna executable you supply. The 6.8.0 Kuna guide says REA verified Kuna 1.833, reports other releases as unverified, and does not install Kuna. That guide does not support Windows. Its supported targets are ELF and thin Mach-O for x86-64, AArch64, and ARM; PE and universal Mach-O are rejected. Built-in static analysis covers JavaScript, Electron, and .NET. Separate official guides cover Android, browsers, and other targets.',
+    agents: 'The 6.8.0 installation reference lists claude_code, codex, and cursor among its setup client ids. It says droid, dsh, kimi, qoder, trae, workbuddy, and zcode require 6.5.0 or later, and freebuff requires 6.8.0 or later. The live get-started page still introduces its client table as the npm 6.4.0 release.',
     install: 'Node.js 22.23.4+ (22.x), 24.22.1+ (24.x), or 26.12.1+, then npx rea-agents@latest setup. Restart the agent after approving the plan. The installer does not upgrade Node.js.',
     strengths: 'One MCP server and CLI for packaged apps and native binaries. Static JavaScript needs no native engine. Results include evidence and stated limits. Analysis runs locally.',
     limits: 'Hopper, IDA, and JEB keep their own licenses. A native engine is still required for deep native work. This site has not measured token cost; see the published tests below.',
@@ -88,11 +88,11 @@ export const compareFaqs: FaqItem[] = [
   },
   {
     question: 'Does REA work with Claude Code, Codex, and Cursor?',
-    answer: 'Yes. The official get-started page names Claude Code, Codex, and Cursor among the clients setup can connect. The installation reference uses the client ids claude_code, codex, and cursor. Run npx rea-agents@latest setup, approve the plan, and restart that agent so it loads the MCP server.',
+    answer: 'Yes. The official get-started page names Claude Code, Codex, and Cursor among the clients setup can connect. The 6.8.0 installation reference uses the client ids claude_code, codex, and cursor, and lists further ids. It says droid, dsh, kimi, qoder, trae, workbuddy, and zcode require rea-agents 6.5.0 or later, and freebuff requires 6.8.0 or later. That get-started page still introduces its client table as the npm 6.4.0 release and says some of those clients are only on repository main. Where the two pages disagree, this site follows the 6.8.0 installation reference. Run npx rea-agents@latest setup, approve the plan, and restart that agent so it loads the MCP server. On November 2, 2026, npm latest was still 6.8.0.',
   },
   {
     question: 'Do I need Ghidra or IDA to use REA?',
-    answer: 'Not for static JavaScript, Electron, or .NET inspection. The REA README says those paths read the files you supply and do not need a native engine. Deep native analysis uses Hopper, Ghidra, or IDA. The get-started page documents Ghidra 12.1.x with JDK 21, an optional Hopper install after approval, and IDA through an existing MCP registration whose verified setups are on Windows.',
+    answer: 'Not for static JavaScript, Electron, or .NET inspection. The REA README says those paths read the files you supply and do not need a native engine. Deep native analysis uses Hopper, Ghidra, IDA, or a Kuna executable you supply. The 6.8.0 Kuna guide says REA verified Kuna 1.833 and does not support Windows, PE, or universal Mach-O. The Kuna guide on main recommends Kuna 1.988 and says those checks ran on macOS arm64; that recommendation is not in the 6.8.0 tag. The get-started page still documents Ghidra 12.1.x with JDK 21, an optional Hopper install after approval, and IDA through an existing MCP registration whose verified setups are on Windows. The installation reference on main says doctor validates Ghidra 12.x at 12.1 or newer. The 6.8.0 copy of that page says Ghidra 12.1.x.',
   },
   {
     question: 'How does REA compare with GhidraMCP, GhydraMCP, ida-pro-mcp, and radare2-mcp?',
@@ -105,6 +105,10 @@ export const compareFaqs: FaqItem[] = [
   {
     question: 'Does REA use more tokens?',
     answer: 'This site has not measured token use. In the GitTested review of rea-agents 6.2.0, median tokens on the native sessions were 94,663 with shell tools and 233,951 with REA, about 2.5 times as many. That review says most of the extra tokens were cached reads, so computed cost rose by about 1.5 times. It also says a full analysis of one 22 MB Electron archive wrote a 692 MB document that could not be returned in a single MCP call. Those figures are that review’s measurements of version 6.2.0, not a measurement of the current 6.8.0 release and not a result from this site.',
+  },
+  {
+    question: 'Is npm’s latest REA newer than 6.8.0?',
+    answer: 'No. On November 2, 2026, npm dist-tag latest and the latest GitHub release were both rea-agents 6.8.0, published 2026-10-25. The changelog on main has no section after 6.8.0, and package.json on main still says 6.8.0. Guides on that commit describe later behavior, including a Kuna 1.988 recommendation, REA_MCP_OUTPUT_SCHEMA_PROFILE=compact, and close_binary keeping investigation records until reset_investigation. Those guides are not the published package. This site did not re-run its October 12, 2026 fixture checks.',
   },
 ];
 
